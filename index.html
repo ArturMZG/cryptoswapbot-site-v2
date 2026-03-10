@@ -85,71 +85,62 @@
         </p>
     </footer>
 <script>
-  // Простой client-side router для статического сайта
+  // Лёгкий кэш для мгновенных переходов на mobile
+  const CACHE_KEY = 'page-cache';
+  const pages = {
+    '/': null,
+    '/terms.html': null,
+    '/privacy.html': null
+  };
+
+  function cachePage(path, html) {
+    try {
+      sessionStorage.setItem(CACHE_KEY + ':' + path, html);
+    } catch (e) { /* ignore */ }
+  }
+
+  function getCachedPage(path) {
+    try {
+      return sessionStorage.getItem(CACHE_KEY + ':' + path);
+    } catch (e) { return null; }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
-    const container = document.body;
     const links = document.querySelectorAll('a[href^="/"]');
-
     links.forEach(link => {
-      // Пропускаем внешние ссылки, target="_blank", download, etc.
-      if (
-        link.hasAttribute('target') ||
-        link.hasAttribute('download') ||
-        link.href.startsWith('mailto:') ||
-        link.href.startsWith('tel:')
-      ) return;
+      if (link.hasAttribute('target') || link.hasAttribute('download')) return;
 
-      link.addEventListener('click', async (e) => {
-        e.preventDefault();
+      link.addEventListener('click', (e) => {
         const url = new URL(link.href);
         const path = url.pathname;
 
-        try {
-          // Загружаем новую страницу через fetch
-          const res = await fetch(path);
-          if (!res.ok) throw new Error('Page not found');
-          const html = await res.text();
-          
-          // Парсим title и body
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          const newBody = doc.querySelector('body');
-          const newTitle = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-
-          // Обновляем DOM
-          container.innerHTML = newBody.innerHTML;
-          document.title = newTitle;
-
-          // Обновляем историю
+        // Если уже в кэше — заменяем body без fetch
+        const cached = getCachedPage(path);
+        if (cached) {
+          e.preventDefault();
+          document.body.innerHTML = cached;
+          document.title = cached.match(/<title>([^<]+)<\/title>/)?.[1] || 'CryptoSwap Bot';
           history.pushState({ path }, '', path);
-
-          // Скролл вверх
           window.scrollTo(0, 0);
-        } catch (err) {
-          console.warn('Fallback to full navigation:', err);
-          window.location.href = link.href;
+          return;
         }
+
+        // Иначе — делаем обычный переход (без блокировки)
+        // Но предварительно кэшируем текущую страницу
+        setTimeout(() => {
+          cachePage(location.pathname, document.documentElement.outerHTML);
+        }, 0);
       });
     });
 
-    // Поддержка back/forward
-    window.addEventListener('popstate', async (e) => {
-      const path = e.state?.path || location.pathname;
-      try {
-        const res = await fetch(path);
-        const html = await res.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        document.body.innerHTML = doc.body.innerHTML;
-        document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-        window.scrollTo(0, 0);
-      } catch {}
-    });
+    // Кэшируем текущую страницу при загрузке
+    cachePage(location.pathname, document.documentElement.outerHTML);
   });
 </script>
 </body>
 
 </html>
+
 
 
 
