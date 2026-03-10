@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — CryptoSwap Bot</title>
+    <meta name="description" content="Privacy Policy of CryptoSwap Bot. Information about what technical data we collect and how we use it.">
+    <!-- Путь к стилям из подпапки en/ -->
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: March 2026</em></p>
+    
+    <h2>1. What Data We Collect</h2>
+    <p>CryptoSwap Bot does not require registration and does not request personal data. During the use of the bot, the following technical information may be recorded:</p>
+    <ul>
+        <li>User's Telegram ID (for identification within the session)</li>
+        <li>Exchange request history (without linking to identity)</li>
+        <li>IP address (only when accessing the website, logs are kept for 7 days)</li>
+    </ul>
+    
+    <h2>2. How We Use the Data</h2>
+    <p>Collected technical data is used exclusively for:</p>
+    <ul>
+        <li>Ensuring the functionality of the Service</li>
+        <li>Analyzing errors and improving user experience</li>
+        <li>Preventing abuse and spam</li>
+    </ul>
+    
+    <h2>3. Data Transfer to Third Parties</h2>
+    <p>We do not sell or transfer personal data. Technical logs may be transferred to partner providers (ChangeNOW, SimpleSwap) exclusively to the extent necessary to execute the exchange, in accordance with their privacy policies.</p>
+    
+    <h2>4. Cookies and Analytics</h2>
+    <p>The website may use anonymized cookies for basic traffic analytics. You can disable cookies in your browser settings.</p>
+    
+    <h2>5. Your Rights</h2>
+    <p>You can request the deletion of your technical data by contacting support: <a href="https://t.me/CryptoSwapBot_support" target="_blank" rel="noopener noreferrer">@CryptoSwapBot_support</a></p>
+    
+    <h2>6. Policy Changes</h2>
+    <p>We reserve the right to update this policy. The current version is always available at this address.</p>
+    
+    <footer>
+        <a href="/en/index.html">← Back to Home</a>
+    </footer>
+
+    <!-- Safe SPA Router -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', async (e) => {
+          const link = e.target.closest('a[href^="/"]');
+          if (!link) return;
+          if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
+          e.preventDefault();
+          const url = new URL(link.href, window.location.origin);
+          const path = url.pathname;
+          if (path === window.location.pathname) return;
+          try {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error('Page not found');
+            const html = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            document.body.innerHTML = doc.body.innerHTML;
+            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+            history.pushState({ path }, '', path);
+            window.scrollTo(0, 0);
+          } catch (err) {
+            window.location.href = link.href;
+          }
+        });
+
+        if (!window.hasPopStateListener) {
+          window.addEventListener('popstate', async (e) => {
+            const path = e.state?.path || location.pathname;
+            try {
+              const res = await fetch(path);
+              const html = await res.text();
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              document.body.innerHTML = doc.body.innerHTML;
+              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+              window.scrollTo(0, 0);
+            } catch {}
+          });
+          window.hasPopStateListener = true;
+        }
+      });
+    </script>
+</body>
+</html>

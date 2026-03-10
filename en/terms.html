@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use — CryptoSwap Bot</title>
+    <meta name="description" content="Terms of Use for CryptoSwap Bot service. Rules, fees, limitations, and user responsibility.">
+    <!-- Путь к стилям из подпапки en/ -->
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <h1>Terms of Use</h1>
+    <p><em>Last updated: March 2026</em></p>
+    
+    <h2>1. General Provisions</h2>
+    <p>CryptoSwap Bot ("Service") provides an interface to access third-party exchange services, including ChangeNOW and SimpleSwap. We are not a cryptocurrency exchange operator, do not store user funds, and do not control private keys.</p>
+    
+    <h2>2. Fees and Exchange Rates</h2>
+    <p>The Service may charge an additional fee (spread) of 0.5–3% of the exchange amount. The final rate is displayed to the user before confirming the transaction and is final.</p>
+    
+    <h2>3. Restrictions and Limits</h2>
+    <p>Minimum and maximum exchange amounts are determined by partner providers and may change without prior notice. Transactions with suspicious activity may be rejected by providers in accordance with their AML policies.</p>
+    
+    <h2>4. User Responsibility</h2>
+    <p>The user bears full responsibility independently for:</p>
+    <ul>
+        <li>The accuracy of the provided wallet addresses</li>
+        <li>The security of their private keys and seed phrases</li>
+        <li>Compliance with the legislation of their jurisdiction when using cryptocurrencies</li>
+    </ul>
+    
+    <h2>5. Disclaimer of Liability</h2>
+    <p>The Service is provided "as is". We do not guarantee uninterrupted operation, nor do we compensate for losses due to user errors, blockchain failures, or actions of partner providers.</p>
+    
+    <h2>6. Changes to Terms</h2>
+    <p>We reserve the right to change these terms at any time. Continued use of the Service after changes constitutes your agreement to the new version.</p>
+    
+    <footer>
+        <a href="/en/index.html">← Back to Home</a>
+    </footer>
+
+    <!-- Safe SPA Router -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', async (e) => {
+          const link = e.target.closest('a[href^="/"]');
+          if (!link) return;
+          if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
+          e.preventDefault();
+          const url = new URL(link.href, window.location.origin);
+          const path = url.pathname;
+          if (path === window.location.pathname) return;
+          try {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error('Page not found');
+            const html = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            document.body.innerHTML = doc.body.innerHTML;
+            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+            history.pushState({ path }, '', path);
+            window.scrollTo(0, 0);
+          } catch (err) {
+            window.location.href = link.href;
+          }
+        });
+
+        if (!window.hasPopStateListener) {
+          window.addEventListener('popstate', async (e) => {
+            const path = e.state?.path || location.pathname;
+            try {
+              const res = await fetch(path);
+              const html = await res.text();
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              document.body.innerHTML = doc.body.innerHTML;
+              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+              window.scrollTo(0, 0);
+            } catch {}
+          });
+          window.hasPopStateListener = true;
+        }
+      });
+    </script>
+</body>
+</html>
