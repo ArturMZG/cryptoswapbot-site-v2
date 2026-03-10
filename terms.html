@@ -47,6 +47,71 @@
     <footer>
         <a href="/">← На главную</a>
     </footer>
+
+    <script>
+  // Простой client-side router для статического сайта
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.body;
+    const links = document.querySelectorAll('a[href^="/"]');
+
+    links.forEach(link => {
+      // Пропускаем внешние ссылки, target="_blank", download, etc.
+      if (
+        link.hasAttribute('target') ||
+        link.hasAttribute('download') ||
+        link.href.startsWith('mailto:') ||
+        link.href.startsWith('tel:')
+      ) return;
+
+      link.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const url = new URL(link.href);
+        const path = url.pathname;
+
+        try {
+          // Загружаем новую страницу через fetch
+          const res = await fetch(path);
+          if (!res.ok) throw new Error('Page not found');
+          const html = await res.text();
+          
+          // Парсим title и body
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const newBody = doc.querySelector('body');
+          const newTitle = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+
+          // Обновляем DOM
+          container.innerHTML = newBody.innerHTML;
+          document.title = newTitle;
+
+          // Обновляем историю
+          history.pushState({ path }, '', path);
+
+          // Скролл вверх
+          window.scrollTo(0, 0);
+        } catch (err) {
+          console.warn('Fallback to full navigation:', err);
+          window.location.href = link.href;
+        }
+      });
+    });
+
+    // Поддержка back/forward
+    window.addEventListener('popstate', async (e) => {
+      const path = e.state?.path || location.pathname;
+      try {
+        const res = await fetch(path);
+        const html = await res.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        document.body.innerHTML = doc.body.innerHTML;
+        document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+        window.scrollTo(0, 0);
+      } catch {}
+    });
+  });
+</script>
 </body>
 
 </html>
+
