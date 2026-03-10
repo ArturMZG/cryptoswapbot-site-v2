@@ -86,6 +86,59 @@
         }
       });
     </script>
+        <!-- Скрипт мультиязычности -->
+    <script>
+      (function() {
+        // Функция переключения языка (вызывается кнопками)
+        window.switchLang = function(lang) {
+          localStorage.setItem('site_lang', lang);
+          const currentPath = window.location.pathname;
+          
+          if (lang === 'en' && !currentPath.startsWith('/en')) {
+            // Переход на EN
+            const newPath = currentPath === '/' ? '/index.html' : currentPath;
+            window.location.href = '/en' + newPath;
+          } else if (lang === 'ru' && currentPath.startsWith('/en')) {
+            // Возврат на RU
+            const newPath = currentPath.replace('/en', '') || '/';
+            window.location.href = newPath;
+          }
+        };
+
+        // Автоопределение при первой загрузке
+        const savedLang = localStorage.getItem('site_lang');
+        const currentPath = window.location.pathname;
+        const isEnPage = currentPath.startsWith('/en');
+
+        if (!savedLang) {
+          // Если пользователь зашел впервые, проверяем язык браузера
+          const browserLang = navigator.language || navigator.userLanguage;
+          const targetLang = browserLang.startsWith('ru') ? 'ru' : 'en';
+          
+          // Сохраняем, чтобы не проверять каждый раз
+          localStorage.setItem('site_lang', targetLang);
+          
+          // Если язык EN, а мы на русской странице — перенаправляем
+          if (targetLang === 'en' && !isEnPage) {
+             const newPath = currentPath === '/' ? '/index.html' : currentPath;
+             window.location.replace('/en' + newPath);
+          }
+        } else {
+          // Если язык сохранен как EN, но мы на русской странице
+          if (savedLang === 'en' && !isEnPage) {
+             const newPath = currentPath === '/' ? '/index.html' : currentPath;
+             window.location.replace('/en' + newPath);
+          }
+          // Если язык сохранен как RU, но мы на английской странице
+          if (savedLang === 'ru' && isEnPage) {
+             const newPath = currentPath.replace('/en', '') || '/';
+             window.location.replace(newPath);
+          }
+        }
+      })();
+    </script>
+
 </body>
 </html>
+
 
