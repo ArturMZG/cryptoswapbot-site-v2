@@ -146,3 +146,28 @@ footer {
   }
 
 }
+
+/* --- Переключатель языков --- */
+.lang-switcher {
+  margin-bottom: 20px;
+}
+.lang-switcher button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 4px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.lang-switcher button:hover {
+  border-color: var(--primary);
+  color: var(--text);
+}
+.lang-switcher button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
