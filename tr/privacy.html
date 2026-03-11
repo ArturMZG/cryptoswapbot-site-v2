@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası — CryptoSwap Bot</title>
+    <meta name="description" content="CryptoSwap Bot Gizlilik Politikası. Hangi teknik verileri topladığımıza ve bunları nasıl kullandığımıza dair bilgiler.">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="lang-switcher" style="text-align: right; margin-bottom: 20px;">
+        <button onclick="switchLang('ru')">RU</button>
+        <button onclick="switchLang('en')">EN</button>
+        <button onclick="switchLang('es')">ES</button>
+        <button onclick="switchLang('pt')">PT</button>
+        <button class="active" onclick="switchLang('tr')">TR</button>
+    </div>
+
+    <h1>Gizlilik Politikası</h1>
+    <p><em>Son güncelleme: Mart 2026</em></p>
+    
+    <h2>1. Hangi Verileri Topluyoruz?</h2>
+    <p>CryptoSwap Bot kayıt gerektirmez ve kişisel veri talep etmez. Botun kullanımı sırasında aşağıdaki teknik bilgiler kaydedilebilir:</p>
+    <ul>
+        <li>Kullanıcının Telegram ID'si (oturum içinde kimlik tespiti için)</li>
+        <li>İşlem talep geçmişi (kimliğe bağlanmaksızın)</li>
+        <li>IP adresi (sadece web sitesine erişildiğinde, loglar 7 gün boyunca saklanır)</li>
+    </ul>
+    
+    <h2>2. Verileri Nasıl Kullanıyoruz?</h2>
+    <p>Toplanan teknik veriler münhasıran aşağıdakiler için kullanılır:</p>
+    <ul>
+        <li>Hizmetin işlevselliğinin sağlanması</li>
+        <li>Hataların analizi ve kullanıcı deneyiminin iyileştirilmesi</li>
+        <li>Kötüye kullanım ve spam'in önlenmesi</li>
+    </ul>
+    
+    <h2>3. Üçüncü Taraflara Veri Aktarımı</h2>
+    <p>Kişisel verileri satmıyoruz veya aktarmıyoruz. Teknik loglar, işlemi gerçekleştirmek için gerekli olan ölçüde, gizlilik politikalarına uygun olarak ortak sağlayıcılara (ChangeNOW, SimpleSwap) aktarılabilir.</p>
+    
+    <h2>4. Çerezler (Cookies) ve Analiz</h2>
+    <p>Web sitesi, temel trafik analizi için anonimleştirilmiş çerezler kullanabilir. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz.</p>
+    
+    <h2>5. Haklarınız</h2>
+    <p>Teknik verilerinizin silinmesini talep etmek için destek ekibiyle iletişime geçebilirsiniz: <a href="https://t.me/CryptoSwapBot_support" target="_blank" rel="noopener noreferrer">@CryptoSwapBot_support</a></p>
+    
+    <h2>6. Politikadaki Değişiklikler</h2>
+    <p>Bu politikayı güncelleme hakkımız saklıdır. Güncel sürüm her zaman bu adreste mevcuttur.</p>
+    
+    <footer>
+        <a href="/tr/index.html">← Ana Sayfaya Dön</a>
+    </footer>
+
+    <!-- Safe SPA Router -->
+    <script>
+      // ... (тот же код роутера, что и в index.html)
+      document.addEventListener('DOMContentLoaded', () => { document.addEventListener('click', async (e) => { const link = e.target.closest('a[href^="/"]'); if (!link) return; if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return; e.preventDefault(); const url = new URL(link.href, window.location.origin); const path = url.pathname; if (path === window.location.pathname) return; try { const res = await fetch(path); if (!res.ok) throw new Error('Page not found'); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; history.pushState({ path }, '', path); window.scrollTo(0, 0); } catch (err) { window.location.href = link.href; } }); if (!window.hasPopStateListener) { window.addEventListener('popstate', async (e) => { const path = e.state?.path || location.pathname; try { const res = await fetch(path); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; window.scrollTo(0, 0); } catch {} }); window.hasPopStateListener = true; } });
+    </script>
+
+    <!-- Скрипт мультиязычности (Финальный) -->
+    <script>
+      // ... (тот же код переключения языков, что и в tr/index.html)
+      (function() { const supportedLangs = ['en', 'es', 'pt', 'tr']; const defaultLang = 'ru'; function getCurrentPageLang() { const path = window.location.pathname; for (let i = 0; i < supportedLangs.length; i++) { if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) { return supportedLangs[i]; } } return defaultLang; } window.switchLang = function(targetLang) { localStorage.setItem('site_lang', targetLang); const currentPath = window.location.pathname; const currentLang = getCurrentPageLang(); if (currentLang === targetLang) return; let newPath = currentPath; if (currentLang !== defaultLang) { newPath = currentPath.replace('/' + currentLang, ''); if (newPath === '') newPath = '/'; } if (newPath === '/') newPath = '/index.html'; if (targetLang !== defaultLang) { newPath = '/' + targetLang + newPath; } window.location.href = newPath; }; const savedLang = localStorage.getItem('site_lang'); const currentLang = getCurrentPageLang(); if (!savedLang) { const browserLang = (navigator.language || navigator.userLanguage).toLowerCase(); let targetLang = 'en'; if (browserLang.startsWith('ru')) targetLang = 'ru'; if (browserLang.startsWith('es')) targetLang = 'es'; if (browserLang.startsWith('pt')) targetLang = 'pt'; if (browserLang.startsWith('tr')) targetLang = 'tr'; localStorage.setItem('site_lang', targetLang); if (targetLang !== currentLang) { window.switchLang(targetLang); } } else { if (savedLang !== currentLang) { window.switchLang(savedLang); } } })();
+    </script>
+</body>
+</html>
