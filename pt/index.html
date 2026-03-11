@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoSwap Bot — Troca Instantânea de Criptomoedas no Telegram</title>
+    <meta name="description" content="Troca rápida e segura de criptomoedas através de um bot no Telegram. Mais de 300 moedas, taxas baixas, cashback.">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="lang-switcher">
+            <button onclick="switchLang('ru')">RU</button>
+            <button onclick="switchLang('en')">EN</button>
+            <button onclick="switchLang('es')">ES</button>
+            <button class="active" onclick="switchLang('pt')">PT</button>
+        </div>
+        <h1>🔄 CryptoSwap Bot 🔄</h1>
+        <p class="subtitle">Troca instantânea de criptomoedas diretamente no Telegram</p>
+        <p class="subtitle">Mais de 300 moedas, taxas baixas, cashback.</p>
+        <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">🚀 Iniciar Bot</a>
+    </header>
+
+    <section class="features">
+        <div class="feature">
+            <h3>⚡ Rápido</h3>
+            <p>Troca em 2–5 minutos. Sem registro, sem KYC para valores inferiores a $1000.</p>
+        </div>
+        <div class="feature">
+            <h3>🔒 Seguro</h3>
+            <p>Arquitetura não custodial (non-custodial): não armazenamos suas chaves privadas nem fundos.</p>
+        </div>
+        <div class="feature">
+            <h3>💰 Lucrativo</h3>
+            <p>Taxas transparentes + até 1% de cashback de cada operação no seu saldo interno.</p>
+        </div>
+    </section>
+
+    <section class="steps">
+        <h3>📋 Como funciona</h3>
+        <ol>
+            <li>Inicie o bot: <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a></li>
+            <li>Selecione um par de troca (por exemplo, BTC → USDT)</li>
+            <li>Insira o valor e o endereço de recebimento</li>
+            <li>Envie a criptomoeda para o endereço gerado</li>
+            <li>Receba as moedas na sua carteira automaticamente</li>
+        </ol>
+    </section>
+
+    <footer>
+        <p>
+            <a href="/pt/terms.html">Termos de Uso</a> | 
+            <a href="/pt/privacy.html">Política de Privacidade</a> | 
+            <a href="https://t.me/CryptoSwapBot_support" target="_blank" rel="noopener noreferrer">Suporte</a>
+        </p>
+        <p>© 2026 CryptoSwap Bot. Todos os direitos reservados.</p>
+        <p class="disclaimer">
+            O serviço atua como um agregador de operações de troca e fornece uma interface 
+            para acessar provedores de liquidez terceirizados (ChangeNOW, SimpleSwap). 
+            Não somos um operador de câmbio, não armazenamos fundos de usuários, 
+            e não controlamos chaves privadas. Todas as trocas são regidas pelos termos 
+            dos respectivos provedores.
+        </p>
+    </footer>
+
+    <!-- Safe SPA Router -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', async (e) => {
+          const link = e.target.closest('a[href^="/"]');
+          if (!link) return;
+          if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
+          e.preventDefault();
+          const url = new URL(link.href, window.location.origin);
+          const path = url.pathname;
+          if (path === window.location.pathname) return;
+          try {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error('Page not found');
+            const html = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            document.body.innerHTML = doc.body.innerHTML;
+            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+            history.pushState({ path }, '', path);
+            window.scrollTo(0, 0);
+          } catch (err) {
+            window.location.href = link.href;
+          }
+        });
+
+        if (!window.hasPopStateListener) {
+          window.addEventListener('popstate', async (e) => {
+            const path = e.state?.path || location.pathname;
+            try {
+              const res = await fetch(path);
+              const html = await res.text();
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              document.body.innerHTML = doc.body.innerHTML;
+              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+              window.scrollTo(0, 0);
+            } catch {}
+          });
+          window.hasPopStateListener = true;
+        }
+      });
+    </script>
+
+    <!-- Скрипт мультиязычности (Уже обновлен для PT!) -->
+    <script>
+      (function() {
+        const supportedLangs = ['en', 'es', 'pt']; 
+        const defaultLang = 'ru';
+
+        function getCurrentPageLang() {
+          const path = window.location.pathname;
+          for (let i = 0; i < supportedLangs.length; i++) {
+            if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) {
+              return supportedLangs[i];
+            }
+          }
+          return defaultLang;
+        }
+
+        window.switchLang = function(targetLang) {
+          localStorage.setItem('site_lang', targetLang);
+          const currentPath = window.location.pathname;
+          const currentLang = getCurrentPageLang();
+          
+          if (currentLang === targetLang) return; 
+
+          let newPath = currentPath;
+          
+          if (currentLang !== defaultLang) {
+            newPath = currentPath.replace('/' + currentLang, '');
+            if (newPath === '') newPath = '/';
+          }
+          if (newPath === '/') newPath = '/index.html'; 
+
+          if (targetLang !== defaultLang) {
+            newPath = '/' + targetLang + newPath;
+          }
+          
+          window.location.href = newPath;
+        };
+
+        const savedLang = localStorage.getItem('site_lang');
+        const currentLang = getCurrentPageLang();
+
+        if (!savedLang) {
+          const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+          
+          let targetLang = 'en'; 
+          if (browserLang.startsWith('ru')) targetLang = 'ru';
+          if (browserLang.startsWith('es')) targetLang = 'es';
+          if (browserLang.startsWith('pt')) targetLang = 'pt'; // Добавлена проверка португальского
+          
+          localStorage.setItem('site_lang', targetLang);
+          
+          if (targetLang !== currentLang) {
+             window.switchLang(targetLang);
+          }
+        } else {
+          if (savedLang !== currentLang) {
+             window.switchLang(savedLang);
+          }
+        }
+      })();
+    </script>
+</body>
+</html>

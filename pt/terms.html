@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso — CryptoSwap Bot</title>
+    <meta name="description" content="Termos de Uso do serviço CryptoSwap Bot. Regras, taxas, limitações e responsabilidade do usuário.">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="lang-switcher" style="text-align: right; margin-bottom: 20px;">
+        <button onclick="switchLang('ru')">RU</button>
+        <button onclick="switchLang('en')">EN</button>
+        <button onclick="switchLang('es')">ES</button>
+        <button class="active" onclick="switchLang('pt')">PT</button>
+    </div>
+    
+    <h1>Termos de Uso</h1>
+    <p><em>Última atualização: Março de 2026</em></p>
+    
+    <h2>1. Disposições Gerais</h2>
+    <p>O CryptoSwap Bot ("Serviço") fornece uma interface para acessar serviços de câmbio de terceiros, incluindo ChangeNOW e SimpleSwap. Não somos um operador de câmbio de criptomoedas, não armazenamos fundos de usuários e não controlamos chaves privadas.</p>
+    
+    <h2>2. Taxas e Taxas de Câmbio</h2>
+    <p>O Serviço pode cobrar uma taxa adicional (spread) de 0,5–3% do valor da troca. A taxa final é exibida ao usuário antes de confirmar a transação e é definitiva.</p>
+    
+    <h2>3. Restrições e Limites</h2>
+    <p>Os valores mínimos e máximos de troca são determinados pelos provedores parceiros e podem mudar sem aviso prévio. Transações com atividade suspeita podem ser rejeitadas pelos provedores de acordo com suas políticas de combate à lavagem de dinheiro (AML).</p>
+    
+    <h2>4. Responsabilidade do Usuário</h2>
+    <p>O usuário assume total responsabilidade de forma independente por:</p>
+    <ul>
+        <li>A precisão dos endereços de carteira fornecidos</li>
+        <li>A segurança de suas chaves privadas e frases semente (seed phrases)</li>
+        <li>O cumprimento da legislação de sua jurisdição ao usar criptomoedas</li>
+    </ul>
+    
+    <h2>5. Isenção de Responsabilidade</h2>
+    <p>O Serviço é fornecido "como está". Não garantimos operação ininterrupta, nem compensamos perdas devido a erros do usuário, falhas na blockchain ou ações de provedores parceiros.</p>
+    
+    <h2>6. Alterações nos Termos</h2>
+    <p>Reservamo-nos o direito de alterar estes termos a qualquer momento. O uso contínuo do Serviço após as alterações constitui sua aceitação da nova versão.</p>
+    
+    <footer>
+        <a href="/pt/index.html">← Voltar à página inicial</a>
+    </footer>
+
+    <!-- Safe SPA Router -->
+    <script>
+      // ... (тот же код роутера, что и в index.html)
+      document.addEventListener('DOMContentLoaded', () => { document.addEventListener('click', async (e) => { const link = e.target.closest('a[href^="/"]'); if (!link) return; if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return; e.preventDefault(); const url = new URL(link.href, window.location.origin); const path = url.pathname; if (path === window.location.pathname) return; try { const res = await fetch(path); if (!res.ok) throw new Error('Page not found'); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; history.pushState({ path }, '', path); window.scrollTo(0, 0); } catch (err) { window.location.href = link.href; } }); if (!window.hasPopStateListener) { window.addEventListener('popstate', async (e) => { const path = e.state?.path || location.pathname; try { const res = await fetch(path); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; window.scrollTo(0, 0); } catch {} }); window.hasPopStateListener = true; } });
+    </script>
+
+    <!-- Скрипт мультиязычности (Уже обновлен для PT!) -->
+    <script>
+      // ... (тот же код переключения языков, что и в pt/index.html)
+      (function() { const supportedLangs = ['en', 'es', 'pt']; const defaultLang = 'ru'; function getCurrentPageLang() { const path = window.location.pathname; for (let i = 0; i < supportedLangs.length; i++) { if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) { return supportedLangs[i]; } } return defaultLang; } window.switchLang = function(targetLang) { localStorage.setItem('site_lang', targetLang); const currentPath = window.location.pathname; const currentLang = getCurrentPageLang(); if (currentLang === targetLang) return; let newPath = currentPath; if (currentLang !== defaultLang) { newPath = currentPath.replace('/' + currentLang, ''); if (newPath === '') newPath = '/'; } if (newPath === '/') newPath = '/index.html'; if (targetLang !== defaultLang) { newPath = '/' + targetLang + newPath; } window.location.href = newPath; }; const savedLang = localStorage.getItem('site_lang'); const currentLang = getCurrentPageLang(); if (!savedLang) { const browserLang = (navigator.language || navigator.userLanguage).toLowerCase(); let targetLang = 'en'; if (browserLang.startsWith('ru')) targetLang = 'ru'; if (browserLang.startsWith('es')) targetLang = 'es'; if (browserLang.startsWith('pt')) targetLang = 'pt'; localStorage.setItem('site_lang', targetLang); if (targetLang !== currentLang) { window.switchLang(targetLang); } } else { if (savedLang !== currentLang) { window.switchLang(savedLang); } } })();
+    </script>
+</body>
+</html>
