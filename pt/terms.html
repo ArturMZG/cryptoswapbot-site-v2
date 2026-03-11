@@ -52,11 +52,69 @@
       document.addEventListener('DOMContentLoaded', () => { document.addEventListener('click', async (e) => { const link = e.target.closest('a[href^="/"]'); if (!link) return; if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return; e.preventDefault(); const url = new URL(link.href, window.location.origin); const path = url.pathname; if (path === window.location.pathname) return; try { const res = await fetch(path); if (!res.ok) throw new Error('Page not found'); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; history.pushState({ path }, '', path); window.scrollTo(0, 0); } catch (err) { window.location.href = link.href; } }); if (!window.hasPopStateListener) { window.addEventListener('popstate', async (e) => { const path = e.state?.path || location.pathname; try { const res = await fetch(path); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; window.scrollTo(0, 0); } catch {} }); window.hasPopStateListener = true; } });
     </script>
 
-    <!-- Скрипт мультиязычности (Уже обновлен для PT!) -->
+    <!-- Скрипт мультиязычности (Финальный, с поддержкой TR) -->
     <script>
-      // ... (тот же код переключения языков, что и в pt/index.html)
-      (function() { const supportedLangs = ['en', 'es', 'pt']; const defaultLang = 'ru'; function getCurrentPageLang() { const path = window.location.pathname; for (let i = 0; i < supportedLangs.length; i++) { if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) { return supportedLangs[i]; } } return defaultLang; } window.switchLang = function(targetLang) { localStorage.setItem('site_lang', targetLang); const currentPath = window.location.pathname; const currentLang = getCurrentPageLang(); if (currentLang === targetLang) return; let newPath = currentPath; if (currentLang !== defaultLang) { newPath = currentPath.replace('/' + currentLang, ''); if (newPath === '') newPath = '/'; } if (newPath === '/') newPath = '/index.html'; if (targetLang !== defaultLang) { newPath = '/' + targetLang + newPath; } window.location.href = newPath; }; const savedLang = localStorage.getItem('site_lang'); const currentLang = getCurrentPageLang(); if (!savedLang) { const browserLang = (navigator.language || navigator.userLanguage).toLowerCase(); let targetLang = 'en'; if (browserLang.startsWith('ru')) targetLang = 'ru'; if (browserLang.startsWith('es')) targetLang = 'es'; if (browserLang.startsWith('pt')) targetLang = 'pt'; localStorage.setItem('site_lang', targetLang); if (targetLang !== currentLang) { window.switchLang(targetLang); } } else { if (savedLang !== currentLang) { window.switchLang(savedLang); } } })();
+      (function() {
+        const supportedLangs = ['en', 'es', 'pt', 'tr']; 
+        const defaultLang = 'ru';
+
+        function getCurrentPageLang() {
+          const path = window.location.pathname;
+          for (let i = 0; i < supportedLangs.length; i++) {
+            if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) {
+              return supportedLangs[i];
+            }
+          }
+          return defaultLang;
+        }
+
+        window.switchLang = function(targetLang) {
+          localStorage.setItem('site_lang', targetLang);
+          const currentPath = window.location.pathname;
+          const currentLang = getCurrentPageLang();
+          
+          if (currentLang === targetLang) return; 
+
+          let newPath = currentPath;
+          
+          if (currentLang !== defaultLang) {
+            newPath = currentPath.replace('/' + currentLang, '');
+            if (newPath === '') newPath = '/';
+          }
+          if (newPath === '/') newPath = '/index.html'; 
+
+          if (targetLang !== defaultLang) {
+            newPath = '/' + targetLang + newPath;
+          }
+          
+          window.location.href = newPath;
+        };
+
+        const savedLang = localStorage.getItem('site_lang');
+        const currentLang = getCurrentPageLang();
+
+        if (!savedLang) {
+          const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+          
+          let targetLang = 'en'; 
+          if (browserLang.startsWith('ru')) targetLang = 'ru';
+          if (browserLang.startsWith('es')) targetLang = 'es';
+          if (browserLang.startsWith('pt')) targetLang = 'pt';
+          if (browserLang.startsWith('tr')) targetLang = 'tr'; // Проверка турецкого
+          
+          localStorage.setItem('site_lang', targetLang);
+          
+          if (targetLang !== currentLang) {
+             window.switchLang(targetLang);
+          }
+        } else {
+          if (savedLang !== currentLang) {
+             window.switchLang(savedLang);
+          }
+        }
+      })();
     </script>
 </body>
 </html>
+
 
