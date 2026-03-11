@@ -108,10 +108,10 @@
       });
     </script>
 
-    <!-- Скрипт мультиязычности (Уже обновлен для PT!) -->
+    <!-- Скрипт мультиязычности (Финальный, с поддержкой TR) -->
     <script>
       (function() {
-        const supportedLangs = ['en', 'es', 'pt']; 
+        const supportedLangs = ['en', 'es', 'pt', 'tr']; 
         const defaultLang = 'ru';
 
         function getCurrentPageLang() {
@@ -155,7 +155,8 @@
           let targetLang = 'en'; 
           if (browserLang.startsWith('ru')) targetLang = 'ru';
           if (browserLang.startsWith('es')) targetLang = 'es';
-          if (browserLang.startsWith('pt')) targetLang = 'pt'; // Добавлена проверка португальского
+          if (browserLang.startsWith('pt')) targetLang = 'pt';
+          if (browserLang.startsWith('tr')) targetLang = 'tr'; // Проверка турецкого
           
           localStorage.setItem('site_lang', targetLang);
           
@@ -171,4 +172,5 @@
     </script>
 </body>
 </html>
+
 
