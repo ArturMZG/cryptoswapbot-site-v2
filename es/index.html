@@ -107,13 +107,12 @@
         }
       });
     </script>
-        <!-- Скрипт мультиязычности (Обновлен для 3+ языков) -->
+    <!-- Скрипт мультиязычности (Уже обновлен для PT!) -->
     <script>
       (function() {
-        const supportedLangs = ['en', 'es']; // Список папок с языками (без 'ru', так как он в корне)
+        const supportedLangs = ['en', 'es', 'pt']; 
         const defaultLang = 'ru';
 
-        // Определяем текущий язык страницы, глядя на путь (например, /es/terms.html -> 'es')
         function getCurrentPageLang() {
           const path = window.location.pathname;
           for (let i = 0; i < supportedLangs.length; i++) {
@@ -124,24 +123,21 @@
           return defaultLang;
         }
 
-        // Функция переключения языка (вызывается кнопками)
         window.switchLang = function(targetLang) {
           localStorage.setItem('site_lang', targetLang);
           const currentPath = window.location.pathname;
           const currentLang = getCurrentPageLang();
           
-          if (currentLang === targetLang) return; // Уже на нужном языке
+          if (currentLang === targetLang) return; 
 
           let newPath = currentPath;
           
-          // Сначала "очищаем" путь от текущего языка (приводим к виду корня, например /terms.html)
           if (currentLang !== defaultLang) {
             newPath = currentPath.replace('/' + currentLang, '');
             if (newPath === '') newPath = '/';
           }
-          if (newPath === '/') newPath = '/index.html'; // Нормализуем корень
+          if (newPath === '/') newPath = '/index.html'; 
 
-          // Теперь добавляем префикс нужного языка (если это не русский)
           if (targetLang !== defaultLang) {
             newPath = '/' + targetLang + newPath;
           }
@@ -149,18 +145,16 @@
           window.location.href = newPath;
         };
 
-        // Автоопределение при первой загрузке
         const savedLang = localStorage.getItem('site_lang');
         const currentLang = getCurrentPageLang();
 
         if (!savedLang) {
-          // Пользователь зашел впервые
           const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
           
-          // Определяем язык (если es - то es, если ru - то ru, остальным (включая en) - en)
           let targetLang = 'en'; 
           if (browserLang.startsWith('ru')) targetLang = 'ru';
           if (browserLang.startsWith('es')) targetLang = 'es';
+          if (browserLang.startsWith('pt')) targetLang = 'pt'; // Добавлена проверка португальского
           
           localStorage.setItem('site_lang', targetLang);
           
@@ -168,7 +162,6 @@
              window.switchLang(targetLang);
           }
         } else {
-          // Язык сохранен, проверяем, на правильной ли мы странице
           if (savedLang !== currentLang) {
              window.switchLang(savedLang);
           }
@@ -178,6 +171,7 @@
 
 </body>
 </html>
+
 
 
 
