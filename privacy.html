@@ -6,27 +6,59 @@
     <title>Политика конфиденциальности — CryptoSwap Bot</title>
     <meta name="description" content="Политика конфиденциальности CryptoSwap Bot. Информация о том, какие технические данные мы собираем и как их используем.">
     <link rel="stylesheet" href="assets/style.css">
-    <!-- SEO: Мультиязычность (hreflang) -->
-    <link rel="alternate" hreflang="ru" href="https://https://www.cryptoswapbot.online/privacy.html" />
-    <link rel="alternate" hreflang="en" href="https://https://www.cryptoswapbot.online/en/privacy.html" />
-    <link rel="alternate" hreflang="es" href="https://https://www.cryptoswapbot.online/es/privacy.html" />
-    <link rel="alternate" hreflang="pt" href="https://https://www.cryptoswapbot.online/pt/privacy.html" />
-    <link rel="alternate" hreflang="tr" href="https://https://www.cryptoswapbot.online/tr/privacy.html" />
-    <link rel="alternate" hreflang="x-default" href="https://https://www.cryptoswapbot.online/en/privacy.html" />
+    
+    <!-- SEO: мультиязычность -->
+    <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/privacy.html" />
+    <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/privacy.html" />
+    <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/privacy.html" />
+    <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/privacy.html" />
+    
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph (для превью в соцсетях и Telegram) -->
+    <meta property="og:title" content="Политика конфиденциальности — CryptoSwap Bot">
+    <meta property="og:description" content="Информация о том, какие технические данные собирает CryptoSwap Bot и как они используются.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/privacy.html">
+    <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="CryptoSwap Bot">
+    <meta property="og:locale" content="ru_RU">
+    
+    <style>
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin: 20px 0 30px;
+        }
+        .btn {
+            min-width: 220px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <button class="active" onclick="switchLang('ru')">RU</button>
-        <button onclick="switchLang('en')">EN</button>
-        <button onclick="switchLang('es')">ES</button>
-        <button onclick="switchLang('pt')">PT</button>
-        <button onclick="switchLang('tr')">TR</button>
-    </div>
-    <h1>Политика конфиденциальности</h1>
-    <p><em>Последнее обновление: Март 2026</em></p>
-    
+    <header>
+        <div class="lang-switcher">
+            <button class="active" onclick="switchLang('ru')">RU</button>
+            <button onclick="switchLang('en')">EN</button>
+            <button onclick="switchLang('es')">ES</button>
+            <button onclick="switchLang('pt')">PT</button>
+            <button onclick="switchLang('tr')">TR</button>
+        </div>
+        <div class="button-group">
+            <a href="/exchange.html?lang=ru&fromFiat=rub&darkMode=true" class="btn">💱 Купить криптовалюту</a>
+        </div>
+        <h1>Политика конфиденциальности</h1>
+        <p><em>Последнее обновление: Март 2026</em></p>
+    </header>
+
     <h2>1. Какие данные мы собираем</h2>
     <p>CryptoSwap Bot не требует регистрации и не запрашивает персональные данные. В процессе использования бота могут технически фиксироваться:</p>
     <ul>
@@ -59,6 +91,7 @@
         <a href="/">← На главную</a>
     </footer>
 
+    <!-- Исправленный безопасный роутер SPA -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', async (e) => {
@@ -149,7 +182,7 @@
           if (browserLang.startsWith('ru')) targetLang = 'ru';
           if (browserLang.startsWith('es')) targetLang = 'es';
           if (browserLang.startsWith('pt')) targetLang = 'pt';
-          if (browserLang.startsWith('tr')) targetLang = 'tr'; // Проверка турецкого
+          if (browserLang.startsWith('tr')) targetLang = 'tr';
           
           localStorage.setItem('site_lang', targetLang);
           
@@ -165,14 +198,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
