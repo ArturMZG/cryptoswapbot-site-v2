@@ -6,26 +6,59 @@
     <title>Kullanım Şartları — CryptoSwap Bot</title>
     <meta name="description" content="CryptoSwap Bot hizmetinin Kullanım Şartları. Kurallar, komisyonlar, sınırlamalar ve kullanıcı sorumluluğu.">
     <link rel="stylesheet" href="../assets/style.css">
-    <!-- SEO: Мультиязычность (hreflang) -->
-    <link rel="alternate" hreflang="ru" href="https://https://www.cryptoswapbot.online/terms.html" />
-    <link rel="alternate" hreflang="en" href="https://https://www.cryptoswapbot.online/en/terms.html" />
-    <link rel="alternate" hreflang="es" href="https://https://www.cryptoswapbot.online/es/terms.html" />
-    <link rel="alternate" hreflang="pt" href="https://https://www.cryptoswapbot.online/pt/terms.html" />
-    <link rel="alternate" hreflang="tr" href="https://https://www.cryptoswapbot.online/tr/terms.html" />
-    <link rel="alternate" hreflang="x-default" href="https://https://www.cryptoswapbot.online/en/terms.html" />
+    
+    <!-- SEO: мультиязычность -->
+    <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/terms.html" />
+    <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/terms.html" />
+    <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/terms.html" />
+    <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/terms.html" />
+    <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/terms.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/terms.html" />
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kullanım Şartları — CryptoSwap Bot">
+    <meta property="og:description" content="CryptoSwap Bot hizmetinin kuralları, komisyonları, sınırlamaları ve kullanıcı sorumluluğu.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/tr/terms.html">
+    <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="CryptoSwap Bot">
+    <meta property="og:locale" content="tr_TR">
+    
+    <style>
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin: 20px 0 30px;
+        }
+        .btn {
+            min-width: 220px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="lang-switcher" style="text-align: right; margin-bottom: 20px;">
-        <button onclick="switchLang('ru')">RU</button>
-        <button onclick="switchLang('en')">EN</button>
-        <button onclick="switchLang('es')">ES</button>
-        <button onclick="switchLang('pt')">PT</button>
-        <button class="active" onclick="switchLang('tr')">TR</button>
-    </div>
-    
-    <h1>Kullanım Şartları</h1>
-    <p><em>Son güncelleme: Mart 2026</em></p>
-    
+    <header>
+        <div class="lang-switcher">
+            <button onclick="switchLang('ru')">RU</button>
+            <button onclick="switchLang('en')">EN</button>
+            <button onclick="switchLang('es')">ES</button>
+            <button onclick="switchLang('pt')">PT</button>
+            <button class="active" onclick="switchLang('tr')">TR</button>
+        </div>
+        <div class="button-group">
+            <a href="/exchange.html?lang=tr&fromFiat=try&darkMode=true" class="btn">💱 Kripto Satın Al</a>
+        </div>
+        <h1>Kullanım Şartları</h1>
+        <p><em>Son güncelleme: Mart 2026</em></p>
+    </header>
+
     <h2>1. Genel Hükümler</h2>
     <p>CryptoSwap Bot ("Hizmet"), ChangeNOW ve SimpleSwap dahil olmak üzere üçüncü taraf borsa hizmetlerine erişim için bir arayüz sağlar. Biz bir kripto para borsası operatörü değiliz, kullanıcı fonlarını saklamıyoruz ve özel anahtarları kontrol etmiyoruz.</p>
     
@@ -50,20 +83,113 @@
     <p>Bu şartları dilediğimiz zaman değiştirme hakkımız saklıdır. Değişikliklerden sonra Hizmeti kullanmaya devam etmeniz, yeni sürümü kabul ettiğiniz anlamına gelir.</p>
     
     <footer>
-        <a href="/tr/index.html">← Ana Sayfaya Dön</a>
+        <a href="/tr/">← Ana Sayfaya Dön</a>
     </footer>
 
     <!-- Safe SPA Router -->
     <script>
-      // ... (тот же код роутера, что и в index.html)
-      document.addEventListener('DOMContentLoaded', () => { document.addEventListener('click', async (e) => { const link = e.target.closest('a[href^="/"]'); if (!link) return; if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return; e.preventDefault(); const url = new URL(link.href, window.location.origin); const path = url.pathname; if (path === window.location.pathname) return; try { const res = await fetch(path); if (!res.ok) throw new Error('Page not found'); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; history.pushState({ path }, '', path); window.scrollTo(0, 0); } catch (err) { window.location.href = link.href; } }); if (!window.hasPopStateListener) { window.addEventListener('popstate', async (e) => { const path = e.state?.path || location.pathname; try { const res = await fetch(path); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; window.scrollTo(0, 0); } catch {} }); window.hasPopStateListener = true; } });
-    </script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', async (e) => {
+          const link = e.target.closest('a[href^="/"]');
+          if (!link) return;
+          if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
+          e.preventDefault();
+          const url = new URL(link.href, window.location.origin);
+          const path = url.pathname;
+          if (path === window.location.pathname) return;
+          try {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error('Page not found');
+            const html = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            document.body.innerHTML = doc.body.innerHTML;
+            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+            history.pushState({ path }, '', path);
+            window.scrollTo(0, 0);
+          } catch (err) {
+            window.location.href = link.href;
+          }
+        });
 
+        if (!window.hasPopStateListener) {
+          window.addEventListener('popstate', async (e) => {
+            const path = e.state?.path || location.pathname;
+            try {
+              const res = await fetch(path);
+              const html = await res.text();
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              document.body.innerHTML = doc.body.innerHTML;
+              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+              window.scrollTo(0, 0);
+            } catch {}
+          });
+          window.hasPopStateListener = true;
+        }
+      });
+    </script>
     <!-- Скрипт мультиязычности (Финальный) -->
     <script>
-      // ... (тот же код переключения языков, что и в tr/index.html)
-      (function() { const supportedLangs = ['en', 'es', 'pt', 'tr']; const defaultLang = 'ru'; function getCurrentPageLang() { const path = window.location.pathname; for (let i = 0; i < supportedLangs.length; i++) { if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) { return supportedLangs[i]; } } return defaultLang; } window.switchLang = function(targetLang) { localStorage.setItem('site_lang', targetLang); const currentPath = window.location.pathname; const currentLang = getCurrentPageLang(); if (currentLang === targetLang) return; let newPath = currentPath; if (currentLang !== defaultLang) { newPath = currentPath.replace('/' + currentLang, ''); if (newPath === '') newPath = '/'; } if (newPath === '/') newPath = '/index.html'; if (targetLang !== defaultLang) { newPath = '/' + targetLang + newPath; } window.location.href = newPath; }; const savedLang = localStorage.getItem('site_lang'); const currentLang = getCurrentPageLang(); if (!savedLang) { const browserLang = (navigator.language || navigator.userLanguage).toLowerCase(); let targetLang = 'en'; if (browserLang.startsWith('ru')) targetLang = 'ru'; if (browserLang.startsWith('es')) targetLang = 'es'; if (browserLang.startsWith('pt')) targetLang = 'pt'; if (browserLang.startsWith('tr')) targetLang = 'tr'; localStorage.setItem('site_lang', targetLang); if (targetLang !== currentLang) { window.switchLang(targetLang); } } else { if (savedLang !== currentLang) { window.switchLang(savedLang); } } })();
+      (function() {
+        const supportedLangs = ['en', 'es', 'pt', 'tr']; 
+        const defaultLang = 'ru';
+
+        function getCurrentPageLang() {
+          const path = window.location.pathname;
+          for (let i = 0; i < supportedLangs.length; i++) {
+            if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) {
+              return supportedLangs[i];
+            }
+          }
+          return defaultLang;
+        }
+
+        window.switchLang = function(targetLang) {
+          localStorage.setItem('site_lang', targetLang);
+          const currentPath = window.location.pathname;
+          const currentLang = getCurrentPageLang();
+          
+          if (currentLang === targetLang) return; 
+
+          let newPath = currentPath;
+          
+          if (currentLang !== defaultLang) {
+            newPath = currentPath.replace('/' + currentLang, '');
+            if (newPath === '') newPath = '/';
+          }
+          if (newPath === '/') newPath = '/index.html'; 
+
+          if (targetLang !== defaultLang) {
+            newPath = '/' + targetLang + newPath;
+          }
+          
+          window.location.href = newPath;
+        };
+
+        const savedLang = localStorage.getItem('site_lang');
+        const currentLang = getCurrentPageLang();
+
+        if (!savedLang) {
+          const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+          
+          let targetLang = 'en'; 
+          if (browserLang.startsWith('ru')) targetLang = 'ru';
+          if (browserLang.startsWith('es')) targetLang = 'es';
+          if (browserLang.startsWith('pt')) targetLang = 'pt';
+          if (browserLang.startsWith('tr')) targetLang = 'tr';
+          
+          localStorage.setItem('site_lang', targetLang);
+          
+          if (targetLang !== currentLang) {
+             window.switchLang(targetLang);
+          }
+        } else {
+          if (savedLang !== currentLang) {
+             window.switchLang(savedLang);
+          }
+        }
+      })();
     </script>
 </body>
 </html>
-

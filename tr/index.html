@@ -6,13 +6,43 @@
     <title>CryptoSwap Bot — Telegram'da Anında Kripto Para Bozdurma</title>
     <meta name="description" content="Telegram botu üzerinden hızlı ve güvenli kripto para değişimi. 300+ coin, düşük komisyon, nakit iade (cashback).">
     <link rel="stylesheet" href="../assets/style.css">
-    <!-- SEO: Мультиязычность (hreflang) для главной страницы -->
-    <link rel="alternate" hreflang="ru" href="https://https://www.cryptoswapbot.online/" />
-    <link rel="alternate" hreflang="en" href="https://https://www.cryptoswapbot.online/en/" />
-    <link rel="alternate" hreflang="es" href="https://https://www.cryptoswapbot.online/es/" />
-    <link rel="alternate" hreflang="pt" href="https://https://www.cryptoswapbot.online/pt/" />
-    <link rel="alternate" hreflang="tr" href="https://https://www.cryptoswapbot.online/tr/" />
-    <link rel="alternate" hreflang="x-default" href="https://https://www.cryptoswapbot.online/en/" />
+    
+    <!-- SEO: мультиязычность (hreflang) -->
+    <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/" />
+    <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/" />
+    <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/" />
+    <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/" />
+    <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/" />
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph (sosyal medya ve Telegram önizlemesi için) -->
+    <meta property="og:title" content="CryptoSwap Bot — Telegram'da Anında Kripto Para Bozdurma">
+    <meta property="og:description" content="Telegram botu üzerinden hızlı ve güvenli kripto para değişimi. 300+ coin, düşük komisyon, nakit iade.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/tr/">
+    <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="CryptoSwap Bot">
+    <meta property="og:locale" content="tr_TR">
+    
+    <style>
+        /* Dikey buton grubu stili */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 36px;
+            margin: 30px 0 20px;
+        }
+        .btn {
+            min-width: 220px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -26,7 +56,11 @@
         <h1>🔄 CryptoSwap Bot 🔄</h1>
         <p class="subtitle">Doğrudan Telegram'da anında kripto para değişimi</p>
         <p class="subtitle">300+ coin, düşük komisyon, nakit iade (cashback).</p>
-        <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">🚀 Botu Başlat</a>
+        
+        <div class="button-group">
+            <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">🚀 Botu Başlat</a>
+            <a href="/exchange.html?lang=tr&fromFiat=try&darkMode=true" class="btn">💱 Kripto Satın Al</a>
+        </div>
     </header>
 
     <section class="features">
@@ -113,7 +147,6 @@
         }
       });
     </script>
-
     <!-- Скрипт мультиязычности (Финальный, с поддержкой TR) -->
     <script>
       (function() {
@@ -162,7 +195,7 @@
           if (browserLang.startsWith('ru')) targetLang = 'ru';
           if (browserLang.startsWith('es')) targetLang = 'es';
           if (browserLang.startsWith('pt')) targetLang = 'pt';
-          if (browserLang.startsWith('tr')) targetLang = 'tr'; // Проверка турецкого
+          if (browserLang.startsWith('tr')) targetLang = 'tr';
           
           localStorage.setItem('site_lang', targetLang);
           
@@ -178,4 +211,3 @@
     </script>
 </body>
 </html>
-
