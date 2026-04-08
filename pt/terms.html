@@ -6,26 +6,59 @@
     <title>Termos de Uso — CryptoSwap Bot</title>
     <meta name="description" content="Termos de Uso do serviço CryptoSwap Bot. Regras, taxas, limitações e responsabilidade do usuário.">
     <link rel="stylesheet" href="../assets/style.css">
-    <!-- SEO: Мультиязычность (hreflang) -->
-    <link rel="alternate" hreflang="ru" href="https://https://www.cryptoswapbot.online/terms.html" />
-    <link rel="alternate" hreflang="en" href="https://https://www.cryptoswapbot.online/en/terms.html" />
-    <link rel="alternate" hreflang="es" href="https://https://www.cryptoswapbot.online/es/terms.html" />
-    <link rel="alternate" hreflang="pt" href="https://https://www.cryptoswapbot.online/pt/terms.html" />
-    <link rel="alternate" hreflang="tr" href="https://https://www.cryptoswapbot.online/tr/terms.html" />
-    <link rel="alternate" hreflang="x-default" href="https://https://www.cryptoswapbot.online/en/terms.html" />
+    
+    <!-- SEO: мультиязычность -->
+    <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/terms.html" />
+    <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/terms.html" />
+    <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/terms.html" />
+    <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/terms.html" />
+    <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/terms.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/terms.html" />
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Termos de Uso — CryptoSwap Bot">
+    <meta property="og:description" content="Regras, taxas, limitações e responsabilidade do usuário do serviço CryptoSwap Bot.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/pt/terms.html">
+    <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="CryptoSwap Bot">
+    <meta property="og:locale" content="pt_PT">
+    
+    <style>
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin: 20px 0 30px;
+        }
+        .btn {
+            min-width: 220px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="lang-switcher" style="text-align: right; margin-bottom: 20px;">
-        <button onclick="switchLang('ru')">RU</button>
-        <button onclick="switchLang('en')">EN</button>
-        <button onclick="switchLang('es')">ES</button>
-        <button class="active" onclick="switchLang('pt')">PT</button>
-        <button onclick="switchLang('tr')">TR</button>
-    </div>
-    
-    <h1>Termos de Uso</h1>
-    <p><em>Última atualização: Março de 2026</em></p>
-    
+    <header>
+        <div class="lang-switcher">
+            <button onclick="switchLang('ru')">RU</button>
+            <button onclick="switchLang('en')">EN</button>
+            <button onclick="switchLang('es')">ES</button>
+            <button class="active" onclick="switchLang('pt')">PT</button>
+            <button onclick="switchLang('tr')">TR</button>
+        </div>
+        <div class="button-group">
+            <a href="/exchange.html?lang=pt&fromFiat=brl&darkMode=true" class="btn">💱 Comprar Cripto</a>
+        </div>
+        <h1>Termos de Uso</h1>
+        <p><em>Última atualização: Março de 2026</em></p>
+    </header>
+
     <h2>1. Disposições Gerais</h2>
     <p>O CryptoSwap Bot ("Serviço") fornece uma interface para acessar serviços de câmbio de terceiros, incluindo ChangeNOW e SimpleSwap. Não somos um operador de câmbio de criptomoedas, não armazenamos fundos de usuários e não controlamos chaves privadas.</p>
     
@@ -50,15 +83,52 @@
     <p>Reservamo-nos o direito de alterar estes termos a qualquer momento. O uso contínuo do Serviço após as alterações constitui sua aceitação da nova versão.</p>
     
     <footer>
-        <a href="/pt/index.html">← Voltar à página inicial</a>
+        <a href="/pt/">← Voltar à página inicial</a>
     </footer>
 
     <!-- Safe SPA Router -->
     <script>
-      // ... (тот же код роутера, что и в index.html)
-      document.addEventListener('DOMContentLoaded', () => { document.addEventListener('click', async (e) => { const link = e.target.closest('a[href^="/"]'); if (!link) return; if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return; e.preventDefault(); const url = new URL(link.href, window.location.origin); const path = url.pathname; if (path === window.location.pathname) return; try { const res = await fetch(path); if (!res.ok) throw new Error('Page not found'); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; history.pushState({ path }, '', path); window.scrollTo(0, 0); } catch (err) { window.location.href = link.href; } }); if (!window.hasPopStateListener) { window.addEventListener('popstate', async (e) => { const path = e.state?.path || location.pathname; try { const res = await fetch(path); const html = await res.text(); const parser = new DOMParser(); const doc = parser.parseFromString(html, 'text/html'); document.body.innerHTML = doc.body.innerHTML; document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot'; window.scrollTo(0, 0); } catch {} }); window.hasPopStateListener = true; } });
-    </script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', async (e) => {
+          const link = e.target.closest('a[href^="/"]');
+          if (!link) return;
+          if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
+          e.preventDefault();
+          const url = new URL(link.href, window.location.origin);
+          const path = url.pathname;
+          if (path === window.location.pathname) return;
+          try {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error('Page not found');
+            const html = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            document.body.innerHTML = doc.body.innerHTML;
+            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+            history.pushState({ path }, '', path);
+            window.scrollTo(0, 0);
+          } catch (err) {
+            window.location.href = link.href;
+          }
+        });
 
+        if (!window.hasPopStateListener) {
+          window.addEventListener('popstate', async (e) => {
+            const path = e.state?.path || location.pathname;
+            try {
+              const res = await fetch(path);
+              const html = await res.text();
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              document.body.innerHTML = doc.body.innerHTML;
+              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
+              window.scrollTo(0, 0);
+            } catch {}
+          });
+          window.hasPopStateListener = true;
+        }
+      });
+    </script>
     <!-- Скрипт мультиязычности (Финальный, с поддержкой TR) -->
     <script>
       (function() {
@@ -107,7 +177,7 @@
           if (browserLang.startsWith('ru')) targetLang = 'ru';
           if (browserLang.startsWith('es')) targetLang = 'es';
           if (browserLang.startsWith('pt')) targetLang = 'pt';
-          if (browserLang.startsWith('tr')) targetLang = 'tr'; // Проверка турецкого
+          if (browserLang.startsWith('tr')) targetLang = 'tr';
           
           localStorage.setItem('site_lang', targetLang);
           
@@ -123,6 +193,3 @@
     </script>
 </body>
 </html>
-
-
-
