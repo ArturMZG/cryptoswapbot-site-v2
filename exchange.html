@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Покупка криптовалюты | CryptoSwap Bot</title>
     <meta name="description" content="Мгновенный обмен криптовалют через Telegram-бота. Покупка BTC, ETH, USDT за рубли, доллары, евро.">
+    <!-- Подключаем общие стили сайта (не переопределяем центрирование кнопок) -->
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
+        /* Переопределяем стили только для этой страницы, чтобы кнопки языков центрировались и виджет выглядел правильно */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +23,7 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* меняем на flex-start, чтобы контент не сжимался по вертикали */
         }
         .container {
             width: 100%;
@@ -29,6 +31,7 @@
             margin: 0 auto;
             background: transparent;
         }
+        /* Явно центрируем переключатель языков */
         .lang-switcher {
             text-align: center;
             margin-bottom: 20px;
@@ -74,6 +77,69 @@
             background: #1a1a1a;
             display: block;
         }
+        /* Блок платёжных методов (как на скриншоте) */
+        .payment-methods {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+        }
+        .payment-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .payment-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .payment-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            row-gap: 15px;
+        }
+        .payment-icons span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #2a2a2a;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #ddd;
+            letter-spacing: 0.5px;
+        }
+        /* Для имитации иконок используем текстовые метки (можно заменить на эмодзи или картинки) */
+        .payment-icons span::before {
+            content: "💳";
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+        /* Индивидуальные префиксы (можно убрать или оставить как есть) */
+        .payment-icons span.visa::before { content: "💳"; }
+        .payment-icons span.mastercard::before { content: "💳"; }
+        .payment-icons span.paypal::before { content: "🅿️"; }
+        .payment-icons span.gpay::before { content: "📱"; }
+        .payment-icons span.revolut::before { content: "🔄"; }
+        .payment-icons span.ach::before { content: "🏦"; }
+        /* Для мобильных устройств уменьшаем отступы */
+        @media (max-width: 480px) {
+            .payment-icons span {
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+            .payment-title {
+                font-size: 1.2rem;
+            }
+        }
         footer {
             text-align: center;
             margin-top: 20px;
@@ -110,6 +176,20 @@
             <iframe id="changeNOW-widget"
                 src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=1A1A1A&darkMode=true&from=btc&fromFiat=rub&horizontal=false&isFiat=true&lang=ru&link_id=9ccfa63406d1d6&locales=true&logo=true&primaryColor=00C26F&to=usdterc20&toFiat=rub&toTheMoon=true"
                 style="width: 100%; height: 620px; border: none; border-radius: 16px;"></iframe>
+        </div>
+
+        <!-- Блок с платёжными методами (Buy crypto with fiat) -->
+        <div class="payment-methods">
+            <div class="payment-title">Buy crypto with fiat</div>
+            <div class="payment-desc">On ChangeNOW, you can buy any crypto with more than 50 fiat currencies using your Visa or MasterCard</div>
+            <div class="payment-icons">
+                <span class="visa">Visa</span>
+                <span class="mastercard">Mastercard</span>
+                <span class="paypal">PayPal</span>
+                <span class="gpay">G Pay</span>
+                <span class="revolut">Revolut</span>
+                <span class="ach">ACH</span>
+            </div>
         </div>
 
         <footer>
@@ -168,7 +248,7 @@
             let fromFiat = getQueryParam('fromFiat', 'rub');
             let darkMode = getQueryParam('darkMode', 'true') === 'true';
 
-            // Установка активной кнопки языка
+            // Устанавливаем активную кнопку языка
             const buttons = document.querySelectorAll('.lang-switcher button');
             buttons.forEach(btn => {
                 const btnLang = btn.getAttribute('data-lang');
@@ -177,16 +257,21 @@
                 } else {
                     btn.classList.remove('active');
                 }
-                btn.addEventListener('click', (e) => {
+                // Убираем старые обработчики, чтобы избежать дублирования, и добавляем новый
+                btn.removeEventListener('click', switchHandler);
+                const switchHandler = (e) => {
                     e.preventDefault();
                     const targetLang = btn.getAttribute('data-lang');
                     if (targetLang !== lang) {
                         switchLanguage(targetLang);
                     }
-                });
+                };
+                btn.addEventListener('click', switchHandler);
+                // Сохраняем обработчик для возможного удаления (но не критично)
+                btn._switchHandler = switchHandler;
             });
 
-            // Принудительно устанавливаем тёмный фон тела, если darkMode=true
+            // Устанавливаем фон тела
             if (darkMode) {
                 document.body.style.backgroundColor = '#0f0f0f';
             } else {
