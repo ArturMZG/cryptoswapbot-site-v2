@@ -24,7 +24,6 @@
     <meta property="og:description" content="Мгновенный обмен 300+ монет. Без регистрации, низкие комиссии, кэшбэк до 1%.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.cryptoswapbot.online/">
-    <!-- ВРЕМЕННО используем favicon, но лучше заменить на https://www.cryptoswapbot.online/assets/logo.png -->
     <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
@@ -107,13 +106,17 @@
         </p>
     </footer>
 
-    <!-- Исправленный безопасный роутер SPA -->
+    <!-- Исправленный безопасный роутер SPA (игнорирует переходы на exchange.html) -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', async (e) => {
           const link = e.target.closest('a[href^="/"]');
-          
           if (!link) return;
+          
+          // НЕ перехватываем ссылки, ведущие на exchange.html
+          const href = link.getAttribute('href');
+          if (href && href.includes('exchange.html')) return;
+
           if (
             link.hasAttribute('target') ||
             link.hasAttribute('download') ||
@@ -163,7 +166,7 @@
         }
       });
     </script>
-    <!-- Скрипт мультиязычности (Финальный, с поддержкой TR) -->
+    <!-- Скрипт мультиязычности (без изменений) -->
     <script>
       (function() {
         const supportedLangs = ['en', 'es', 'pt', 'tr']; 
