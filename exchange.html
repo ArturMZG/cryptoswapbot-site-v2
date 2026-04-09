@@ -8,157 +8,176 @@
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
-        /* Дополнительные стили для выравнивания отступов */
+        /* Глобальное центрирование и отступы */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             min-height: 100vh;
-            margin: 0;
-            padding: 0;
+            background-color: #0f0f0f;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
         }
-        .wrapper {
-            flex: 1;
-        }
-        .widget-container {
+        .container {
             width: 100%;
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 0 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .lang-switcher {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .lang-switcher button {
+            background: transparent;
+            border: 1px solid #333;
+            color: #aaa;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0 4px;
+            transition: all 0.2s;
+        }
+        .lang-switcher button.active {
+            background: #00C26F;
+            border-color: #00C26F;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-top: 5px;
+        }
+        .widget-wrapper {
+            width: 100%;
+            margin: 10px 0;
         }
         iframe {
             width: 100%;
             height: 620px;
             border: none;
             border-radius: 16px;
+            background: #fff;
+            display: block;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
         }
         .back-link {
             display: inline-block;
-            margin: 20px 0 10px;
+            margin-bottom: 10px;
             color: #00C26F;
             text-decoration: none;
         }
         .disclaimer {
-            margin-bottom: 20px;
+            font-size: 12px;
+            color: #777;
         }
-        /* Фикс для переключателя языков – он уже есть в style.css, но добавим активный класс */
-        .lang-switcher button.active {
-            background: #00C26F;
-            border-color: #00C26F;
-            color: white;
+        .disclaimer a {
+            color: #00C26F;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <div class="lang-switcher">
-                <button data-lang="ru" class="active">RU</button>
-                <button data-lang="en">EN</button>
-                <button data-lang="es">ES</button>
-                <button data-lang="pt">PT</button>
-                <button data-lang="tr">TR</button>
-            </div>
-            <h1>🔄 Покупка криптовалюты 🔄</h1>
-            <p class="subtitle">Виджет от ChangeNOW – безопасно и быстро</p>
-        </header>
-
-        <div class="widget-container">
-            <!-- Виджет будет вставлен динамически через JS -->
-            <div id="widget-placeholder" style="text-align:center; padding:40px;">Загрузка виджета...</div>
+    <div class="container">
+        <div class="lang-switcher">
+            <button data-lang="ru" class="active">RU</button>
+            <button data-lang="en">EN</button>
+            <button data-lang="es">ES</button>
+            <button data-lang="pt">PT</button>
+            <button data-lang="tr">TR</button>
         </div>
+        <h1>🔄 Покупка криптовалюты 🔄</h1>
+        <p class="subtitle">Виджет от ChangeNOW – безопасно и быстро</p>
+
+        <div class="widget-wrapper">
+            <iframe id="changeNOW-widget"
+                src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=1A1A1A&darkMode=true&from=btc&fromFiat=rub&horizontal=false&isFiat=true&lang=ru&link_id=9ccfa63406d1d6&locales=true&logo=true&primaryColor=00C26F&to=usdterc20&toFiat=rub&toTheMoon=true"
+                style="height: 620px; width: 100%; border: none; border-radius: 16px;"></iframe>
+        </div>
+
+        <footer>
+            <a href="/" class="back-link">← На главную</a>
+            <p class="disclaimer">
+                Сервис использует виджет ChangeNOW. Все обмены осуществляются через партнёра. 
+                <a href="https://changenow.app.link/referral?link_id=9ccfa63406d1d6" target="_blank" rel="noopener noreferrer">Условия ChangeNOW</a>
+            </p>
+        </footer>
     </div>
 
-    <footer style="text-align: center; margin-top: 20px;">
-        <a href="/" class="back-link">← На главную</a>
-        <p class="disclaimer">
-            Сервис использует виджет ChangeNOW. Все обмены осуществляются через партнёра. 
-            <a href="https://changenow.app.link/referral?link_id=9ccfa63406d1d6" target="_blank" rel="noopener noreferrer">Условия ChangeNOW</a>
-        </p>
-    </footer>
-
     <script>
-        // Функция получения параметров из URL
+        // Функция обновления виджета при смене языка/валюты
+        function updateWidget(lang, fromFiat, darkMode) {
+            const iframe = document.getElementById('changeNOW-widget');
+            if (!iframe) return;
+            
+            const baseUrl = 'https://changenow.io/embeds/exchange-widget/v2/widget.html';
+            const params = {
+                FAQ: 'true',
+                amount: '0.1',
+                amountFiat: '1500',
+                backgroundColor: darkMode ? '1A1A1A' : 'FFFFFF',
+                darkMode: darkMode ? 'true' : 'false',
+                from: 'btc',
+                fromFiat: fromFiat,
+                horizontal: 'false',
+                isFiat: 'true',
+                lang: lang,
+                link_id: '9ccfa63406d1d6',
+                locales: 'true',
+                logo: 'true',
+                primaryColor: '00C26F',
+                to: 'usdterc20',
+                toFiat: fromFiat,
+                toTheMoon: 'true'
+            };
+            const url = baseUrl + '?' + new URLSearchParams(params).toString();
+            iframe.src = url;
+        }
+
+        // Получение параметров из URL
         function getQueryParam(param, defaultValue) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param) || defaultValue;
         }
 
-        // Создание iframe виджета
-        function loadWidget() {
-            const link_id = '9ccfa63406d1d6';
-            let lang = getQueryParam('lang', 'ru');
-            let darkMode = getQueryParam('darkMode', 'true');
-            let fromFiat = getQueryParam('fromFiat', 'rub');
-            let to = getQueryParam('to', 'usdterc20');
-            let primaryColor = getQueryParam('primaryColor', '00C26F');
-            
-            darkMode = (darkMode === 'true' || darkMode === true) ? 'true' : 'false';
-            
-            // Смена фона body под тёмную/светлую тему
-            if (darkMode === 'true') {
-                document.body.style.backgroundColor = '#0f0f0f';
-            } else {
-                document.body.style.backgroundColor = '#f8f9fa';
-            }
-            
-            // Формируем URL виджета
-            let widgetUrl = `https://changenow.io/embeds/exchange-widget/v2/widget.html?link_id=${link_id}&lang=${lang}&darkMode=${darkMode}&fromFiat=${fromFiat}&to=${to}&primaryColor=${primaryColor}&isFiat=true&locales=true&logo=true&toTheMoon=true&FAQ=true&horizontal=false`;
-            
-            // Дополнительные параметры
-            let fromCoin = getQueryParam('from', '');
-            let amount = getQueryParam('amount', '');
-            if (fromCoin) widgetUrl += `&from=${fromCoin}`;
-            if (amount) widgetUrl += `&amount=${amount}`;
-            
-            // Создаём iframe
-            const iframe = document.createElement('iframe');
-            iframe.src = widgetUrl;
-            iframe.style.width = '100%';
-            iframe.style.height = '620px';
-            iframe.style.border = 'none';
-            iframe.style.borderRadius = '16px';
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-            
-            const placeholder = document.getElementById('widget-placeholder');
-            if (placeholder) {
-                placeholder.parentNode.replaceChild(iframe, placeholder);
-            } else {
-                // Запасной вариант
-                document.querySelector('.widget-container').appendChild(iframe);
-            }
-            
-            // Подключаем скрипт-коннектор ChangeNOW (он может быть уже загружен)
-            if (!document.querySelector('script[src*="stepper-connector.js"]')) {
-                const script = document.createElement('script');
-                script.src = 'https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js';
-                script.defer = true;
-                document.body.appendChild(script);
-            }
-        }
-
-        // Функция переключения языка (перезагружает страницу с новыми параметрами)
+        // Переключение языка
         function switchLanguage(targetLang) {
             const url = new URL(window.location.href);
             url.searchParams.set('lang', targetLang);
-            // Сопоставление языка и фиатной валюты
             const fiatMap = { ru: 'rub', en: 'usd', es: 'eur', pt: 'brl', tr: 'try' };
             url.searchParams.set('fromFiat', fiatMap[targetLang] || 'usd');
-            // Тёмная тема по умолчанию включена, можно оставить
             if (!url.searchParams.has('darkMode')) url.searchParams.set('darkMode', 'true');
             window.location.href = url.toString();
         }
 
-        // Инициализация: загружаем виджет и вешаем обработчики на кнопки языков
+        // Инициализация
         document.addEventListener('DOMContentLoaded', () => {
-            loadWidget();
+            let lang = getQueryParam('lang', 'ru');
+            let fromFiat = getQueryParam('fromFiat', 'rub');
+            let darkMode = getQueryParam('darkMode', 'true') === 'true';
             
-            // Находим все кнопки переключения языков
+            // Установка активной кнопки языка
             const buttons = document.querySelectorAll('.lang-switcher button');
-            const currentLang = getQueryParam('lang', 'ru');
-            
             buttons.forEach(btn => {
-                const lang = btn.getAttribute('data-lang');
-                if (lang === currentLang) {
+                const btnLang = btn.getAttribute('data-lang');
+                if (btnLang === lang) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -166,12 +185,16 @@
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetLang = btn.getAttribute('data-lang');
-                    if (targetLang !== currentLang) {
+                    if (targetLang !== lang) {
                         switchLanguage(targetLang);
                     }
                 });
             });
+            
+            // Обновляем виджет согласно параметрам
+            updateWidget(lang, fromFiat, darkMode);
         });
     </script>
+    <script defer type='text/javascript' src='https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js'></script>
 </body>
 </html>
