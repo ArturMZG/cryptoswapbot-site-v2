@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
-        /* Локальные стили – имеют приоритет */
         * {
             margin: 0;
             padding: 0;
@@ -70,10 +69,10 @@
         }
         iframe {
             width: 100%;
-            height: 500px;          /* Уменьшил до 500px – пустота исчезла */
+            height: 500px; /* начальная высота, потом будет меняться динамически */
             border: none;
             border-radius: 16px;
-            background: #1a1a1a;
+            background: transparent; /* фон прозрачный – серой полосы не будет */
             display: block;
         }
         .payment-methods {
@@ -229,7 +228,7 @@
         let fromFiat = getQueryParam('fromFiat', 'rub');
         let darkMode = getQueryParam('darkMode', 'true') === 'true';
 
-        // Переключатель языков
+        // Кнопки языков
         const switcher = document.querySelector('.lang-switcher');
         if (switcher) {
             const buttons = Array.from(switcher.querySelectorAll('button'));
@@ -247,6 +246,16 @@
 
         document.body.style.backgroundColor = darkMode ? '#0f0f0f' : '#f8f9fa';
         updateWidget(lang, fromFiat, darkMode);
+
+        // Динамическая подстройка высоты виджета (убирает серую полосу)
+        const iframe = document.getElementById('changeNOW-widget');
+        window.addEventListener('message', function(event) {
+            if (event.origin !== 'https://changenow.io') return;
+            // ChangeNOW отправляет событие resize с новой высотой
+            if (event.data && event.data.type === 'resize' && event.data.height) {
+                iframe.style.height = event.data.height + 'px';
+            }
+        });
     });
 </script>
 <script defer src="https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"></script>
