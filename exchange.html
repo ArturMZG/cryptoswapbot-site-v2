@@ -5,29 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Обмен криптовалют | CryptoSwap Bot</title>
     <meta name="description" content="Мгновенный обмен криптовалют через Telegram-бота. Покупка и продажа BTC, ETH, USDT за рубли, доллары, евро и другие валюты.">
-    <meta name="keywords" content="обмен криптовалют, купить биткоин, телеграм бот, crypto exchange, buy usdt, changenow">
-    <meta name="author" content="CryptoSwap Bot">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="CryptoSwap Bot — Обмен криптовалют">
-    <meta property="og:description" content="Быстрый и безопасный обмен криптовалют прямо в Telegram.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.cryptoswapbot.online/exchange.html">
-    <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.png">
-    <meta property="og:site_name" content="CryptoSwap Bot">
-    
-    <!-- Цвет темы для браузера и Telegram -->
-    <meta name="theme-color" content="#00C26F">
-    <meta name="telegram:theme-color" content="#00C26F">
-    <meta name="color-scheme" content="dark light">
-    
-    <!-- Подключаем общий стиль сайта -->
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
     <style>
-        /* Дополнительные стили только для страницы виджета */
         .widget-container {
             width: 100%;
             max-width: 500px;
@@ -39,17 +20,12 @@
             height: 620px;
             border: none;
             border-radius: 16px;
-            background: transparent;
         }
         .back-link {
             display: inline-block;
             margin: 20px 0 10px;
-            color: var(--primary);
+            color: #00C26F;
             text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .back-link:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -62,12 +38,15 @@
             <button onclick="switchLang('pt')">PT</button>
             <button onclick="switchLang('tr')">TR</button>
         </div>
-        <h1>🔄 Обмен криптовалют</h1>
+        <h1>🔄 Покупка криптовалюты 🔄</h1>
         <p class="subtitle">Виджет от ChangeNOW – безопасно и быстро</p>
     </header>
 
     <div class="widget-container">
-        <div id="widget-placeholder" style="text-align:center; padding:40px;">Загрузка виджета...</div>
+        <!-- Статический iframe с оригинальными параметрами, но с возможностью динамической замены src через JS -->
+        <iframe id="changeNowWidget" 
+            src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=FFFFFF&darkMode=false&from=btc&fromFiat=eur&horizontal=false&isFiat&lang=en-US&link_id=9ccfa63406d1d6&locales=true&logo=true&primaryColor=00C26F&to=eth&toFiat=eth&toTheMoon=true"
+            style="height: 620px; width: 100%; border: none; border-radius: 16px;"></iframe>
     </div>
 
     <footer style="text-align: center; margin-top: 20px;">
@@ -78,118 +57,59 @@
         </p>
     </footer>
 
+    <script defer type='text/javascript' src='https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js'></script>
+
     <script>
-        // Функция получения параметров из URL
-        function getQueryParam(param, defaultValue) {
+        // Функция для обновления iframe при смене языка/валюты
+        function updateWidget() {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param) || defaultValue;
-        }
-
-        // Базовые параметры виджета (с подстановкой из URL)
-        const link_id = '9ccfa63406d1d6';  // Ваш партнёрский ID (не менять!)
-        let lang = getQueryParam('lang', 'ru');
-        let darkMode = getQueryParam('darkMode', 'true');
-        let fromFiat = getQueryParam('fromFiat', 'rub');
-        let to = getQueryParam('to', 'usdterc20');
-        let primaryColor = getQueryParam('primaryColor', '00C26F');
-        
-        // Преобразуем darkMode в строку true/false
-        darkMode = (darkMode === 'true' || darkMode === true) ? 'true' : 'false';
-        
-        // Если тёмная тема, меняем фон body (стили из style.css уже поддерживают)
-        if (darkMode === 'true') {
-            document.body.style.backgroundColor = '#0f0f0f';
-        } else {
-            document.body.style.backgroundColor = '#f8f9fa';
-        }
-        
-        // Формируем URL виджета
-        let widgetUrl = `https://changenow.io/embeds/exchange-widget/v2/widget.html?link_id=${link_id}&lang=${lang}&darkMode=${darkMode}&fromFiat=${fromFiat}&to=${to}&primaryColor=${primaryColor}&isFiat=true&locales=true&logo=true&toTheMoon=true&FAQ=true&horizontal=false`;
-        
-        // Дополнительно: если передан from (криптовалюта) или amount – добавим
-        let fromCoin = getQueryParam('from', '');
-        let amount = getQueryParam('amount', '');
-        if (fromCoin) widgetUrl += `&from=${fromCoin}`;
-        if (amount) widgetUrl += `&amount=${amount}`;
-        
-        // Создаём iframe динамически
-        const iframe = document.createElement('iframe');
-        iframe.src = widgetUrl;
-        iframe.style.width = '100%';
-        iframe.style.height = '620px';
-        iframe.style.border = 'none';
-        iframe.style.borderRadius = '16px';
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        
-        const placeholder = document.getElementById('widget-placeholder');
-        placeholder.parentNode.replaceChild(iframe, placeholder);
-        
-        // Подключаем скрипт-коннектор ChangeNOW
-        const script = document.createElement('script');
-        script.src = 'https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js';
-        script.defer = true;
-        document.body.appendChild(script);
-        
-        // Слушаем сообщения от виджета (опционально)
-        window.addEventListener('message', function(event) {
-            if (event.origin !== 'https://changenow.io') return;
-            if (event.data && event.data.type === 'transactionFinished') {
-                console.log('Обмен завершён:', event.data);
-                // Здесь можно отправить уведомление боту (через Webhook)
-            }
-        });
-    </script>
-
-    <!-- Скрипт мультиязычности (адаптированный для exchange.html) -->
-    <script>
-        (function() {
-            const supportedLangs = ['en', 'es', 'pt', 'tr'];
-            const defaultLang = 'ru';
+            let lang = urlParams.get('lang') || 'ru';
+            let fromFiat = urlParams.get('fromFiat') || 'rub';
+            let darkMode = urlParams.get('darkMode') === 'true' ? true : false;
             
-            function getCurrentPageLang() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const langParam = urlParams.get('lang');
-                if (langParam && supportedLangs.includes(langParam)) return langParam;
-                if (langParam === 'ru') return 'ru';
-                // Если нет параметра, пробуем определить по localStorage или navigator
-                return defaultLang;
-            }
+            // Сопоставление языка и фиата
+            const fiatMap = { ru: 'rub', en: 'usd', es: 'eur', pt: 'brl', tr: 'try' };
+            if (fromFiat === 'rub' && lang !== 'ru') fromFiat = fiatMap[lang] || 'usd';
             
-            window.switchLang = function(targetLang) {
-                if (targetLang === getCurrentPageLang()) return;
-                // Перенаправляем на ту же страницу, но с новым параметром lang
-                const url = new URL(window.location.href);
-                url.searchParams.set('lang', targetLang);
-                // Также меняем fromFiat в соответствии с языком (по желанию)
-                const fiatMap = { ru: 'rub', en: 'usd', es: 'eur', pt: 'brl', tr: 'try' };
-                url.searchParams.set('fromFiat', fiatMap[targetLang] || 'usd');
-                window.location.href = url.toString();
+            // Базовый URL (можно взять из атрибута src, но проще сформировать заново)
+            let baseUrl = 'https://changenow.io/embeds/exchange-widget/v2/widget.html?';
+            let params = {
+                FAQ: 'true',
+                amount: '0.1',
+                amountFiat: '1500',
+                backgroundColor: darkMode ? '1A1A1A' : 'FFFFFF',
+                darkMode: darkMode ? 'true' : 'false',
+                from: 'btc',
+                fromFiat: fromFiat,
+                horizontal: 'false',
+                isFiat: 'true',
+                lang: lang === 'ru' ? 'ru' : (lang === 'tr' ? 'tr' : (lang === 'pt' ? 'pt' : (lang === 'es' ? 'es' : 'en'))),
+                link_id: '9ccfa63406d1d6',
+                locales: 'true',
+                logo: 'true',
+                primaryColor: '00C26F',
+                to: 'usdterc20',   // можно оставить eth, но usdt удобнее
+                toFiat: fromFiat,
+                toTheMoon: 'true'
             };
-            
-            // Автоматическое определение языка при первом визите (если нет параметра lang)
-            const urlLang = new URLSearchParams(window.location.search).get('lang');
-            if (!urlLang) {
-                let savedLang = localStorage.getItem('site_lang');
-                if (!savedLang) {
-                    const browserLang = (navigator.language || 'en').toLowerCase();
-                    if (browserLang.startsWith('ru')) savedLang = 'ru';
-                    else if (browserLang.startsWith('es')) savedLang = 'es';
-                    else if (browserLang.startsWith('pt')) savedLang = 'pt';
-                    else if (browserLang.startsWith('tr')) savedLang = 'tr';
-                    else savedLang = 'en';
-                    localStorage.setItem('site_lang', savedLang);
-                }
-                // Перенаправляем с установкой параметра lang
-                const newUrl = new URL(window.location.href);
-                newUrl.searchParams.set('lang', savedLang);
-                const fiatMap = { ru: 'rub', en: 'usd', es: 'eur', pt: 'brl', tr: 'try' };
-                newUrl.searchParams.set('fromFiat', fiatMap[savedLang] || 'usd');
-                window.location.href = newUrl.toString();
-            } else {
-                // Сохраняем выбранный язык в localStorage
-                localStorage.setItem('site_lang', urlLang);
-            }
-        })();
+            const url = baseUrl + new URLSearchParams(params).toString();
+            document.getElementById('changeNowWidget').src = url;
+        }
+
+        // Переключение языка
+        window.switchLang = function(targetLang) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', targetLang);
+            const fiatMap = { ru: 'rub', en: 'usd', es: 'eur', pt: 'brl', tr: 'try' };
+            url.searchParams.set('fromFiat', fiatMap[targetLang] || 'usd');
+            if (targetLang === 'pt') url.searchParams.set('darkMode', 'true'); // для примера
+            window.location.href = url.toString();
+        };
+
+        // При загрузке страницы обновляем виджет согласно параметрам URL
+        window.addEventListener('DOMContentLoaded', () => {
+            updateWidget();
+        });
     </script>
 </body>
 </html>
