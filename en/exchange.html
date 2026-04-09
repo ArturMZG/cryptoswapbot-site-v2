@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Buy Crypto | CryptoSwap Bot</title>
+    <meta name="description" content="Instant crypto exchange via Telegram bot. Buy BTC, ETH, USDT with USD, EUR, GBP and more.">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: transparent;
+        }
+        .lang-switcher {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .lang-switcher button {
+            background: transparent;
+            border: 1px solid #333;
+            color: #aaa;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0 4px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .lang-switcher button.active {
+            background: #00C26F;
+            border-color: #00C26F;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        .widget-wrapper {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 16px;
+            background: transparent;
+            display: block;
+        }
+        .payment-methods {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+        }
+        .payment-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .payment-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .payment-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            row-gap: 12px;
+        }
+        .payment-icons span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #2a2a2a;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #ddd;
+        }
+        .payment-icons span::before { font-size: 1rem; }
+        .visa::before { content: "💳"; }
+        .swift::before { content: "🏦"; }
+        .mastercard::before { content: "💳"; }
+        .paypal::before { content: "🅿️"; }
+        .gpay::before { content: "📱"; }
+        .revolut::before { content: "🔄"; }
+        .ach::before { content: "🏦"; }
+        @media (max-width: 480px) {
+            .payment-icons span { padding: 5px 10px; font-size: 0.75rem; }
+            .payment-title { font-size: 1.2rem; }
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #00C26F;
+            text-decoration: none;
+        }
+        .disclaimer {
+            font-size: 12px;
+            color: #777;
+        }
+        .disclaimer a {
+            color: #00C26F;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-switcher">
+        <button data-lang="ru">RU</button>
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="pt">PT</button>
+        <button data-lang="tr">TR</button>
+    </div>
+    <h1>🔄 Buy Crypto 🔄</h1>
+    <p class="subtitle">ChangeNOW widget – secure and fast</p>
+
+    <div class="widget-wrapper">
+        <iframe id="changeNOW-widget"
+                src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=1A1A1A&darkMode=true&from=btc&fromFiat=usd&horizontal=false&isFiat=true&lang=en&link_id=9ccfa63406d1d6&locales=true&logo=true&primaryColor=00C26F&to=usdterc20&toFiat=usd&toTheMoon=true"
+                style="width: 100%; border: none; border-radius: 16px;"></iframe>
+    </div>
+
+    <div class="payment-methods">
+        <div class="payment-title">Buy crypto with fiat</div>
+        <div class="payment-desc">On ChangeNOW, you can buy any crypto with more than 50 fiat currencies using your Visa or MasterCard</div>
+        <div class="payment-icons">
+            <span class="visa">Visa</span>
+            <span class="swift">Swift</span>
+            <span class="mastercard">Mastercard</span>
+            <span class="paypal">PayPal</span>
+            <span class="gpay">G Pay</span>
+            <span class="revolut">Revolut</span>
+            <span class="ach">ACH</span>
+        </div>
+    </div>
+
+    <footer>
+        <a href="/en/" class="back-link">← Back to Home</a>
+        <p class="disclaimer">
+            The service uses the ChangeNOW widget. All exchanges are carried out through a partner.
+            <a href="https://changenow.app.link/referral?link_id=9ccfa63406d1d6" target="_blank" rel="noopener noreferrer">ChangeNOW Terms</a>
+        </p>
+    </footer>
+</div>
+
+<script>
+    function updateWidget(lang, fromFiat, darkMode) {
+        const iframe = document.getElementById('changeNOW-widget');
+        if (!iframe) return;
+        const baseUrl = 'https://changenow.io/embeds/exchange-widget/v2/widget.html';
+        const params = {
+            FAQ: 'true', amount: '0.1', amountFiat: '1500',
+            backgroundColor: darkMode ? '1A1A1A' : 'FFFFFF',
+            darkMode: darkMode ? 'true' : 'false',
+            from: 'btc', fromFiat: fromFiat, horizontal: 'false', isFiat: 'true',
+            lang: lang, link_id: '9ccfa63406d1d6', locales: 'true', logo: 'true',
+            primaryColor: '00C26F', to: 'usdterc20', toFiat: fromFiat, toTheMoon: 'true'
+        };
+        const url = baseUrl + '?' + new URLSearchParams(params).toString();
+        iframe.src = url;
+    }
+
+    function getQueryParam(param, defaultValue) {
+        return new URLSearchParams(window.location.search).get(param) || defaultValue;
+    }
+
+    function switchLanguage(targetLang) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', targetLang);
+        const fiatMap = { ru: 'rub', en: 'usd', es: 'eur', pt: 'brl', tr: 'try' };
+        url.searchParams.set('fromFiat', fiatMap[targetLang] || 'usd');
+        if (!url.searchParams.has('darkMode')) url.searchParams.set('darkMode', 'true');
+        window.location.href = url.toString();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let lang = getQueryParam('lang', 'en');
+        let fromFiat = getQueryParam('fromFiat', 'usd');
+        let darkMode = getQueryParam('darkMode', 'true') === 'true';
+
+        const switcher = document.querySelector('.lang-switcher');
+        if (switcher) {
+            const buttons = Array.from(switcher.querySelectorAll('button'));
+            buttons.forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                if (btnLang === lang) btn.classList.add('active');
+                else btn.classList.remove('active');
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetLang = btn.getAttribute('data-lang');
+                    if (targetLang !== lang) switchLanguage(targetLang);
+                });
+            });
+        }
+
+        document.body.style.backgroundColor = darkMode ? '#0f0f0f' : '#f8f9fa';
+        updateWidget(lang, fromFiat, darkMode);
+
+        const iframe = document.getElementById('changeNOW-widget');
+        window.addEventListener('message', function(event) {
+            if (event.origin !== 'https://changenow.io') return;
+            if (event.data && event.data.type === 'resize' && event.data.height) {
+                iframe.style.height = event.data.height + 'px';
+            }
+        });
+    });
+</script>
+<script defer src="https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"></script>
+</body>
+</html>
