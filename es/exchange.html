@@ -208,12 +208,13 @@
     }
 
     function switchLanguage(targetLang) {
-        const url = new URL(window.location.href);
-        url.searchParams.set('lang', targetLang);
-        const fiatMap = { ru: 'rub', en: 'usd', es: 'eur', pt: 'brl', tr: 'try' };
-        url.searchParams.set('fromFiat', fiatMap[targetLang] || 'usd');
-        if (!url.searchParams.has('darkMode')) url.searchParams.set('darkMode', 'true');
-        window.location.href = url.toString();
+        if (targetLang === 'es') {
+            window.location.href = '/en/exchange.html';
+        } else if (targetLang === 'ru') {
+            window.location.href = '/exchange.html';
+        } else {
+            window.location.href = '/' + targetLang + '/exchange.html';
+        }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
