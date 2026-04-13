@@ -10,8 +10,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=2">
     <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/favicon.ico?v=2">
     <link rel="shortcut icon" href="/favicon.ico?v=2">
+    <meta name="theme-color" content="#0f0f0f">
+    <meta name="telegram:theme-color" content="#0f0f0f">
     <style>
-        /* (aynı CSS) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: #0f0f0f;
@@ -248,6 +249,40 @@
             }
         });
     });
+
+    (function() {
+        if (window.Telegram && Telegram.WebApp) {
+            const webApp = Telegram.WebApp;
+            const isDarkTelegram = webApp.colorScheme === 'dark';
+            const urlParams = new URLSearchParams(window.location.search);
+            let currentDarkMode = urlParams.get('darkMode');
+            if (currentDarkMode === null) currentDarkMode = 'true';
+            const isDarkCurrent = currentDarkMode === 'true';
+
+            if (isDarkTelegram !== isDarkCurrent) {
+                const newUrl = new URL(window.location.href);
+                newUrl.searchParams.set('darkMode', isDarkTelegram ? 'true' : 'false');
+                window.location.href = newUrl.toString();
+                return;
+            }
+
+            const setThemeColor = () => {
+                const color = webApp.colorScheme === 'dark' ? '#0f0f0f' : '#ffffff';
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', color);
+                document.querySelector('meta[name="telegram:theme-color"]').setAttribute('content', color);
+            };
+            setThemeColor();
+
+            webApp.onEvent('themeChanged', () => {
+                const newDark = webApp.colorScheme === 'dark';
+                const url = new URL(window.location.href);
+                url.searchParams.set('darkMode', newDark ? 'true' : 'false');
+                window.location.href = url.toString();
+            });
+
+            webApp.ready();
+        }
+    })();
 </script>
 <script defer src="https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"></script>
 </body>
