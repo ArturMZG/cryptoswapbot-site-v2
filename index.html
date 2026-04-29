@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Основные мета-теги -->
     <title>CryptoSwap Bot — Обмен криптовалют в Telegram</title>
     <meta name="description" content="Быстрый и безопасный обмен криптовалют через Telegram-бота. 300+ монет, низкие комиссии, кэшбэк.">
-    <link rel="stylesheet" href="assets/style.css">
-    
-    <!-- SEO: мультиязычность -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.cryptoswapbot.online/">
+    <meta name="theme-color" content="#1a1a2e"> <!-- Цвет верхней панели в мобильных браузерах -->
+
+    <!-- SEO: Мультиязычность -->
     <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/" />
     <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/" />
     <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/" />
     <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/" />
     <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/" />
     <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/" />
-    
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <!-- Favicon -->
+
+    <!-- Favicons: Оптимизированный набор -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=2">
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/favicon.ico?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=2">
     <link rel="shortcut icon" href="/favicon.ico?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <!-- Рекомендуется добавить файл -->
+
+    <!-- Верификация -->
     <meta name="google-site-verification" content="b3Z2NfqgIJISRNv0reKut-_lWhBlX05PAquVu2GX8Mg" />
     <meta name="yandex-verification" content="ed9cf69e2a649466" />
-    
-    <!-- Open Graph (для превью в соцсетях и Telegram) -->
+
+    <!-- Open Graph (Facebook, Telegram, WhatsApp) -->
     <meta property="og:title" content="CryptoSwap Bot — Обмен криптовалют в Telegram">
     <meta property="og:description" content="Мгновенный обмен 300+ монет. Без регистрации, низкие комиссии, кэшбэк до 1%.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.cryptoswapbot.online/">
     <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="CryptoSwap Bot">
     <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CryptoSwap Bot — Обмен криптовалют в Telegram">
+    <meta name="twitter:description" content="Мгновенный обмен 300+ монет. Без регистрации, низкие комиссии, кэшбэк до 1%.">
+    <meta name="twitter:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://t.me">
     
+    <!-- Inline стили (перенеси их в assets/style.css в будущем) -->
     <style>
-        /* Дополнительный стиль для вертикального расположения кнопок */
         .button-group {
             display: flex;
             flex-direction: column;
@@ -47,18 +63,45 @@
             min-width: 220px;
             text-align: center;
         }
+        .disclaimer {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
     </style>
+
+    <!-- Schema.org JSON-LD для SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CryptoSwap Bot",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Telegram",
+      "description": "Быстрый и безопасный обмен криптовалют через Telegram-бота.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
-        <div class="lang-switcher">
-            <button class="active" onclick="switchLang('ru')">RU</button>
-            <button onclick="switchLang('en')">EN</button>
-            <button onclick="switchLang('es')">ES</button>
-            <button onclick="switchLang('pt')">PT</button>
-            <button onclick="switchLang('tr')">TR</button>
-        </div>
-        <h1>🔄 CryptoSwap Bot 🔄</h1>
+        <nav class="lang-switcher" aria-label="Выбор языка">
+            <button class="active" onclick="switchLang('ru')" aria-label="Русский">RU</button>
+            <button onclick="switchLang('en')" aria-label="English">EN</button>
+            <button onclick="switchLang('es')" aria-label="Español">ES</button>
+            <button onclick="switchLang('pt')" aria-label="Português">PT</button>
+            <button onclick="switchLang('tr')" aria-label="Türkçe">TR</button>
+        </nav>
+
+        <h1>
+            <span aria-hidden="true">🔄</span> 
+            CryptoSwap Bot 
+            <span aria-hidden="true">🔄</span>
+        </h1>
         <p class="subtitle">Мгновенный обмен криптовалют прямо в Telegram</p>
         <p class="subtitle">300+ монет, низкие комиссии, кэшбэк.</p>
         
@@ -68,39 +111,42 @@
         </div>
     </header>
 
-    <section class="features">
-        <div class="feature">
-            <h3>⚡ Быстро</h3>
-            <p>Обмен за 2–5 минут. Без регистрации, без KYC для сумм до $1000.</p>
-        </div>
-        <div class="feature">
-            <h3>🔒 Безопасно</h3>
-            <p>Non-custodial архитектура: мы не храним ваши приватные ключи и средства.</p>
-        </div>
-        <div class="feature">
-            <h3>💰 Выгодно</h3>
-            <p>Прозрачный курс + кэшбэк до 1% от каждой сделки на внутренний баланс.</p>
-        </div>
-    </section>
+    <main>
+        <section class="features">
+            <h2>Преимущества</h2>
+            <div class="feature">
+                <h3>⚡ Быстро</h3>
+                <p>Обмен за 2–5 минут. Без регистрации, без KYC для сумм до $1000.</p>
+            </div>
+            <div class="feature">
+                <h3>🔒 Безопасно</h3>
+                <p>Non-custodial архитектура: мы не храним ваши приватные ключи и средства.</p>
+            </div>
+            <div class="feature">
+                <h3>💰 Выгодно</h3>
+                <p>Прозрачный курс + кэшбэк до 1% от каждой сделки на внутренний баланс.</p>
+            </div>
+        </section>
 
-    <section class="steps">
-        <h3>📋 Как это работает</h3>
-        <ol>
-            <li>Запустите бота: <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a></li>
-            <li>Выберите пару обмена (например, BTC → USDT)</li>
-            <li>Введите сумму и адрес получения</li>
-            <li>Отправьте криптовалюту на сгенерированный адрес</li>
-            <li>Получите монеты на свой кошелёк автоматически</li>
-        </ol>
-    </section>
+        <section class="steps">
+            <h2>📋 Как это работает</h2>
+            <ol>
+                <li>Запустите бота: <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a></li>
+                <li>Выберите пару обмена (например, BTC → USDT)</li>
+                <li>Введите сумму и адрес получения</li>
+                <li>Отправьте криптовалюту на сгенерированный адрес</li>
+                <li>Получите монеты на свой кошелёк автоматически</li>
+            </ol>
+        </section>
+    </main>
 
     <footer>
-        <p>
+        <nav aria-label="Дополнительные ссылки">
             <a href="/terms.html">Условия использования</a> | 
             <a href="/privacy.html">Политика конфиденциальности</a> | 
             <a href="https://t.me/CryptoSwapBot_support" target="_blank" rel="noopener noreferrer">Поддержка</a>
-        </p>
-        <p>© 2026 CryptoSwap Bot. All rights reserved.</p>
+        </nav>
+        <p>© <span id="current-year"></span> CryptoSwap Bot. All rights reserved.</p>
         <p class="disclaimer">
             Сервис является агрегатором обменных операций и предоставляет интерфейс 
             для доступа к сторонним провайдерам ликвидности (ChangeNOW, SimpleSwap). 
@@ -110,77 +156,20 @@
         </p>
     </footer>
 
-    <!-- Исправленный безопасный роутер SPA (игнорирует переходы на exchange.html) -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('click', async (e) => {
-          const link = e.target.closest('a[href^="/"]');
-          if (!link) return;
-          
-          // НЕ перехватываем ссылки, ведущие на exchange.html
-          const href = link.getAttribute('href');
-          if (href && href.includes('exchange.html')) return;
+      // Автоматический год
+      document.getElementById('current-year').textContent = new Date().getFullYear();
 
-          if (
-            link.hasAttribute('target') ||
-            link.hasAttribute('download') ||
-            link.href.startsWith('mailto:') ||
-            link.href.startsWith('tel:')
-          ) return;
-
-          e.preventDefault();
-          const url = new URL(link.href, window.location.origin);
-          const path = url.pathname;
-
-          if (path === window.location.pathname) return;
-
-          try {
-            const res = await fetch(path);
-            if (!res.ok) throw new Error('Page not found');
-            const html = await res.text();
-            
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            document.body.innerHTML = doc.body.innerHTML;
-            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-
-            history.pushState({ path }, '', path);
-            window.scrollTo(0, 0);
-          } catch (err) {
-            console.warn('Fallback to full navigation:', err);
-            window.location.href = link.href;
-          }
-        });
-
-        if (!window.hasPopStateListener) {
-          window.addEventListener('popstate', async (e) => {
-            const path = e.state?.path || location.pathname;
-            try {
-              const res = await fetch(path);
-              const html = await res.text();
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              document.body.innerHTML = doc.body.innerHTML;
-              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-              window.scrollTo(0, 0);
-            } catch {}
-          });
-          window.hasPopStateListener = true;
-        }
-      });
-    </script>
-    <!-- Скрипт мультиязычности (без изменений) -->
-    <script>
+      // Скрипт мультиязычности с защитой от бесконечного редиректа
       (function() {
         const supportedLangs = ['en', 'es', 'pt', 'tr']; 
         const defaultLang = 'ru';
 
         function getCurrentPageLang() {
           const path = window.location.pathname;
-          for (let i = 0; i < supportedLangs.length; i++) {
-            if (path.startsWith('/' + supportedLangs[i] + '/') || path === '/' + supportedLangs[i]) {
-              return supportedLangs[i];
+          for (let lang of supportedLangs) {
+            if (path.startsWith('/' + lang + '/') || path === '/' + lang) {
+              return lang;
             }
           }
           return defaultLang;
@@ -199,10 +188,19 @@
             newPath = currentPath.replace('/' + currentLang, '');
             if (newPath === '') newPath = '/';
           }
-          if (newPath === '/') newPath = '/index.html'; 
+          
+          // Убираем лишнее index.html, чтобы ссылки были чистыми (/en/)
+          if (newPath.endsWith('index.html')) {
+              newPath = newPath.replace('index.html', '');
+          }
 
           if (targetLang !== defaultLang) {
-            newPath = '/' + targetLang + newPath;
+            // Если мы на главной, добавляем язык в начало пути
+            if (newPath === '/' || newPath === '/index.html') {
+                newPath = '/' + targetLang + '/';
+            } else {
+                newPath = '/' + targetLang + newPath;
+            }
           }
           
           window.location.href = newPath;
@@ -211,24 +209,24 @@
         const savedLang = localStorage.getItem('site_lang');
         const currentLang = getCurrentPageLang();
 
-        if (!savedLang) {
-          const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
-          
-          let targetLang = 'en'; 
-          if (browserLang.startsWith('ru')) targetLang = 'ru';
-          if (browserLang.startsWith('es')) targetLang = 'es';
-          if (browserLang.startsWith('pt')) targetLang = 'pt';
-          if (browserLang.startsWith('tr')) targetLang = 'tr';
-          
-          localStorage.setItem('site_lang', targetLang);
-          
-          if (targetLang !== currentLang) {
-             window.switchLang(targetLang);
-          }
-        } else {
-          if (savedLang !== currentLang) {
-             window.switchLang(savedLang);
-          }
+        // Если язык в localStorage отличается от текущего, и мы еще не пытались редиректить в этой сессии
+        if (!sessionStorage.getItem('lang_redirected')) {
+            let targetLang = savedLang || 'en';
+            
+            // Если пользователь зашел на RU без сохраненного языка, можно оставить RU
+            if (!savedLang) {
+                const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+                if (browserLang.startsWith('ru')) targetLang = 'ru';
+                else if (browserLang.startsWith('es')) targetLang = 'es';
+                else if (browserLang.startsWith('pt')) targetLang = 'pt';
+                else if (browserLang.startsWith('tr')) targetLang = 'tr';
+                else targetLang = 'en';
+            }
+
+            if (targetLang !== currentLang && targetLang !== defaultLang) {
+                sessionStorage.setItem('lang_redirected', 'true');
+                window.switchLang(targetLang);
+            }
         }
       })();
     </script>
