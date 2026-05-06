@@ -110,57 +110,6 @@
         </p>
     </footer>
 
-    <!-- Исправленный роутер SPA (игнорирует exchange.html) – тот же код -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('click', async (e) => {
-          const link = e.target.closest('a[href^="/"]');
-          if (!link) return;
-          const href = link.getAttribute('href');
-          if (href && href.includes('exchange.html')) return;
-          if (
-            link.hasAttribute('target') ||
-            link.hasAttribute('download') ||
-            link.href.startsWith('mailto:') ||
-            link.href.startsWith('tel:')
-          ) return;
-          e.preventDefault();
-          const url = new URL(link.href, window.location.origin);
-          const path = url.pathname;
-          if (path === window.location.pathname) return;
-          try {
-            const res = await fetch(path);
-            if (!res.ok) throw new Error('Page not found');
-            const html = await res.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            document.body.innerHTML = doc.body.innerHTML;
-            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-            history.pushState({ path }, '', path);
-            window.scrollTo(0, 0);
-          } catch (err) {
-            console.warn('Fallback to full navigation:', err);
-            window.location.href = link.href;
-          }
-        });
-
-        if (!window.hasPopStateListener) {
-          window.addEventListener('popstate', async (e) => {
-            const path = e.state?.path || location.pathname;
-            try {
-              const res = await fetch(path);
-              const html = await res.text();
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              document.body.innerHTML = doc.body.innerHTML;
-              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-              window.scrollTo(0, 0);
-            } catch {}
-          });
-          window.hasPopStateListener = true;
-        }
-      });
-    </script>
     <!-- Скрипт мультиязычности (без изменений) -->
     <script>
       (function() {
