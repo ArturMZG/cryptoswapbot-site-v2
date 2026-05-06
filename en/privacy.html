@@ -91,49 +91,6 @@
         <a href="/en/">← Back to Home</a>
     </footer>
 
-    <!-- SPA Router и мультиязычность (аналогично index.html, скопированы) -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('click', async (e) => {
-          const link = e.target.closest('a[href^="/"]');
-          if (!link) return;
-          if (link.hasAttribute('target') || link.hasAttribute('download') || link.href.startsWith('mailto:') || link.href.startsWith('tel:')) return;
-          e.preventDefault();
-          const url = new URL(link.href, window.location.origin);
-          const path = url.pathname;
-          if (path === window.location.pathname) return;
-          try {
-            const res = await fetch(path);
-            if (!res.ok) throw new Error('Page not found');
-            const html = await res.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            document.body.innerHTML = doc.body.innerHTML;
-            document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-            history.pushState({ path }, '', path);
-            window.scrollTo(0, 0);
-          } catch (err) {
-            window.location.href = link.href;
-          }
-        });
-
-        if (!window.hasPopStateListener) {
-          window.addEventListener('popstate', async (e) => {
-            const path = e.state?.path || location.pathname;
-            try {
-              const res = await fetch(path);
-              const html = await res.text();
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              document.body.innerHTML = doc.body.innerHTML;
-              document.title = doc.querySelector('title')?.innerText || 'CryptoSwap Bot';
-              window.scrollTo(0, 0);
-            } catch {}
-          });
-          window.hasPopStateListener = true;
-        }
-      });
-    </script>
     <script>
       (function() {
         const supportedLangs = ['en', 'es', 'pt', 'tr']; 
