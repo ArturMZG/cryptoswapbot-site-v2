@@ -64,7 +64,7 @@
         
         <div class="button-group">
             <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">🚀 Запустить бота</a>
-            <a href="https://changenow.io/exchange?from=usd&to=btc&fiatMode=true&link_id=9ccfa63406d1d6" class="btn" target="_blank" rel="noopener noreferrer">💱 Купить криптовалюту</a>
+            <a href="javascript:void(0)" class="btn" onclick="openExchange()">💱 Купить криптовалюту</a>
         </div>
     </header>
 
@@ -141,5 +141,36 @@
         window.location.href = newPath;
       }
     </script>
+    function openExchange() {
+        const frame = document.getElementById('exchangeFrame');
+        const modal = document.getElementById('exchangeModal');
+        // Ваша реферальная ссылка:
+        const refLink = "https://changenow.io/exchange?from=usd&to=btc&fiatMode=true&link_id=9ccfa63406d1d6";
+        
+        if (!frame.src) {
+            frame.src = refLink;
+        }
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Запретить прокрутку сайта
+    }
+    
+    function closeExchange() {
+        document.getElementById('exchangeModal').style.display = "none";
+        document.body.style.overflow = "auto"; // Вернуть прокрутку
+    }
+    
+    // Закрытие при клике вне окна
+    window.onclick = function(event) {
+        const modal = document.getElementById('exchangeModal');
+        if (event.target == modal) {
+            closeExchange();
+        }
+    }
+    <div id="exchangeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeExchange()">&times;</span>
+            <iframe id="exchangeFrame" src="" frameborder="0" loading="lazy"></iframe>
+        </div>
+    </div>
 </body>
 </html>
