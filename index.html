@@ -112,34 +112,34 @@
     </footer>
 
     <!-- Скрипт мультиязычности (без изменений) -->
-<script>
-  function switchLang(targetLang) {
-    localStorage.setItem('site_lang', targetLang);
-    let currentPath = window.location.pathname;
+    <script>
+      function switchLang(targetLang) {
+        localStorage.setItem('site_lang', targetLang);
+        let currentPath = window.location.pathname;
+        
+        // Список ваших языков
+        const langs = ['en', 'es', 'pt', 'tr'];
+        
+        // 1. Убираем текущий языковой префикс, если он есть
+        langs.forEach(l => {
+          if (currentPath.startsWith('/' + l + '/')) {
+            currentPath = currentPath.replace('/' + l + '/', '/');
+          } else if (currentPath === '/' + l) {
+            currentPath = '/';
+          }
+        });
     
-    // Список ваших языков
-    const langs = ['en', 'es', 'pt', 'tr'];
-    
-    // 1. Убираем текущий языковой префикс, если он есть
-    langs.forEach(l => {
-      if (currentPath.startsWith('/' + l + '/')) {
-        currentPath = currentPath.replace('/' + l + '/', '/');
-      } else if (currentPath === '/' + l) {
-        currentPath = '/';
+        // 2. Формируем новый путь
+        let newPath = currentPath;
+        if (targetLang !== 'ru') {
+          newPath = '/' + targetLang + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
+        }
+        
+        // Убираем двойные слэши, если появились
+        newPath = newPath.replace('//', '/');
+        
+        window.location.href = newPath;
       }
-    });
-
-    // 2. Формируем новый путь
-    let newPath = currentPath;
-    if (targetLang !== 'ru') {
-      newPath = '/' + targetLang + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
-    }
-    
-    // Убираем двойные слэши, если появились
-    newPath = newPath.replace('//', '/');
-    
-    window.location.href = newPath;
-  }
-</script>
+    </script>
 </body>
 </html>
