@@ -168,7 +168,14 @@
     <div id="exchangeModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeExchange()">&times;</span>
-            <iframe id="exchangeFrame" src="" frameborder="0" loading="lazy"></iframe>
+            <iframe>
+                id="exchangeFrame" 
+                src="" 
+                frameborder="0" 
+                loading="lazy" 
+                allow="payment; camera; microphone; clipboard-read; clipboard-write" 
+                sandbox="allow-scripts allow-forms allow-popups allow-same-origin allow-modals">
+            </iframe>
         </div>
     </div>
 
@@ -201,8 +208,9 @@
             const frame = document.getElementById('exchangeFrame');
             const modal = document.getElementById('exchangeModal');
             
-            // URL виджета с параметрами (Фиатный режим, темная тема, ваш link_id)
-            const widgetUrl = "https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=150&amountFiat=150&backgroundColor=1a1a1a&darkMode=true&from=usd&fromFiat=usd&horizontal=false&isFiat=true&lang=ru-RU&link_id=9ccfa63406d1d6&locales=true&logo=true&primaryColor=0088cc&to=btc&toFiat=btc&toTheMoon=true";
+            // Чистая ссылка на виджет без конфликтующих параметров
+            // Мы оставляем только базовые настройки: fiatMode, валюты и ваш ID
+            const widgetUrl = "https://changenow.io/embeds/exchange-widget/v2/widget.html?fiatMode=true&isFiat=true&link_id=9ccfa63406d1d6&from=usd&to=btc&amount=150&lang=ru-RU&backgroundColor=1a1a1a&darkMode=true&primaryColor=0088cc";
             
             if (frame.src !== widgetUrl) {
                 frame.src = widgetUrl;
