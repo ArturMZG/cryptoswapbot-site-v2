@@ -205,19 +205,35 @@
         }
 
         function openExchange() {
-            const frame = document.getElementById('exchangeFrame');
-            const modal = document.getElementById('exchangeModal');
-            
-            // Чистая ссылка на виджет без конфликтующих параметров
-            // Мы оставляем только базовые настройки: fiatMode, валюты и ваш ID
-            const widgetUrl = "https://changenow.io/embeds/exchange-widget/v2/widget.html?fiatMode=true&isFiat=true&link_id=9ccfa63406d1d6&from=usd&to=btc&amount=150&lang=ru-RU&backgroundColor=1a1a1a&darkMode=true&primaryColor=0088cc";
-            
-            if (frame.src !== widgetUrl) {
-                frame.src = widgetUrl;
-            }
-            
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden";
+          const frame = document.getElementById('exchangeFrame');
+          const modal = document.getElementById('exchangeModal');
+          
+          if (!frame || !modal) {
+            console.error('Modal or iframe not found');
+            return;
+          }
+        
+          // ✅ Виджет с вашим link_id и нужными параметрами
+          const widgetUrl = "https://changenow.io/embeds/exchange-widget/v2/widget.html?" +
+            "link_id=9ccfa63406d1d6" +        // 🔥 Ваш реферальный ID
+            "&fiatMode=true" +
+            "&isFiat=true" +
+            "&from=usd" +
+            "&to=btc" +
+            "&amount=150" +
+            "&lang=ru-RU" +
+            "&backgroundColor=1a1a1a" +
+            "&darkMode=true" +
+            "&primaryColor=0088cc" +
+            "&logo=true" +
+            "&locales=true";
+        
+          if (frame.src !== widgetUrl) {
+            frame.src = widgetUrl;
+          }
+          
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden";
         }
         
         function closeExchange() {
