@@ -171,3 +171,36 @@ footer {
   border-color: var(--primary);
   color: white;
 }
+
+/* Стили для модального окна */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+    position: relative;
+    background-color: #1a1a1a;
+    margin: 5% auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 500px; /* Виджеты обмена обычно узкие */
+    height: 80vh;
+    border-radius: 12px;
+}
+.close-modal {
+    position: absolute;
+    right: 15px; top: 10px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
+}
+#exchangeFrame {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
