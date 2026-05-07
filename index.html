@@ -35,7 +35,6 @@
     <meta property="og:locale" content="ru_RU">
     
     <style>
-        /* Дополнительный стиль для вертикального расположения кнопок */
         .button-group {
             display: flex;
             flex-direction: column;
@@ -57,20 +56,21 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
         }
         .modal-content {
             position: relative;
-            background-color: #fff;
-            margin: 5% auto;
+            background-color: #1a1a1a;
+            margin: 2vh auto;
             padding: 0;
-            width: 90%;
-            max-width: 800px;
-            height: 80vh;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 95%;
+            max-width: 440px; /* Ширина оптимизирована под виджет */
+            height: 90vh;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             overflow: hidden;
+            border: 1px solid #333;
         }
         .modal-content iframe {
             width: 100%;
@@ -79,22 +79,26 @@
         }
         .close-modal {
             position: absolute;
-            right: 20px;
-            top: 15px;
+            right: 15px;
+            top: 10px;
             color: #fff;
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 35px;
+            font-weight: 300;
             cursor: pointer;
             z-index: 1001;
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
+            line-height: 1;
         }
         .close-modal:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            color: #0088cc;
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                margin: 0;
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+            }
         }
     </style>
 </head>
@@ -168,16 +172,15 @@
         </div>
     </div>
 
-    <!-- Скрипты -->
+    <!-- Подключаем скрипт-коннектор виджета (обязательно один раз) -->
+    <script defer type='text/javascript' src='https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js'></script>
+
     <script>
         function switchLang(targetLang) {
             localStorage.setItem('site_lang', targetLang);
             let currentPath = window.location.pathname;
-            
-            // Список ваших языков
             const langs = ['en', 'es', 'pt', 'tr'];
             
-            // 1. Убираем текущий языковой префикс, если он есть
             langs.forEach(l => {
                 if (currentPath.startsWith('/' + l + '/')) {
                     currentPath = currentPath.replace('/' + l + '/', '/');
@@ -186,37 +189,34 @@
                 }
             });
         
-            // 2. Формируем новый путь
             let newPath = currentPath;
             if (targetLang !== 'ru') {
                 newPath = '/' + targetLang + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
             }
-            
-            // Убираем двойные слэши, если появились
             newPath = newPath.replace('//', '/');
-            
             window.location.href = newPath;
         }
 
         function openExchange() {
             const frame = document.getElementById('exchangeFrame');
             const modal = document.getElementById('exchangeModal');
-            // Ваша реферальная ссылка:
-            const refLink = "https://changenow.io/exchange?from=usd&to=btc&fiatMode=true&link_id=9ccfa63406d1d6";
             
-            if (!frame.src) {
-                frame.src = refLink;
+            // URL виджета с параметрами (Фиатный режим, темная тема, ваш link_id)
+            const widgetUrl = "https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=150&amountFiat=150&backgroundColor=1a1a1a&darkMode=true&from=usd&fromFiat=usd&horizontal=false&isFiat=true&lang=ru-RU&link_id=9ccfa63406d1d6&locales=true&logo=true&primaryColor=0088cc&to=btc&toFiat=btc&toTheMoon=true";
+            
+            if (frame.src !== widgetUrl) {
+                frame.src = widgetUrl;
             }
+            
             modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // Запретить прокрутку сайта
+            document.body.style.overflow = "hidden";
         }
         
         function closeExchange() {
             document.getElementById('exchangeModal').style.display = "none";
-            document.body.style.overflow = "auto"; // Вернуть прокрутку
+            document.body.style.overflow = "auto";
         }
         
-        // Закрытие при клике вне окна
         window.onclick = function(event) {
             const modal = document.getElementById('exchangeModal');
             if (event.target == modal) {
