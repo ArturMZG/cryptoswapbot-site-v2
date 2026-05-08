@@ -15,11 +15,11 @@
     <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/" />
     <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/" />
     
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="shortcut icon" href="/favicon.ico">
-    
     <meta name="google-site-verification" content="b3Z2NfqgIJISRNv0reKut-_lWhBlX05PAquVu2GX8Mg" />
     <meta name="yandex-verification" content="ed9cf69e2a649466" />
     
@@ -35,6 +35,7 @@
     <meta property="og:locale" content="ru_RU">
     
     <style>
+        /* Дополнительный стиль для вертикального расположения кнопок */
         .button-group {
             display: flex;
             flex-direction: column;
@@ -45,60 +46,6 @@
         .btn {
             min-width: 220px;
             text-align: center;
-        }
-        
-        /* Стили для модального окна */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            position: relative;
-            background-color: #1a1a1a;
-            margin: 2vh auto;
-            padding: 0;
-            width: 95%;
-            max-width: 440px; /* Ширина оптимизирована под виджет */
-            height: 90vh;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            border: 1px solid #333;
-        }
-        .modal-content iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .close-modal {
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            color: #fff;
-            font-size: 35px;
-            font-weight: 300;
-            cursor: pointer;
-            z-index: 1001;
-            line-height: 1;
-        }
-        .close-modal:hover {
-            color: #0088cc;
-        }
-
-        @media (max-width: 600px) {
-            .modal-content {
-                margin: 0;
-                width: 100%;
-                height: 100vh;
-                border-radius: 0;
-            }
         }
     </style>
 </head>
@@ -117,7 +64,7 @@
         
         <div class="button-group">
             <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">🚀 Запустить бота</a>
-            <a href="javascript:void(0)" class="btn" onclick="openExchange()">💱 Купить криптовалюту</a>
+            <a href="https://changenow.io/exchange?from=usd&to=btc&fiatMode=true&link_id=9ccfa63406d1d6" class="btn" target="_blank" rel="noopener noreferrer">💱 Купить криптовалюту</a>
         </div>
     </header>
 
@@ -164,103 +111,35 @@
         </p>
     </footer>
 
-    <!-- Модальное окно -->
-    <div id="exchangeModal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal" onclick="closeExchange()">&times;</span>
-        
-        <!-- ✅ Виджет, а не обычная страница -->
-        <iframe 
-          id="exchangeFrame"
-          src="https://changenow.io/embeds/exchange-widget/v2/widget.html?
-            link_id=9ccfa63406d1d6&
-            fiatMode=true&
-            isFiat=true&
-            from=usd&
-            to=btc&
-            amount=150&
-            lang=ru-RU&
-            backgroundColor=1a1a1a&
-            darkMode=true&
-            primaryColor=0088cc&
-            logo=true&
-            locales=true"
-          frameborder="0"
-          loading="lazy"
-          allow="payment; clipboard-read; clipboard-write"
-          sandbox="allow-scripts allow-forms allow-popups allow-same-origin allow-modals allow-top-navigation">
-        </iframe>
-      </div>
-    </div>
-
-    <!-- Подключаем скрипт-коннектор виджета (обязательно один раз) -->
-    <script defer type='text/javascript' src='https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js'></script>
-
+    <!-- Скрипт мультиязычности (без изменений) -->
     <script>
-        function switchLang(targetLang) {
-            localStorage.setItem('site_lang', targetLang);
-            let currentPath = window.location.pathname;
-            const langs = ['en', 'es', 'pt', 'tr'];
-            
-            langs.forEach(l => {
-                if (currentPath.startsWith('/' + l + '/')) {
-                    currentPath = currentPath.replace('/' + l + '/', '/');
-                } else if (currentPath === '/' + l) {
-                    currentPath = '/';
-                }
-            });
+      function switchLang(targetLang) {
+        localStorage.setItem('site_lang', targetLang);
+        let currentPath = window.location.pathname;
         
-            let newPath = currentPath;
-            if (targetLang !== 'ru') {
-                newPath = '/' + targetLang + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
-            }
-            newPath = newPath.replace('//', '/');
-            window.location.href = newPath;
-        }
-
-        function openExchange() {
-          const frame = document.getElementById('exchangeFrame');
-          const modal = document.getElementById('exchangeModal');
-          
-          if (!frame || !modal) {
-            console.error('Modal or iframe not found');
-            return;
+        // Список ваших языков
+        const langs = ['en', 'es', 'pt', 'tr'];
+        
+        // 1. Убираем текущий языковой префикс, если он есть
+        langs.forEach(l => {
+          if (currentPath.startsWith('/' + l + '/')) {
+            currentPath = currentPath.replace('/' + l + '/', '/');
+          } else if (currentPath === '/' + l) {
+            currentPath = '/';
           }
-        
-          // ✅ Виджет с вашим link_id и нужными параметрами
-          const widgetUrl = "https://changenow.io/embeds/exchange-widget/v2/widget.html?" +
-            "link_id=9ccfa63406d1d6" +        // 🔥 Ваш реферальный ID
-            "&fiatMode=true" +
-            "&isFiat=true" +
-            "&from=usd" +
-            "&to=btc" +
-            "&amount=150" +
-            "&lang=ru-RU" +
-            "&backgroundColor=1a1a1a" +
-            "&darkMode=true" +
-            "&primaryColor=0088cc" +
-            "&logo=true" +
-            "&locales=true";
-        
-          if (frame.src !== widgetUrl) {
-            frame.src = widgetUrl;
-          }
-          
-          modal.style.display = "block";
-          document.body.style.overflow = "hidden";
+        });
+    
+        // 2. Формируем новый путь
+        let newPath = currentPath;
+        if (targetLang !== 'ru') {
+          newPath = '/' + targetLang + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
         }
         
-        function closeExchange() {
-            document.getElementById('exchangeModal').style.display = "none";
-            document.body.style.overflow = "auto";
-        }
+        // Убираем двойные слэши, если появились
+        newPath = newPath.replace('//', '/');
         
-        window.onclick = function(event) {
-            const modal = document.getElementById('exchangeModal');
-            if (event.target == modal) {
-                closeExchange();
-            }
-        }
+        window.location.href = newPath;
+      }
     </script>
 </body>
 </html>
