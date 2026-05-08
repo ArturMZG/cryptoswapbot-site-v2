@@ -164,19 +164,33 @@
         </p>
     </footer>
 
-    <!-- Модальное окно для обмена -->
+    <!-- Модальное окно -->
     <div id="exchangeModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeExchange()">&times;</span>
-            <iframe
-                id="exchangeFrame" 
-                src="" 
-                frameborder="0" 
-                loading="lazy" 
-                allow="payment; camera; microphone; clipboard-read; clipboard-write" 
-                sandbox="allow-scripts allow-forms allow-popups allow-same-origin allow-modals">
-            </iframe>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeExchange()">&times;</span>
+        
+        <!-- ✅ Виджет, а не обычная страница -->
+        <iframe 
+          id="exchangeFrame"
+          src="https://changenow.io/embeds/exchange-widget/v2/widget.html?
+            link_id=9ccfa63406d1d6&
+            fiatMode=true&
+            isFiat=true&
+            from=usd&
+            to=btc&
+            amount=150&
+            lang=ru-RU&
+            backgroundColor=1a1a1a&
+            darkMode=true&
+            primaryColor=0088cc&
+            logo=true&
+            locales=true"
+          frameborder="0"
+          loading="lazy"
+          allow="payment; clipboard-read; clipboard-write"
+          sandbox="allow-scripts allow-forms allow-popups allow-same-origin allow-modals allow-top-navigation">
+        </iframe>
+      </div>
     </div>
 
     <!-- Подключаем скрипт-коннектор виджета (обязательно один раз) -->
