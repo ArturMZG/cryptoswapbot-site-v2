@@ -3,104 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Основное -->
     <title>Политика конфиденциальности — CryptoSwap Bot</title>
     <meta name="description" content="Политика конфиденциальности CryptoSwap Bot. Информация о том, какие технические данные мы собираем и как их используем.">
-    <link rel="stylesheet" href="/assets/style.css">
-    
-    <!-- SEO: мультиязычность -->
-    <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/privacy.html" />
-    <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/privacy.html" />
-    <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/privacy.html" />
-    <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/privacy.html" />
-    <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/privacy.html" />
-    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/privacy.html" />
-    
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.cryptoswapbot.online/privacy" />
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO: Мультиязычность -->
+    <link rel="alternate" hreflang="ru"       href="https://www.cryptoswapbot.online/privacy" />
+    <link rel="alternate" hreflang="en"       href="https://www.cryptoswapbot.online/en/privacy" />
+    <link rel="alternate" hreflang="es"       href="https://www.cryptoswapbot.online/es/privacy" />
+    <link rel="alternate" hreflang="pt"       href="https://www.cryptoswapbot.online/pt/privacy" />
+    <link rel="alternate" hreflang="tr"       href="https://www.cryptoswapbot.online/tr/privacy" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/privacy" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="shortcut icon" href="/favicon.ico">
-    
-    <!-- Open Graph (для превью в соцсетях и Telegram) -->
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Политика конфиденциальности — CryptoSwap Bot">
     <meta property="og:description" content="Информация о том, какие технические данные собирает CryptoSwap Bot и как они используются.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.cryptoswapbot.online/privacy.html">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/privacy">
     <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="CryptoSwap Bot">
     <meta property="og:locale" content="ru_RU">
-    
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Политика конфиденциальности — CryptoSwap Bot">
+    <meta name="twitter:description" content="Информация о том, какие технические данные собирает CryptoSwap Bot и как они используются.">
+    <meta name="twitter:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+
+    <link rel="preconnect" href="https://t.me">
+    <link rel="stylesheet" href="/assets/style.css">
+
     <style>
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            margin: 20px 0 30px;
+        /* Стили для страниц с текстовым контентом */
+        .legal-content {
+            background: var(--card-bg, #1a1a1a);
+            border: 1px solid var(--border, #333);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px 0;
         }
-        .btn {
-            min-width: 220px;
-            text-align: center;
+        .legal-content h2 {
+            margin-top: 28px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border, #333);
+        }
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+        .legal-content p {
+            margin-bottom: 12px;
+            color: var(--text-light, #aaaaaa);
+            line-height: 1.7;
+        }
+        .legal-content ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--text-light, #aaaaaa);
+        }
+        .legal-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .legal-content li::marker {
+            color: var(--primary, #0088cc);
+        }
+        .back-link {
+            display: inline-block;
+            margin: 16px 0 32px;
+            color: var(--primary, #0088cc);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            color: var(--text-light, #aaaaaa);
+            font-size: 0.9rem;
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="lang-switcher">
-            <button class="active" onclick="switchLang('ru')">RU</button>
-            <button onclick="switchLang('en')">EN</button>
-            <button onclick="switchLang('es')">ES</button>
-            <button onclick="switchLang('pt')">PT</button>
-            <button onclick="switchLang('tr')">TR</button>
-        </div>        
+        <nav class="lang-switcher" aria-label="Выбор языка">
+            <button class="active" onclick="switchLang('ru')" aria-label="Русский">RU</button>
+            <button onclick="switchLang('en')" aria-label="English">EN</button>
+            <button onclick="switchLang('es')" aria-label="Español">ES</button>
+            <button onclick="switchLang('pt')" aria-label="Português">PT</button>
+            <button onclick="switchLang('tr')" aria-label="Türkçe">TR</button>
+        </nav>
         <h1>Политика конфиденциальности</h1>
-        <p><em>Последнее обновление: Март 2026</em></p>
+        <p class="last-updated"><em>Последнее обновление: Март 2026</em></p>
     </header>
 
-    <h2>1. Какие данные мы собираем</h2>
-    <p>CryptoSwap Bot не требует регистрации и не запрашивает персональные данные. В процессе использования бота могут технически фиксироваться:</p>
-    <ul>
-        <li>Telegram ID пользователя (для идентификации в рамках сессии)</li>
-        <li>История запросов на обмен (без привязки к личности)</li>
-        <li>IP-адрес (только при обращении к веб-сайту, логи хранятся 7 дней)</li>
-    </ul>
-    
-    <h2>2. Как мы используем данные</h2>
-    <p>Собранные технические данные используются исключительно для:</p>
-    <ul>
-        <li>Обеспечения работоспособности Сервиса</li>
-        <li>Анализа ошибок и улучшения пользовательского опыта</li>
-        <li>Предотвращения злоупотреблений и спама</li>
-    </ul>
-    
-    <h2>3. Передача данных третьим лицам</h2>
-    <p>Мы не продаем и не передаем персональные данные. Технические логи могут передаваться партнёрским провайдерам (ChangeNOW, SimpleSwap) исключительно в объёме, необходимом для исполнения обмена, в соответствии с их политиками конфиденциальности.</p>
-    
-    <h2>4. Cookies и аналитика</h2>
-    <p>Веб-сайт может использовать анонимизированные cookie для базовой аналитики посещаемости. Вы можете отключить cookie в настройках браузера.</p>
-    
-    <h2>5. Ваши права</h2>
-    <p>Вы можете запросить удаление своих технических данных, написав в поддержку: <a href="https://t.me/CryptoSwapBot_support" target="_blank" rel="noopener noreferrer">@Support CryptoSwapBot</a></p>
-    
-    <h2>6. Изменения политики</h2>
-    <p>Мы оставляем за собой право обновлять данную политику. Актуальная версия всегда доступна по этому адресу.</p>
-    
+    <main>
+        <a href="/" class="back-link">← На главную</a>
+
+        <article class="legal-content">
+
+            <h2>1. Какие данные мы собираем</h2>
+            <p>CryptoSwap Bot не требует регистрации и не запрашивает персональные данные. В процессе использования бота могут технически фиксироваться:</p>
+            <ul>
+                <li>Telegram ID пользователя (для идентификации в рамках сессии)</li>
+                <li>История запросов на обмен (без привязки к личности)</li>
+                <li>IP-адрес (только при обращении к веб-сайту, логи хранятся 7 дней)</li>
+            </ul>
+
+            <h2>2. Как мы используем данные</h2>
+            <p>Собранные технические данные используются исключительно для:</p>
+            <ul>
+                <li>Обеспечения работоспособности Сервиса</li>
+                <li>Анализа ошибок и улучшения пользовательского опыта</li>
+                <li>Предотвращения злоупотреблений и спама</li>
+            </ul>
+
+            <h2>3. Передача данных третьим лицам</h2>
+            <p>Мы не продаем и не передаем персональные данные. Технические логи могут передаваться партнёрским провайдерам (ChangeNOW, SimpleSwap) исключительно в объёме, необходимом для исполнения обмена, в соответствии с их политиками конфиденциальности.</p>
+
+            <h2>4. Cookies и аналитика</h2>
+            <p>Веб-сайт использует:</p>
+            <ul>
+                <li><strong>localStorage</strong> — для сохранения выбранного языка интерфейса</li>
+                <li><strong>sessionStorage</strong> — для защиты от циклических редиректов при смене языка</li>
+                <li>Анонимизированные cookie для базовой аналитики посещаемости</li>
+            </ul>
+            <p>Вы можете отключить cookie в настройках браузера. Это не повлияет на основной функционал сайта.</p>
+
+            <h2>5. Ваши права</h2>
+            <p>Вы можете запросить удаление своих технических данных, написав в поддержку:
+                <a href="https://t.me/CryptoSwapBot_support"
+                   target="_blank"
+                   rel="noopener noreferrer">@CryptoSwapBot_support</a>
+            </p>
+
+            <h2>6. Изменения политики</h2>
+            <p>Мы оставляем за собой право обновлять данную политику. Актуальная версия всегда доступна по этому адресу.</p>
+
+        </article>
+
+        <a href="/" class="back-link">← На главную</a>
+    </main>
+
     <footer>
-        <a href="/">← На главную</a>
+        <nav aria-label="Футер навигация">
+            <p>
+                <a href="/terms">Условия использования</a> |
+                <a href="/privacy">Политика конфиденциальности</a> |
+                <a href="mailto:support@changenow.io" rel="noopener noreferrer">Поддержка Changenow</a> |
+                <a href="mailto:support@simpleswap.io" rel="noopener noreferrer">Поддержка Simpleswap</a>
+            </p>
+        </nav>
+        <p>© <span id="year"></span> CryptoSwap Bot. All rights reserved.</p>
     </footer>
 
-    <!-- Скрипт мультиязычности (Финальный, с поддержкой TR) -->
     <script>
+      // Автоматический год
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Переключатель языков
       function switchLang(targetLang) {
         localStorage.setItem('site_lang', targetLang);
         let currentPath = window.location.pathname;
-        
-        // Список ваших языков
         const langs = ['en', 'es', 'pt', 'tr'];
-        
-        // 1. Убираем текущий языковой префикс, если он есть
+
         langs.forEach(l => {
           if (currentPath.startsWith('/' + l + '/')) {
             currentPath = currentPath.replace('/' + l + '/', '/');
@@ -108,18 +186,37 @@
             currentPath = '/';
           }
         });
-    
-        // 2. Формируем новый путь
+
         let newPath = currentPath;
         if (targetLang !== 'ru') {
-          newPath = '/' + targetLang + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
+          newPath = (newPath === '/' || newPath === '/index.html')
+            ? '/' + targetLang + '/'
+            : '/' + targetLang + newPath;
         }
-        
-        // Убираем двойные слэши, если появились
-        newPath = newPath.replace('//', '/');
-        
-        window.location.href = newPath;
+
+        newPath = newPath.replace(/\/+/g, '/');
+        window.location.href = (targetLang === 'ru' && newPath === '/') ? '/' : newPath;
       }
+
+      // Авто-редирект по сохранённому языку
+      (function() {
+        const savedLang = localStorage.getItem('site_lang');
+        const currentPath = window.location.pathname;
+        const langs = ['en', 'es', 'pt', 'tr'];
+
+        let currentLang = 'ru';
+        for (let l of langs) {
+          if (currentPath.startsWith('/' + l + '/') || currentPath === '/' + l) {
+            currentLang = l;
+            break;
+          }
+        }
+
+        if (savedLang && savedLang !== currentLang && !sessionStorage.getItem('lang_redirected')) {
+          sessionStorage.setItem('lang_redirected', 'true');
+          switchLang(savedLang);
+        }
+      })();
     </script>
 </body>
 </html>
