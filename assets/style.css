@@ -1,21 +1,33 @@
-/* Основные переменные */
+/* ============================================
+   ОСНОВНЫЕ ПЕРЕМЕННЫЕ
+   ============================================ */
 :root {
-  --primary: #0088cc;        /* акцентный цвет — синий/бирюзовый */
-  --bg: #0f0f0f;             /* тёмный фон */
-  --text: #ffffff;           /* белый текст */
-  --text-light: #aaaaaa;     /* светлый серый текст */
-  --card-bg: #1a1a1a;        /* фон карточек */
-  --border: #333;            /* границы */
+  --primary: #0088cc;
+  --bg: #0f0f0f;
+  --text: #ffffff;
+  --text-light: #aaaaaa;
+  --card-bg: #1a1a1a;
+  --border: #333;
+
+  /* НОВОЕ: переменные для удобного управления отступами */
+  --radius: 12px;
+  --transition: 0.2s ease;
 }
 
-/* Сброс стилей */
-* {
+/* ============================================
+   СБРОС СТИЛЕЙ
+   ============================================ */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Основной контейнер */
+/* ============================================
+   ОСНОВНОЙ КОНТЕЙНЕР
+   ============================================ */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
   background-color: var(--bg);
@@ -24,33 +36,49 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+
+  /* НОВОЕ: сглаживание шрифтов на Mac/мобильных */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Шапка сайта (центрирование кнопки) */
+/* ============================================
+   ШАПКА
+   ============================================ */
 header {
   text-align: center;
   padding: 20px 0;
 }
 
-/* Заголовки */
+/* ============================================
+   ЗАГОЛОВКИ
+   ============================================ */
 h1, h2, h3 {
   margin-bottom: 16px;
+  /* НОВОЕ: плавный перенос длинных слов на мобильных */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
+
 h1 {
   font-size: 2.2rem;
   text-align: center;
   margin: 40px 0 20px;
 }
+
 h2 {
   font-size: 1.5rem;
   color: var(--primary);
 }
+
 h3 {
   font-size: 1.2rem;
   color: var(--primary);
 }
 
-/* Подзаголовки / описания */
+/* ============================================
+   ПОДЗАГОЛОВКИ
+   ============================================ */
 .subtitle {
   text-align: center;
   color: var(--text-light);
@@ -58,65 +86,191 @@ h3 {
   margin-bottom: 30px;
 }
 
-/* Кнопка действия */
+/* ============================================
+   КНОПКИ
+   ============================================ */
 .btn {
   display: inline-block;
   background: var(--primary);
   color: white;
   text-decoration: none;
   padding: 14px 32px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   font-weight: 600;
   font-size: 1.1rem;
-  transition: all 0.2s ease;
+  transition: background var(--transition),
+              transform var(--transition),
+              box-shadow var(--transition);
   text-align: center;
+
+  /* НОВОЕ: фокус-стиль для клавиатурной навигации */
+  outline-offset: 3px;
 }
+
 .btn:hover {
   background: #0077b5;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+  text-decoration: none; /* ИСПРАВЛЕНИЕ: ссылки не подчёркивались при hover */
 }
 
-/* Блоки преимуществ */
+/* НОВОЕ: стиль при фокусе с клавиатуры (Tab) — важно для доступности */
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  box-shadow: 0 0 0 4px rgba(0, 136, 204, 0.3);
+}
+
+/* НОВОЕ: группа кнопок */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;            /* ИСПРАВЛЕНИЕ: было 36px — слишком большой отступ */
+  margin: 30px 0 20px;
+}
+
+/* ============================================
+   СЕКЦИЯ ПРЕИМУЩЕСТВ
+   ============================================ */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   margin: 40px 0;
 }
+
+/* ИСПРАВЛЕНИЕ ГЛАВНОГО БАГА:
+   h2 внутри .features растягивается на все колонки,
+   не ломая сетку карточек */
+.features h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
 .feature {
   background: var(--card-bg);
   padding: 24px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
+
+  /* НОВОЕ: плавное появление тени при наведении */
+  transition: border-color var(--transition),
+              box-shadow var(--transition);
 }
 
-/* Пошаговая инструкция */
+/* НОВОЕ: лёгкое выделение карточки при наведении */
+.feature:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(0, 136, 204, 0.15);
+}
+
+/* ============================================
+   ПОШАГОВАЯ ИНСТРУКЦИЯ
+   ============================================ */
 .steps {
   background: var(--card-bg);
   padding: 24px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   margin: 30px 0;
   border: 1px solid var(--border);
 }
+
 .steps ol {
   padding-left: 20px;
   margin-top: 15px;
 }
+
 .steps li {
   margin-bottom: 10px;
+  /* НОВОЕ: выделение номеров пунктов */
+  padding-left: 6px;
 }
 
-/* Ссылки */
+/* НОВОЕ: стиль маркеров списка */
+.steps li::marker {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ============================================
+   ССЫЛКИ
+   ============================================ */
 a {
   color: var(--primary);
   text-decoration: none;
+
+  /* НОВОЕ: плавный переход цвета */
+  transition: color var(--transition);
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-/* Футер */
+/* НОВОЕ: фокус-стиль для ссылок (доступность) */
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
+   ============================================ */
+.lang-switcher {
+  margin-bottom: 20px;
+  /* НОВОЕ: поддержка переноса на очень узких экранах */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lang-switcher button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: border-color var(--transition),
+              color var(--transition),
+              background var(--transition);
+
+  /* НОВОЕ: убираем синюю рамку браузера, добавляем свою */
+  outline: none;
+}
+
+.lang-switcher button:hover {
+  border-color: var(--primary);
+  color: var(--text);
+}
+
+.lang-switcher button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* НОВОЕ: фокус с клавиатуры */
+.lang-switcher button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   ЗАГОЛОВОК СЕКЦИИ (вынесен за пределы .features)
+   ============================================ */
+.section-title {
+  text-align: center;
+  margin-bottom: 0;  /* отступ снизу берёт на себя margin-top у .features */
+}
+
+/* ============================================
+   ФУТЕР
+   ============================================ */
 footer {
   margin-top: 60px;
   padding-top: 20px;
@@ -125,82 +279,132 @@ footer {
   color: var(--text-light);
   text-align: center;
 }
+
+footer nav {
+  margin-bottom: 12px;
+}
+
+footer nav a {
+  /* НОВОЕ: ссылки в футере чуть светлее */
+  color: var(--text-light);
+  transition: color var(--transition);
+}
+
+footer nav a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
 .disclaimer {
   font-size: 12px;
   color: #777;
   margin-top: 15px;
   line-height: 1.5;
+
+  /* НОВОЕ: максимальная ширина для удобочитаемости */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Адаптивность */
+/* ============================================
+   МОДАЛЬНОЕ ОКНО
+   ============================================ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  /* НОВОЕ: плавное появление */
+  animation: fadeIn 0.2s ease;
+}
+
+/* НОВОЕ: анимация появления модального окна */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--card-bg);  /* ИСПРАВЛЕНИЕ: использует переменную */
+  margin: 5% auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+  height: 80vh;
+  border-radius: var(--radius);      /* ИСПРАВЛЕНИЕ: использует переменную */
+
+  /* НОВОЕ: тень для глубины */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: var(--text);
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+
+  /* НОВОЕ: плавный hover */
+  transition: color var(--transition);
+}
+
+.close-modal:hover {
+  color: var(--primary);
+}
+
+#exchangeFrame {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: none;  /* ИСПРАВЛЕНИЕ: убирает дефолтную рамку iframe */
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
 @media (max-width: 600px) {
+  body {
+    padding: 16px;  /* НОВОЕ: чуть меньше отступы на телефоне */
+  }
+
   h1 {
     font-size: 1.8rem;
   }
+
+  h2 {
+    font-size: 1.3rem;  /* НОВОЕ: масштабируем h2 */
+  }
+
   .btn {
     padding: 12px 24px;
     font-size: 1rem;
+    width: 100%;        /* НОВОЕ: кнопки на всю ширину на мобильных */
   }
+
   .subtitle {
     font-size: 1rem;
   }
 
-}
+  .features {
+    /* НОВОЕ: на телефоне карточки в одну колонку */
+    grid-template-columns: 1fr;
+  }
 
-/* --- Переключатель языков --- */
-.lang-switcher {
-  margin-bottom: 20px;
-}
-.lang-switcher button {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text-light);
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: 0 4px;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-}
-.lang-switcher button:hover {
-  border-color: var(--primary);
-  color: var(--text);
-}
-.lang-switcher button.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
-}
+  .steps {
+    padding: 16px;  /* НОВОЕ: меньше паддинг на телефоне */
+  }
 
-/* Стили для модального окна */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.8);
-}
-.modal-content {
-    position: relative;
-    background-color: #1a1a1a;
-    margin: 5% auto;
-    padding: 10px;
-    width: 90%;
-    max-width: 500px; /* Виджеты обмена обычно узкие */
-    height: 80vh;
-    border-radius: 12px;
-}
-.close-modal {
-    position: absolute;
-    right: 15px; top: 10px;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 10;
-}
-#exchangeFrame {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
+  footer {
+    font-size: 13px;
+  }
 }
