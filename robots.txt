@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+# Запрет индексации технических и служебных файлов
+Disallow: /google97684fc6c20fcacb.html
+
+# Карта сайта
 Sitemap: https://www.cryptoswapbot.online/sitemap.xml
