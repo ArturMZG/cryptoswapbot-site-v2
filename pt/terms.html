@@ -3,99 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Principal -->
     <title>Termos de Uso — CryptoSwap Bot</title>
-    <meta name="description" content="Termos de Uso do serviço CryptoSwap Bot. Regras, taxas, limitações e responsabilidade do usuário.">
-    <link rel="stylesheet" href="/assets/style.css">
-    
-    <!-- SEO: мультиязычность -->
-    <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/terms.html" />
-    <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/terms.html" />
-    <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/terms.html" />
-    <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/terms.html" />
-    <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/terms.html" />
-    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/terms.html" />
-    
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Termos de uso do serviço CryptoSwap Bot. Regras, taxas, limitações e responsabilidade do usuário.">
+    <link rel="canonical" href="https://www.cryptoswapbot.online/pt/terms" />
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO: Multilíngue -->
+    <link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/terms" />
+    <link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/terms" />
+    <link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/terms" />
+    <link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/terms" />
+    <link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/terms" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/terms" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="shortcut icon" href="/favicon.ico">
-    
+    <link rel="apple-touch-icon" href="/favicon.png">
+
     <!-- Open Graph -->
     <meta property="og:title" content="Termos de Uso — CryptoSwap Bot">
     <meta property="og:description" content="Regras, taxas, limitações e responsabilidade do usuário do serviço CryptoSwap Bot.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.cryptoswapbot.online/pt/terms.html">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/pt/terms">
     <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="CryptoSwap Bot">
-    <meta property="og:locale" content="pt_PT">
-    
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Termos de Uso — CryptoSwap Bot">
+    <meta name="twitter:description" content="Regras, taxas, limitações e responsabilidade do usuário do serviço CryptoSwap Bot.">
+    <meta name="twitter:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+
+    <link rel="preconnect" href="https://t.me">
+    <link rel="stylesheet" href="/assets/style.css">
+
     <style>
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            margin: 20px 0 30px;
+        .legal-content {
+            background: var(--card-bg, #1a1a1a);
+            border: 1px solid var(--border, #333);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px 0;
         }
-        .btn {
-            min-width: 220px;
-            text-align: center;
+        .legal-content h2 {
+            margin-top: 28px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border, #333);
+        }
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+        .legal-content p {
+            margin-bottom: 12px;
+            color: var(--text-light, #aaaaaa);
+            line-height: 1.7;
+        }
+        .legal-content ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--text-light, #aaaaaa);
+        }
+        .legal-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .legal-content li::marker {
+            color: var(--primary, #0088cc);
+        }
+        .back-link {
+            display: inline-block;
+            margin: 16px 0 32px;
+            color: var(--primary, #0088cc);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            color: var(--text-light, #aaaaaa);
+            font-size: 0.9rem;
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="lang-switcher">
-            <button onclick="switchLang('ru')">RU</button>
-            <button onclick="switchLang('en')">EN</button>
-            <button onclick="switchLang('es')">ES</button>
-            <button class="active" onclick="switchLang('pt')">PT</button>
-            <button onclick="switchLang('tr')">TR</button>
-        </div>        
+        <nav class="lang-switcher" aria-label="Seleção de idioma">
+            <button onclick="switchLang('ru')" aria-label="Русский">RU</button>
+            <button onclick="switchLang('en')" aria-label="English">EN</button>
+            <button onclick="switchLang('es')" aria-label="Español">ES</button>
+            <button class="active" onclick="switchLang('pt')" aria-label="Português">PT</button>
+            <button onclick="switchLang('tr')" aria-label="Türkçe">TR</button>
+        </nav>
         <h1>Termos de Uso</h1>
-        <p><em>Última atualização: Março de 2026</em></p>
+        <p class="last-updated"><em>Última atualização: Março 2026</em></p>
     </header>
 
-    <h2>1. Disposições Gerais</h2>
-    <p>O CryptoSwap Bot ("Serviço") fornece uma interface para acessar serviços de câmbio de terceiros, incluindo ChangeNOW e SimpleSwap. Não somos um operador de câmbio de criptomoedas, não armazenamos fundos de usuários e não controlamos chaves privadas.</p>
-    
-    <h2>2. Taxas e Taxas de Câmbio</h2>
-    <p>O Serviço pode cobrar uma taxa adicional (spread) de 0,5–3% do valor da troca. A taxa final é exibida ao usuário antes de confirmar a transação e é definitiva.</p>
-    
-    <h2>3. Restrições e Limites</h2>
-    <p>Os valores mínimos e máximos de troca são determinados pelos provedores parceiros e podem mudar sem aviso prévio. Transações com atividade suspeita podem ser rejeitadas pelos provedores de acordo com suas políticas de combate à lavagem de dinheiro (AML).</p>
-    
-    <h2>4. Responsabilidade do Usuário</h2>
-    <p>O usuário assume total responsabilidade de forma independente por:</p>
-    <ul>
-        <li>A precisão dos endereços de carteira fornecidos</li>
-        <li>A segurança de suas chaves privadas e frases semente (seed phrases)</li>
-        <li>O cumprimento da legislação de sua jurisdição ao usar criptomoedas</li>
-    </ul>
-    
-    <h2>5. Isenção de Responsabilidade</h2>
-    <p>O Serviço é fornecido "como está". Não garantimos operação ininterrupta, nem compensamos perdas devido a erros do usuário, falhas na blockchain ou ações de provedores parceiros.</p>
-    
-    <h2>6. Alterações nos Termos</h2>
-    <p>Reservamo-nos o direito de alterar estes termos a qualquer momento. O uso contínuo do Serviço após as alterações constitui sua aceitação da nova versão.</p>
-    
+    <main>
+        <a href="/pt" class="back-link">← Voltar ao início</a>
+
+        <article class="legal-content">
+
+            <h2>1. Disposições Gerais</h2>
+            <p>CryptoSwap Bot ("Serviço") fornece uma interface para acessar serviços de câmbio de terceiros, incluindo ChangeNOW e SimpleSwap. Não somos um operador de câmbio de criptomoedas, não armazenamos fundos de usuários e não controlamos chaves privadas.</p>
+
+            <h2>2. Taxas e Câmbio</h2>
+            <p>O Serviço pode cobrar uma taxa adicional (spread) de 0,5–3% do valor da troca. A taxa final é exibida ao usuário antes da confirmação da operação e é definitiva.</p>
+
+            <h2>3. Restrições e Limites</h2>
+            <p>Os valores mínimos e máximos de troca são determinados pelos provedores parceiros e podem ser alterados sem aviso prévio. Transações com atividade suspeita podem ser recusadas pelos provedores de acordo com sua política AML.</p>
+
+            <h2>4. Responsabilidade do Usuário</h2>
+            <p>O usuário assume total responsabilidade por:</p>
+            <ul>
+                <li>A precisão dos endereços de carteira fornecidos</li>
+                <li>A segurança de suas chaves privadas e frases de recuperação</li>
+                <li>O cumprimento das leis de sua jurisdição ao usar criptomoedas</li>
+            </ul>
+
+            <h2>5. Isenção de Responsabilidade</h2>
+            <p>O Serviço é fornecido "como está". Não garantimos operação ininterrupta e não compensamos perdas por erros do usuário, falhas na blockchain ou ações de provedores parceiros.</p>
+
+            <h2>6. Alterações nos Termos</h2>
+            <p>Reservamo-nos o direito de modificar estes termos a qualquer momento. O uso continuado do Serviço após as alterações implica sua concordância com a nova versão.</p>
+
+        </article>
+
+        <a href="/pt" class="back-link">← Voltar ao início</a>
+    </main>
+
     <footer>
-        <a href="/pt/">← Voltar à página inicial</a>
+        <nav aria-label="Navegação do rodapé">
+            <p>
+                <a href="/pt/terms">Termos de Uso</a> |
+                <a href="/pt/privacy">Política de Privacidade</a> |
+                <a href="mailto:support@changenow.io" rel="noopener noreferrer">Suporte Changenow</a> |
+                <a href="mailto:support@simpleswap.io" rel="noopener noreferrer">Suporte Simpleswap</a>
+            </p>
+        </nav>
+        <p>© <span id="year"></span> CryptoSwap Bot. All rights reserved.</p>
     </footer>
 
-    <!-- Скрипт мультиязычности (Финальный, с поддержкой TR) -->
     <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
       function switchLang(targetLang) {
         localStorage.setItem('site_lang', targetLang);
         let currentPath = window.location.pathname;
-        
-        // Список ваших языков
         const langs = ['en', 'es', 'pt', 'tr'];
-        
-        // 1. Убираем текущий языковой префикс, если он есть
+
         langs.forEach(l => {
           if (currentPath.startsWith('/' + l + '/')) {
             currentPath = currentPath.replace('/' + l + '/', '/');
@@ -103,18 +168,36 @@
             currentPath = '/';
           }
         });
-    
-        // 2. Формируем новый путь
+
         let newPath = currentPath;
         if (targetLang !== 'ru') {
-          newPath = '/' + targetLang + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
+          newPath = (newPath === '/' || newPath === '/index.html')
+            ? '/' + targetLang + '/'
+            : '/' + targetLang + newPath;
         }
-        
-        // Убираем двойные слэши, если появились
-        newPath = newPath.replace('//', '/');
-        
-        window.location.href = newPath;
+
+        newPath = newPath.replace(/\/+/g, '/');
+        window.location.href = (targetLang === 'ru' && newPath === '/') ? '/' : newPath;
       }
+
+      (function() {
+        const savedLang = localStorage.getItem('site_lang');
+        const currentPath = window.location.pathname;
+        const langs = ['en', 'es', 'pt', 'tr'];
+
+        let currentLang = 'ru';
+        for (let l of langs) {
+          if (currentPath.startsWith('/' + l + '/') || currentPath === '/' + l) {
+            currentLang = l;
+            break;
+          }
+        }
+
+        if (savedLang && savedLang !== currentLang && !sessionStorage.getItem('lang_redirected')) {
+          sessionStorage.setItem('lang_redirected', 'true');
+          switchLang(savedLang);
+        }
+      })();
     </script>
 </body>
 </html>
