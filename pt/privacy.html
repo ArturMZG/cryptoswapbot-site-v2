@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO: Principal -->
     <title>Política de Privacidade — CryptoSwap Bot</title>
     <meta name="description" content="Política de privacidade do CryptoSwap Bot. Informações sobre quais dados técnicos coletamos e como os utilizamos.">
     <link rel="canonical" href="https://www.cryptoswapbot.online/pt/privacy" />
     <meta name="robots" content="index, follow">
 
-    <!-- SEO: Multilíngue -->
     <link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/privacy" />
     <link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/privacy" />
     <link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/privacy" />
@@ -18,13 +16,11 @@
     <link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/privacy" />
     <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/privacy" />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.png">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Política de Privacidade — CryptoSwap Bot">
     <meta property="og:description" content="Informações sobre quais dados técnicos o CryptoSwap Bot coleta e como são utilizados.">
     <meta property="og:type" content="website">
@@ -35,7 +31,6 @@
     <meta property="og:site_name" content="CryptoSwap Bot">
     <meta property="og:locale" content="pt_BR">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Política de Privacidade — CryptoSwap Bot">
     <meta name="twitter:description" content="Informações sobre quais dados técnicos o CryptoSwap Bot coleta e como são utilizados.">
@@ -58,9 +53,7 @@
             padding-bottom: 8px;
             border-bottom: 1px solid var(--border, #333);
         }
-        .legal-content h2:first-child {
-            margin-top: 0;
-        }
+        .legal-content h2:first-child { margin-top: 0; }
         .legal-content p {
             margin-bottom: 12px;
             color: var(--text-light, #aaaaaa);
@@ -71,13 +64,8 @@
             margin-bottom: 12px;
             color: var(--text-light, #aaaaaa);
         }
-        .legal-content li {
-            margin-bottom: 6px;
-            line-height: 1.6;
-        }
-        .legal-content li::marker {
-            color: var(--primary, #0088cc);
-        }
+        .legal-content li { margin-bottom: 6px; line-height: 1.6; }
+        .legal-content li::marker { color: var(--primary, #0088cc); }
         .back-link {
             display: inline-block;
             margin: 16px 0 32px;
@@ -85,9 +73,7 @@
             text-decoration: none;
             font-size: 0.95rem;
         }
-        .back-link:hover {
-            text-decoration: underline;
-        }
+        .back-link:hover { text-decoration: underline; }
         .last-updated {
             color: var(--text-light, #aaaaaa);
             font-size: 0.9rem;
@@ -101,7 +87,7 @@
             <button onclick="switchLang('ru')" aria-label="Русский">RU</button>
             <button onclick="switchLang('en')" aria-label="English">EN</button>
             <button onclick="switchLang('es')" aria-label="Español">ES</button>
-            <button class="active" onclick="switchLang('pt')" aria-label="Português">PT</button>
+            <button onclick="switchLang('pt')" aria-label="Português">PT</button>
             <button onclick="switchLang('tr')" aria-label="Türkçe">TR</button>
         </nav>
         <h1>Política de Privacidade</h1>
@@ -109,10 +95,9 @@
     </header>
 
     <main>
-        <a href="/pt" class="back-link">← Voltar ao início</a>
+        <a href="/pt" data-i18n-home class="back-link">← Voltar ao início</a>
 
         <article class="legal-content">
-
             <h2>1. Quais Dados Coletamos</h2>
             <p>CryptoSwap Bot não requer cadastro e não solicita dados pessoais. Durante o uso do bot, os seguintes dados podem ser registrados tecnicamente:</p>
             <ul>
@@ -150,17 +135,16 @@
 
             <h2>6. Alterações na Política</h2>
             <p>Reservamo-nos o direito de atualizar esta política. A versão atual está sempre disponível neste endereço.</p>
-
         </article>
 
-        <a href="/pt" class="back-link">← Voltar ao início</a>
+        <a href="/pt" data-i18n-home class="back-link">← Voltar ao início</a>
     </main>
 
     <footer>
         <nav aria-label="Navegação do rodapé">
             <p>
-                <a href="/pt/terms">Termos de Uso</a> |
-                <a href="/pt/privacy">Política de Privacidade</a> |
+                <a href="/pt/terms" data-i18n-link="terms">Termos de Uso</a> |
+                <a href="/pt/privacy" data-i18n-link="privacy">Política de Privacidade</a> |
                 <a href="mailto:support@changenow.io" rel="noopener noreferrer">Suporte Changenow</a> |
                 <a href="mailto:support@simpleswap.io" rel="noopener noreferrer">Suporte Simpleswap</a>
             </p>
@@ -169,50 +153,85 @@
     </footer>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      const LANGS = ['en', 'es', 'pt', 'tr'];
+      const DEFAULT_LANG = 'ru';
 
-      function switchLang(targetLang) {
-        localStorage.setItem('site_lang', targetLang);
-        let currentPath = window.location.pathname;
-        const langs = ['en', 'es', 'pt', 'tr'];
-
-        langs.forEach(l => {
-          if (currentPath.startsWith('/' + l + '/')) {
-            currentPath = currentPath.replace('/' + l + '/', '/');
-          } else if (currentPath === '/' + l) {
-            currentPath = '/';
-          }
-        });
-
-        let newPath = currentPath;
-        if (targetLang !== 'ru') {
-          newPath = (newPath === '/' || newPath === '/index.html')
-            ? '/' + targetLang + '/'
-            : '/' + targetLang + newPath;
+      function getCurrentLang() {
+        const path = window.location.pathname;
+        for (let l of LANGS) {
+          if (path.startsWith('/' + l + '/') || path === '/' + l) return l;
         }
-
-        newPath = newPath.replace(/\/+/g, '/');
-        window.location.href = (targetLang === 'ru' && newPath === '/') ? '/' : newPath;
+        return DEFAULT_LANG;
       }
 
-      (function() {
-        const savedLang = localStorage.getItem('site_lang');
-        const currentPath = window.location.pathname;
-        const langs = ['en', 'es', 'pt', 'tr'];
-
-        let currentLang = 'ru';
-        for (let l of langs) {
-          if (currentPath.startsWith('/' + l + '/') || currentPath === '/' + l) {
-            currentLang = l;
-            break;
-          }
+      function stripLangPrefix(path) {
+        for (let l of LANGS) {
+          if (path.startsWith('/' + l + '/')) return path.slice(('/' + l).length);
+          if (path === '/' + l) return '/';
         }
+        return path;
+      }
 
-        if (savedLang && savedLang !== currentLang && !sessionStorage.getItem('lang_redirected')) {
+      function buildPath(targetLang, basePath) {
+        if (targetLang === DEFAULT_LANG) return basePath || '/';
+        if (!basePath || basePath === '/') return '/' + targetLang;
+        return '/' + targetLang + basePath;
+      }
+
+      function switchLang(targetLang) {
+        const currentLang = getCurrentLang();
+        if (targetLang === currentLang) return;
+        localStorage.setItem('site_lang', targetLang);
+        sessionStorage.removeItem('lang_redirected');
+        const basePath = stripLangPrefix(window.location.pathname);
+        window.location.href = buildPath(targetLang, basePath);
+      }
+
+      function highlightActiveLang() {
+        const currentLang = getCurrentLang();
+        document.querySelectorAll('.lang-switcher button').forEach(btn => {
+          btn.classList.remove('active');
+          const match = (btn.getAttribute('onclick') || '').match(/switchLang\('(\w+)'\)/);
+          if (match && match[1] === currentLang) btn.classList.add('active');
+        });
+      }
+
+      function updateFooterLinks() {
+        const currentLang = getCurrentLang();
+        const prefix = currentLang === DEFAULT_LANG ? '' : '/' + currentLang;
+        document.querySelectorAll('a[data-i18n-link]').forEach(link => {
+          link.href = prefix + '/' + link.getAttribute('data-i18n-link');
+        });
+        document.querySelectorAll('a[data-i18n-home]').forEach(link => {
+          link.href = prefix || '/';
+        });
+      }
+
+      (function autoRedirect() {
+        if (sessionStorage.getItem('lang_redirected')) return;
+        const currentLang = getCurrentLang();
+        let targetLang = localStorage.getItem('site_lang');
+        if (!targetLang) {
+          const b = (navigator.language || '').toLowerCase();
+          if (b.startsWith('ru'))      targetLang = 'ru';
+          else if (b.startsWith('es')) targetLang = 'es';
+          else if (b.startsWith('pt')) targetLang = 'pt';
+          else if (b.startsWith('tr')) targetLang = 'tr';
+          else                         targetLang = 'en';
+          localStorage.setItem('site_lang', targetLang);
+        }
+        if (targetLang !== currentLang) {
           sessionStorage.setItem('lang_redirected', 'true');
-          switchLang(savedLang);
+          const basePath = stripLangPrefix(window.location.pathname);
+          window.location.href = buildPath(targetLang, basePath);
         }
       })();
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('year').textContent = new Date().getFullYear();
+        highlightActiveLang();
+        updateFooterLinks();
+      });
     </script>
 </body>
 </html>
