@@ -4,42 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO: Temel -->
     <title>CryptoSwap Bot — Telegram'da Kripto Para Değişimi</title>
     <meta name="description" content="Telegram botu aracılığıyla hızlı ve güvenli kripto para değişimi. 300'den fazla coin, düşük ücretler, %1'e kadar cashback.">
     <link rel="canonical" href="https://www.cryptoswapbot.online/tr" />
     <meta name="robots" content="index, follow">
 
-    <!-- SEO: Çoklu Dil -->
-    <link rel="alternate" hreflang="ru" href="https://www.cryptoswapbot.online/" />
-    <link rel="alternate" hreflang="en" href="https://www.cryptoswapbot.online/en/" />
-    <link rel="alternate" hreflang="es" href="https://www.cryptoswapbot.online/es/" />
-    <link rel="alternate" hreflang="pt" href="https://www.cryptoswapbot.online/pt/" />
-    <link rel="alternate" hreflang="tr" href="https://www.cryptoswapbot.online/tr/" />
-    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/" />
+    <link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/" />
+    <link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en" />
+    <link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es" />
+    <link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt" />
+    <link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en" />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.png">
 
-    <!-- Doğrulama -->
     <meta name="google-site-verification" content="b3Z2NfqgIJISRNv0reKut-_lWhBlX05PAquVu2GX8Mg" />
     <meta name="yandex-verification" content="ed9cf69e2a649466" />
 
-    <!-- Open Graph -->
     <meta property="og:title" content="CryptoSwap Bot — Telegram'da Kripto Para Değişimi">
     <meta property="og:description" content="300'den fazla coinin anında değişimi. Kayıt yok, düşük ücretler, %1'e kadar cashback.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.cryptoswapbot.online/tr/">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/tr">
     <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="CryptoSwap Bot">
     <meta property="og:locale" content="tr_TR">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CryptoSwap Bot — Telegram'da Kripto Para Değişimi">
     <meta name="twitter:description" content="300'den fazla coinin anında değişimi. Kayıt yok, düşük ücretler, %1'e kadar cashback.">
@@ -92,7 +86,7 @@
             <button onclick="switchLang('en')" aria-label="English">EN</button>
             <button onclick="switchLang('es')" aria-label="Español">ES</button>
             <button onclick="switchLang('pt')" aria-label="Português">PT</button>
-            <button class="active" onclick="switchLang('tr')" aria-label="Türkçe">TR</button>
+            <button onclick="switchLang('tr')" aria-label="Türkçe">TR</button>
         </nav>
 
         <h1>
@@ -141,8 +135,8 @@
     <footer>
         <nav aria-label="Alt bilgi navigasyonu">
             <p>
-                <a href="/terms.html">Kullanım Koşulları</a> |
-                <a href="/privacy.html">Gizlilik Politikası</a> |
+                <a href="/tr/terms" data-i18n-link="terms">Kullanım Koşulları</a> |
+                <a href="/tr/privacy" data-i18n-link="privacy">Gizlilik Politikası</a> |
                 <a href="mailto:support@changenow.io" rel="noopener noreferrer">Changenow Destek</a> |
                 <a href="mailto:support@simpleswap.io" rel="noopener noreferrer">Simpleswap Destek</a>
             </p>
@@ -158,50 +152,85 @@
     </footer>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      const LANGS = ['en', 'es', 'pt', 'tr'];
+      const DEFAULT_LANG = 'ru';
 
-      function switchLang(targetLang) {
-        localStorage.setItem('site_lang', targetLang);
-        let currentPath = window.location.pathname;
-        const langs = ['en', 'es', 'pt', 'tr'];
-
-        langs.forEach(l => {
-          if (currentPath.startsWith('/' + l + '/')) {
-            currentPath = currentPath.replace('/' + l + '/', '/');
-          } else if (currentPath === '/' + l) {
-            currentPath = '/';
-          }
-        });
-
-        let newPath = currentPath;
-        if (targetLang !== 'ru') {
-          newPath = (newPath === '/' || newPath === '/index.html')
-            ? '/' + targetLang + '/'
-            : '/' + targetLang + newPath;
+      function getCurrentLang() {
+        const path = window.location.pathname;
+        for (let l of LANGS) {
+          if (path.startsWith('/' + l + '/') || path === '/' + l) return l;
         }
-
-        newPath = newPath.replace(/\/+/g, '/');
-        window.location.href = (targetLang === 'ru' && newPath === '/') ? '/' : newPath;
+        return DEFAULT_LANG;
       }
 
-      (function() {
-        const savedLang = localStorage.getItem('site_lang');
-        const currentPath = window.location.pathname;
-        const langs = ['en', 'es', 'pt', 'tr'];
-
-        let currentLang = 'ru';
-        for (let l of langs) {
-          if (currentPath.startsWith('/' + l + '/') || currentPath === '/' + l) {
-            currentLang = l;
-            break;
-          }
+      function stripLangPrefix(path) {
+        for (let l of LANGS) {
+          if (path.startsWith('/' + l + '/')) return path.slice(('/' + l).length);
+          if (path === '/' + l) return '/';
         }
+        return path;
+      }
 
-        if (savedLang && savedLang !== currentLang && !sessionStorage.getItem('lang_redirected')) {
+      function buildPath(targetLang, basePath) {
+        if (targetLang === DEFAULT_LANG) return basePath || '/';
+        if (!basePath || basePath === '/') return '/' + targetLang;
+        return '/' + targetLang + basePath;
+      }
+
+      function switchLang(targetLang) {
+        const currentLang = getCurrentLang();
+        if (targetLang === currentLang) return;
+        localStorage.setItem('site_lang', targetLang);
+        sessionStorage.removeItem('lang_redirected');
+        const basePath = stripLangPrefix(window.location.pathname);
+        window.location.href = buildPath(targetLang, basePath);
+      }
+
+      function highlightActiveLang() {
+        const currentLang = getCurrentLang();
+        document.querySelectorAll('.lang-switcher button').forEach(btn => {
+          btn.classList.remove('active');
+          const match = (btn.getAttribute('onclick') || '').match(/switchLang\('(\w+)'\)/);
+          if (match && match[1] === currentLang) btn.classList.add('active');
+        });
+      }
+
+      function updateFooterLinks() {
+        const currentLang = getCurrentLang();
+        const prefix = currentLang === DEFAULT_LANG ? '' : '/' + currentLang;
+        document.querySelectorAll('a[data-i18n-link]').forEach(link => {
+          link.href = prefix + '/' + link.getAttribute('data-i18n-link');
+        });
+        document.querySelectorAll('a[data-i18n-home]').forEach(link => {
+          link.href = prefix || '/';
+        });
+      }
+
+      (function autoRedirect() {
+        if (sessionStorage.getItem('lang_redirected')) return;
+        const currentLang = getCurrentLang();
+        let targetLang = localStorage.getItem('site_lang');
+        if (!targetLang) {
+          const b = (navigator.language || '').toLowerCase();
+          if (b.startsWith('ru'))      targetLang = 'ru';
+          else if (b.startsWith('es')) targetLang = 'es';
+          else if (b.startsWith('pt')) targetLang = 'pt';
+          else if (b.startsWith('tr')) targetLang = 'tr';
+          else                         targetLang = 'en';
+          localStorage.setItem('site_lang', targetLang);
+        }
+        if (targetLang !== currentLang) {
           sessionStorage.setItem('lang_redirected', 'true');
-          switchLang(savedLang);
+          const basePath = stripLangPrefix(window.location.pathname);
+          window.location.href = buildPath(targetLang, basePath);
         }
       })();
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('year').textContent = new Date().getFullYear();
+        highlightActiveLang();
+        updateFooterLinks();
+      });
     </script>
 </body>
 </html>
