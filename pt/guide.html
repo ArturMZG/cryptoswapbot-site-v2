@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO: Principal -->
-    <title>Como Comprar Crypto com Reais e PIX no Telegram — Guia 2026</title>
-    <meta name="description" content="Guia passo a passo: compre Bitcoin, USDT e 300+ criptomoedas com reais brasileiros via PIX no Telegram. Sem KYC, sem cadastro, em 2-5 minutos.">
+    <title>Comprar Crypto com PIX e Real no Telegram — Sem CPF | 2026</title>
+    <meta name="description" content="Compre Bitcoin, USDT e 300+ criptos com reais via PIX no Telegram. Sem CPF, sem cadastro, sem KYC. Confirmação em 2-5 minutos. Funciona 24h, inclusive fins de semana.">
     <link rel="canonical" href="https://www.cryptoswapbot.online/pt/guide" />
     <meta name="robots" content="index, follow">
 
@@ -29,8 +29,8 @@
     <meta name="yandex-verification" content="ed9cf69e2a649466" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Como Comprar Crypto com Reais e PIX no Telegram — Guia 2026">
-    <meta property="og:description" content="Compre Bitcoin, USDT e 300+ criptomoedas com reais via PIX. Sem KYC, sem cadastro, em 2-5 minutos.">
+    <meta property="og:title" content="Comprar Crypto com PIX e Real no Telegram — Sem CPF | 2026">
+    <meta property="og:description" content="Compre Bitcoin, USDT e 300+ criptos com reais via PIX. Sem CPF, sem cadastro, 2-5 minutos. Funciona 24h.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.cryptoswapbot.online/pt/guide">
     <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
@@ -41,8 +41,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Como Comprar Crypto com Reais e PIX no Telegram — Guia 2026">
-    <meta name="twitter:description" content="Compre Bitcoin, USDT e 300+ criptomoedas com reais via PIX. Sem KYC, 2-5 minutos.">
+    <meta name="twitter:title" content="Comprar Crypto com PIX e Real no Telegram — Sem CPF | 2026">
+    <meta name="twitter:description" content="Bitcoin, USDT e 300+ criptos com reais via PIX. Sem CPF, sem cadastro, 2-5 minutos.">
     <meta name="twitter:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
 
     <link rel="preconnect" href="https://t.me">
@@ -88,6 +88,13 @@
         }
         .guide-content a:hover { border-bottom-color: var(--primary, #0088cc); }
         .guide-content strong { color: var(--text, #ffffff); font-weight: 600; }
+        .guide-content code {
+            background: var(--border, #333);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--text, #ffffff);
+        }
         .back-link {
             display: inline-block;
             margin: 16px 0 32px;
@@ -96,6 +103,8 @@
             font-size: 0.95rem;
         }
         .back-link:hover { text-decoration: underline; }
+
+        /* CTA блок */
         .guide-cta {
             background: linear-gradient(135deg, var(--primary, #0088cc), #0066aa);
             border-radius: 12px;
@@ -103,84 +112,176 @@
             margin: 32px 0;
             text-align: center;
         }
-        .guide-cta h3 { color: white; margin-top: 0; margin-bottom: 16px; }
-        .guide-cta p { color: rgba(255,255,255,0.85); }
+        .guide-cta h3 { color: white; margin-top: 0; margin-bottom: 12px; font-size: 1.3rem; }
+        .guide-cta p { color: rgba(255,255,255,0.88); margin-bottom: 20px; }
         .guide-cta .btn {
             background: white;
             color: var(--primary, #0088cc);
-            font-weight: 600;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
         }
         .guide-cta .btn:hover {
             background: #f0f0f0;
             transform: translateY(-2px);
+            border-bottom: none;
         }
+
+        /* Бейджи валют */
         .fiat-badges {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 16px 0;
+            margin: 16px 0 24px;
         }
         .fiat-badge {
-            background: var(--border, #333);
+            background: var(--border, #2a2a2a);
+            border: 1px solid rgba(0,136,204,0.3);
             color: var(--text, #ffffff);
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            font-weight: 500;
         }
+
+        /* Таблица сравнения */
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
             margin: 24px 0;
-            color: var(--text-light, #aaaaaa);
+            font-size: 0.95rem;
         }
         .comparison-table th {
-            background: var(--border, #333);
+            background: var(--border, #2a2a2a);
             color: var(--text, #ffffff);
-            padding: 12px;
+            padding: 12px 16px;
             text-align: left;
+            font-weight: 600;
         }
         .comparison-table td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border, #333);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border, #2a2a2a);
+            color: var(--text-light, #aaaaaa);
         }
+        .comparison-table tr:last-child td { border-bottom: none; }
         .comparison-table tr:hover td {
-            background: rgba(0, 136, 204, 0.05);
+            background: rgba(0,136,204,0.04);
         }
-        .region-block {
-            background: rgba(0, 136, 204, 0.08);
-            border: 1px solid rgba(0, 136, 204, 0.25);
-            border-radius: 10px;
-            padding: 20px 24px;
-            margin: 20px 0;
-        }
-        .region-block h3 { margin-top: 0; }
+
+        /* PIX блок */
         .pix-block {
-            background: rgba(50, 205, 50, 0.08);
-            border: 1px solid rgba(50, 205, 50, 0.3);
-            border-radius: 10px;
-            padding: 20px 24px;
-            margin: 20px 0;
+            background: rgba(0, 180, 80, 0.08);
+            border: 1px solid rgba(0, 180, 80, 0.35);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 24px 0;
         }
         .pix-block h3 {
-            color: #32cd32;
+            color: #00c853;
             margin-top: 0;
+            margin-bottom: 12px;
         }
-        .pix-block p {
-            color: var(--text-light, #aaaaaa);
+        .pix-block p { color: var(--text-light, #aaaaaa); }
+        .pix-block ul { color: var(--text-light, #aaaaaa); }
+
+        /* Блок без CPF */
+        .nocpf-block {
+            background: rgba(0, 136, 204, 0.08);
+            border: 1px solid rgba(0, 136, 204, 0.3);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 24px 0;
         }
+        .nocpf-block h3 {
+            color: var(--primary, #0088cc);
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        .nocpf-block p { color: var(--text-light, #aaaaaa); }
+
+        /* Блок инфляции */
         .inflation-block {
-            background: rgba(255, 160, 0, 0.08);
-            border: 1px solid rgba(255, 160, 0, 0.3);
-            border-radius: 10px;
-            padding: 20px 24px;
-            margin: 20px 0;
+            background: rgba(255, 152, 0, 0.08);
+            border: 1px solid rgba(255, 152, 0, 0.35);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 24px 0;
         }
         .inflation-block h3 {
-            color: #ffa000;
+            color: #ff9800;
             margin-top: 0;
+            margin-bottom: 12px;
         }
-        .inflation-block p {
+        .inflation-block p { color: var(--text-light, #aaaaaa); }
+
+        /* Шаги */
+        .step-block {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin: 20px 0;
+            padding: 20px 24px;
+            background: var(--card-bg, #1e1e1e);
+            border: 1px solid var(--border, #2a2a2a);
+            border-radius: 10px;
+        }
+        .step-number {
+            background: var(--primary, #0088cc);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: var(--text, #ffffff);
+            font-size: 1rem;
+        }
+        .step-content p {
+            margin: 0;
             color: var(--text-light, #aaaaaa);
+            font-size: 0.95rem;
+        }
+
+        /* Статистика */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .stat-card {
+            background: var(--border, #2a2a2a);
+            border-radius: 10px;
+            padding: 20px 16px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary, #0088cc);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-light, #aaaaaa);
+            margin-top: 4px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .guide-content { padding: 24px 20px; }
+            .step-block { flex-direction: column; gap: 12px; }
         }
     </style>
 
@@ -189,45 +290,55 @@
     {
       "@context": "https://schema.org",
       "@type": "HowTo",
-      "name": "Como comprar criptomoedas com reais e PIX no Telegram",
-      "description": "Guia passo a passo para comprar criptomoedas com reais brasileiros via PIX usando o bot do Telegram.",
+      "name": "Como comprar criptomoedas com reais via PIX no Telegram sem CPF",
+      "description": "Guia passo a passo para comprar Bitcoin, USDT e outras criptomoedas com reais brasileiros via PIX usando o CryptoSwap Bot no Telegram. Sem CPF, sem cadastro.",
       "totalTime": "PT5M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "BRL",
+        "value": "25"
+      },
       "step": [
         {
           "@type": "HowToStep",
-          "name": "Abrir o bot no Telegram",
-          "text": "Abra @CryptoSwapExchangeBot no Telegram e pressione Iniciar",
-          "url": "https://www.cryptoswapbot.online/pt/guide#step1"
+          "position": 1,
+          "name": "Abrir o CryptoSwap Bot no Telegram",
+          "text": "Acesse @CryptoSwapExchangeBot no Telegram e pressione o botão Iniciar. Não é necessário criar conta ou fornecer CPF.",
+          "url": "https://www.cryptoswapbot.online/pt/guide#passo1"
         },
         {
           "@type": "HowToStep",
-          "name": "Selecionar Comprar Cripto",
-          "text": "Escolha a opção Comprar Cripto e selecione BRL como moeda de pagamento",
-          "url": "https://www.cryptoswapbot.online/pt/guide#step2"
+          "position": 2,
+          "name": "Escolher Comprar Cripto e selecionar BRL",
+          "text": "No menu principal selecione Comprar Cripto. Escolha BRL (Real brasileiro) como moeda de pagamento.",
+          "url": "https://www.cryptoswapbot.online/pt/guide#passo2"
         },
         {
           "@type": "HowToStep",
-          "name": "Escolher qual cripto comprar",
-          "text": "Selecione a criptomoeda que deseja receber: USDT, BTC, ETH etc.",
-          "url": "https://www.cryptoswapbot.online/pt/guide#step3"
+          "position": 3,
+          "name": "Selecionar a criptomoeda desejada",
+          "text": "Escolha qual cripto quer receber: USDT para proteger do dólar, Bitcoin para investimento de longo prazo, ou qualquer uma das 300+ opções disponíveis.",
+          "url": "https://www.cryptoswapbot.online/pt/guide#passo3"
         },
         {
           "@type": "HowToStep",
-          "name": "Inserir o valor em reais",
-          "text": "Digite quanto deseja gastar em reais. O bot calcula automaticamente quanto cripto você receberá.",
-          "url": "https://www.cryptoswapbot.online/pt/guide#step4"
+          "position": 4,
+          "name": "Digitar o valor em reais",
+          "text": "Informe quanto deseja gastar em reais. O bot calcula automaticamente quanto cripto você receberá, já com todas as taxas incluídas.",
+          "url": "https://www.cryptoswapbot.online/pt/guide#passo4"
         },
         {
           "@type": "HowToStep",
+          "position": 5,
           "name": "Pagar via PIX e receber a cripto",
-          "text": "Efetue o pagamento via PIX. A criptomoeda chega à sua carteira em 2-5 minutos.",
-          "url": "https://www.cryptoswapbot.online/pt/guide#step5"
+          "text": "Realize o pagamento via PIX seguindo as instruções do bot. A criptomoeda chega diretamente na sua carteira em 2-5 minutos.",
+          "url": "https://www.cryptoswapbot.online/pt/guide#passo5"
         }
       ]
     }
     </script>
 
-    <!-- Schema.org FAQ -->
+    <!-- Schema.org FAQPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -235,42 +346,66 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Como comprar USDT com reais via PIX sem verificação?",
+          "name": "Como comprar USDT com reais via PIX sem CPF?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Abra @CryptoSwapExchangeBot no Telegram, selecione Comprar USDT e escolha BRL como moeda de pagamento. O bot fornece os dados de pagamento PIX. Após confirmar, o USDT chega à sua carteira em 2-5 minutos. Não é necessário KYC para valores abaixo de $1000."
+            "text": "Abra @CryptoSwapExchangeBot no Telegram, selecione Comprar USDT e escolha BRL como moeda. O bot gera a chave PIX para pagamento. Após o PIX, o USDT chega na sua carteira em 2-5 minutos. CPF não é exigido para valores abaixo de $1000."
           }
         },
         {
           "@type": "Question",
-          "name": "É possível comprar Bitcoin com PIX sem CPF?",
+          "name": "Como comprar Bitcoin com PIX sem cadastro?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sim. CryptoSwap Bot não exige CPF, cadastro ou verificação de identidade para valores abaixo de $1000. Você só precisa de uma carteira de criptomoedas para receber o Bitcoin."
+            "text": "Acesse @CryptoSwapExchangeBot no Telegram, escolha Comprar BTC e selecione BRL. Digite o valor em reais, copie a chave PIX e efetue o pagamento. O Bitcoin chega na sua carteira em 2-5 minutos, sem necessidade de cadastro, CPF ou verificação de identidade."
           }
         },
         {
           "@type": "Question",
-          "name": "Como proteger minha renda da inflação com criptomoedas?",
+          "name": "É possível comprar cripto com PIX 24 horas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A forma mais popular é comprar USDT, uma stablecoin atrelada ao dólar americano. Com CryptoSwap Bot você converte reais em USDT em minutos, sem precisar de conta em dólares ou corretora internacional."
+            "text": "Sim. O CryptoSwap Bot funciona 24 horas por dia, 7 dias por semana, inclusive sábados, domingos e feriados. O PIX também funciona a qualquer hora. Você pode comprar USDT às 3h da manhã de um domingo sem nenhum problema."
           }
         },
         {
           "@type": "Question",
-          "name": "É seguro comprar cripto pelo Telegram?",
+          "name": "Qual o valor mínimo para comprar cripto com reais?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "CryptoSwap Bot usa arquitetura non-custodial: a cripto vai diretamente para sua carteira. O bot nunca guarda seus fundos ou chaves privadas. As operações são realizadas por ChangeNOW e SimpleSwap, ativos desde 2018."
+            "text": "O valor mínimo é de aproximadamente R$25-50, equivalente a cerca de $5 USD. Para USDT o mínimo é de aproximadamente R$25, para Bitcoin em torno de R$50."
           }
         },
         {
           "@type": "Question",
-          "name": "Qual o valor mínimo para comprar criptomoedas?",
+          "name": "É seguro comprar criptomoedas pelo Telegram?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "O valor mínimo equivale a aproximadamente R$25-50 (cerca de $5 USD). Para USDT o mínimo é de aproximadamente $5, para Bitcoin cerca de $10 em reais."
+            "text": "Sim. O CryptoSwap Bot usa arquitetura non-custodial: a cripto vai diretamente para a sua carteira, nunca fica retida no bot. As operações são processadas por ChangeNOW e SimpleSwap, plataformas com mais de 6 anos de operação e bilhões em volume transacionado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como proteger meu dinheiro da inflação com criptomoedas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A forma mais simples é converter reais em USDT, uma stablecoin atrelada ao dólar americano. Com o CryptoSwap Bot você faz isso via PIX em menos de 5 minutos, sem precisar de conta em corretora, conta em dólares ou documentação adicional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de carteira de cripto para usar o bot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, você precisa de uma carteira para receber a criptomoeda. As melhores opções para brasileiros são: Trust Wallet (gratuita, mobile), MetaMask (para USDT e tokens Ethereum) e Exodus (multimoeda, interface simples). Todas são gratuitas e não exigem CPF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva para receber a criptomoeda após o PIX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Após a confirmação do PIX, a criptomoeda chega na sua carteira em 2-5 minutos. Em casos de congestionamento da rede Bitcoin, pode levar até 15-30 minutos. USDT e outras altcoins costumam ser ainda mais rápidas."
           }
         }
       ]
@@ -289,10 +424,10 @@
 
         <h1>
             <span aria-hidden="true">🔄</span>
-            Como Comprar Crypto com Reais e PIX no Telegram
+            Comprar Crypto com PIX e Real no Telegram
             <span aria-hidden="true">🔄</span>
         </h1>
-        <p class="subtitle">Guia completo 2026: Brasil e Portugal. Sem KYC, sem CPF, em 2-5 minutos.</p>
+        <p class="subtitle">Sem CPF, sem cadastro, sem KYC — Bitcoin, USDT e 300+ criptos em 2-5 minutos. Funciona 24h, inclusive feriados.</p>
     </header>
 
     <main>
@@ -302,249 +437,320 @@
 
             <!-- Top CTA -->
             <div class="guide-cta">
-                <h3>🚀 Pronto para proteger seu dinheiro com cripto?</h3>
-                <p>Compre USDT, Bitcoin e mais com reais via PIX em menos de 5 minutos</p>
+                <h3>⚡ Compre USDT com PIX agora — sem CPF, sem cadastro</h3>
+                <p>Mais de 10 milhões de brasileiros já investem em cripto. Comece em menos de 5 minutos.</p>
                 <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">
-                    Iniciar CryptoSwap Bot agora
+                    Abrir CryptoSwap Bot no Telegram
                 </a>
             </div>
 
-            <!-- Introdução -->
-            <p><strong>Comprar criptomoedas com reais</strong> nunca foi tão simples. Com o bot CryptoSwap no Telegram você adquire <strong>USDT</strong>, <strong>Bitcoin</strong>, <strong>Ethereum</strong> e mais de 300 criptomoedas diretamente com <strong>reais brasileiros via PIX</strong> — sem cadastro, sem verificação de identidade, sem precisar de CPF e sem conta em corretora internacional.</p>
+            <!-- Статистика Бразилии -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <span class="stat-number">10M+</span>
+                    <span class="stat-label">brasileiros com cripto</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Top 3</span>
+                    <span class="stat-label">mercado cripto mundial</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2-5 min</span>
+                    <span class="stat-label">PIX → cripto na carteira</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">300+</span>
+                    <span class="stat-label">criptomoedas disponíveis</span>
+                </div>
+            </div>
 
-            <p>Moedas aceitas:</p>
+            <!-- Введение -->
+            <p>O Brasil é o <strong>terceiro maior mercado de criptomoedas do mundo</strong> — e não é por acaso. Com o PIX revolucionando os pagamentos instantâneos e a inflação corroendo o poder de compra, cada vez mais brasileiros buscam converter reais em cripto de forma rápida, barata e sem burocracia.</p>
+
+            <p>Com o <strong>CryptoSwap Bot no Telegram</strong>, você compra <strong>USDT, Bitcoin, Ethereum</strong> e mais de 300 criptomoedas diretamente com <strong>reais via PIX</strong> — sem CPF, sem cadastro, sem verificação de identidade, sem conta em corretora.</p>
+
             <div class="fiat-badges">
-                <span class="fiat-badge">🇧🇷 BRL (Real brasileiro)</span>
-                <span class="fiat-badge">🇵🇹 EUR (Euro — Portugal)</span>
-                <span class="fiat-badge">💳 PIX instantâneo</span>
-                <span class="fiat-badge">🌎 100+ moedas</span>
+                <span class="fiat-badge">🇧🇷 BRL → USDT via PIX</span>
+                <span class="fiat-badge">🇧🇷 BRL → Bitcoin via PIX</span>
+                <span class="fiat-badge">🇧🇷 BRL → Ethereum via PIX</span>
+                <span class="fiat-badge">✅ Sem CPF</span>
+                <span class="fiat-badge">✅ Sem cadastro</span>
+                <span class="fiat-badge">✅ 24h / 7 dias</span>
             </div>
 
-            <!-- Bloco PIX -->
+            <!-- PIX блок — главный триггер -->
+            <h2 id="pix-cripto">Por Que o PIX Mudou Tudo para Comprar Cripto no Brasil</h2>
+
             <div class="pix-block">
-                <h3>⚡ PIX + Cripto = A Combinação Perfeita</h3>
-                <p>O <strong>PIX</strong> é o sistema de pagamentos instantâneos do Banco Central do Brasil — disponível 24 horas por dia, 7 dias por semana, inclusive feriados. Combinado com CryptoSwap Bot, você consegue comprar <strong>USDT ou Bitcoin em minutos</strong>, a qualquer hora do dia ou da noite.</p>
-                <p>Sem fila, sem DOC, sem TED, sem horário bancário. <strong>PIX confirma em segundos</strong> — e sua cripto chega em 2-5 minutos.</p>
+                <h3>⚡ PIX + Telegram = A Combinação Mais Rápida do Brasil</h3>
+                <p>O <strong>PIX</strong> é o sistema de pagamentos instantâneos do Banco Central do Brasil. Funciona <strong>24 horas por dia, 7 dias por semana, 365 dias por ano</strong> — inclusive sábados, domingos e feriados nacionais.</p>
+                <p>Antes do PIX, comprar cripto com reais levava dias: TED só em horário bancário, compensação de 1-3 dias úteis, taxas abusivas. Hoje com o CryptoSwap Bot:</p>
+                <ul>
+                    <li>✅ <strong>PIX confirma em segundos</strong> — cripto na carteira em 2-5 minutos</li>
+                    <li>✅ <strong>Funciona às 3h da manhã de domingo</strong> — sem restrição de horário</li>
+                    <li>✅ <strong>Sem taxa de TED ou DOC</strong> — apenas a taxa de câmbio da cripto</li>
+                    <li>✅ <strong>Qualquer banco do Brasil</strong> — Nubank, Itaú, Bradesco, Caixa, BB e todos os outros</li>
+                    <li>✅ <strong>Qualquer valor</strong> — de R$25 a R$50.000+</li>
+                </ul>
             </div>
 
-            <!-- Por que Telegram -->
-            <h2 id="por-que-telegram">Por Que Comprar Cripto pelo Telegram?</h2>
+            <!-- Блок sem CPF — второй триггер -->
+            <h2 id="sem-cpf">Comprar Cripto Sem CPF — Como Funciona</h2>
+
+            <div class="nocpf-block">
+                <h3>🔐 Por que o CryptoSwap Bot não exige CPF?</h3>
+                <p>Exchanges tradicionais exigem CPF, selfie com documento, comprovante de residência e às vezes até declaração de renda. Esse processo leva dias e muitas pessoas desistem.</p>
+                <p>O <strong>CryptoSwap Bot</strong> opera de forma diferente. Ele usa uma <strong>arquitetura non-custodial</strong>: a cripto vai diretamente da rede blockchain para a sua carteira. O bot nunca guarda seus fundos, então não há necessidade de identificação completa para valores abaixo de $1.000.</p>
+                <p><strong>O que você precisa para comprar cripto sem CPF:</strong></p>
+            </div>
+
+            <ul>
+                <li>📱 <strong>Conta no Telegram</strong> — gratuita, criada em 2 minutos com número de celular</li>
+                <li>👛 <strong>Carteira de cripto</strong> — Trust Wallet, MetaMask ou Exodus (todas gratuitas)</li>
+                <li>💳 <strong>PIX disponível</strong> — qualquer banco brasileiro com PIX habilitado</li>
+                <li>💰 <strong>A partir de R$25</strong> — valor mínimo para começar</li>
+            </ul>
+
+            <p>Isso é tudo. <strong>Sem CPF, sem selfie, sem documentos, sem espera.</strong></p>
+
+            <!-- Блок инфляции реала -->
+            <div class="inflation-block">
+                <h3>📉 O Real Perde Valor Todo Ano — Seus Reais Valem Menos Hoje do que Ontem</h3>
+                <p>Desde 2014, o real brasileiro perdeu mais de <strong>70% do seu valor frente ao dólar</strong>. O dólar que custava R$2,30 hoje custa mais de R$5,00. A inflação oficial (IPCA) corrói entre 4% e 12% ao ano do poder de compra.</p>
+                <p>O <strong>USDT</strong> (Tether) é uma stablecoin 100% atrelada ao dólar americano. Converter reais em USDT é a forma mais acessível de <strong>dolarizar suas economias sem precisar de conta no exterior</strong>, sem burocracia e sem mínimo de investimento alto.</p>
+                <p><strong>Cada dia que você mantém em reais, perde um pouco mais para a inflação.</strong></p>
+            </div>
+
+            <!-- Сравнительная таблица -->
+            <h2 id="comparacao">CryptoSwap Bot vs Exchanges Tradicionais</h2>
 
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th>Característica</th>
+                        <th>Critério</th>
                         <th>CryptoSwap Bot</th>
-                        <th>Exchanges tradicionais</th>
+                        <th>Exchange tradicional</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Cadastro</strong></td>
-                        <td>✅ Não necessário</td>
-                        <td>❌ Obrigatório + KYC</td>
+                        <td><strong>CPF obrigatório</strong></td>
+                        <td>✅ Não (até $1.000)</td>
+                        <td>❌ Sempre obrigatório</td>
                     </tr>
                     <tr>
-                        <td><strong>CPF / Documento</strong></td>
-                        <td>✅ Não exigido (até $1000)</td>
-                        <td>❌ CPF obrigatório</td>
+                        <td><strong>Cadastro</strong></td>
+                        <td>✅ Não necessário</td>
+                        <td>❌ E-mail + senha + verificação</td>
                     </tr>
                     <tr>
                         <td><strong>Pagamento via PIX</strong></td>
-                        <td>✅ Sim, instantâneo</td>
+                        <td>✅ Sim, 24h/7 dias</td>
                         <td>⚠️ Nem sempre disponível</td>
                     </tr>
                     <tr>
-                        <td><strong>Velocidade</strong></td>
+                        <td><strong>Tempo até receber cripto</strong></td>
                         <td>✅ 2-5 minutos</td>
-                        <td>❌ 1-3 dias úteis</td>
+                        <td>❌ Até 3 dias úteis</td>
                     </tr>
                     <tr>
-                        <td><strong>Custódia</strong></td>
-                        <td>✅ Non-custodial (você tem as chaves)</td>
+                        <td><strong>Custódia dos fundos</strong></td>
+                        <td>✅ Non-custodial (você controla)</td>
                         <td>❌ Exchange guarda seus fundos</td>
                     </tr>
                     <tr>
                         <td><strong>Disponibilidade</strong></td>
-                        <td>✅ 24/7, inclusive feriados</td>
-                        <td>❌ Horário comercial</td>
+                        <td>✅ 24h, fins de semana, feriados</td>
+                        <td>❌ Horário bancário</td>
                     </tr>
                     <tr>
-                        <td><strong>Bloqueios bancários</strong></td>
-                        <td>✅ Sem restrições</td>
-                        <td>❌ Conta pode ser bloqueada</td>
+                        <td><strong>Mínimo para começar</strong></td>
+                        <td>✅ A partir de R$25</td>
+                        <td>❌ Geralmente R$100+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risco de bloqueio de conta</strong></td>
+                        <td>✅ Sem conta, sem bloqueio</td>
+                        <td>❌ Conta pode ser bloqueada a qualquer momento</td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- Bloco inflação -->
-            <div class="inflation-block">
-                <h3>⚠️ Por Que a Inflação Torna Urgente Comprar USDT?</h3>
-                <p>O <strong>real brasileiro</strong> perdeu mais de <strong>60% do seu valor</strong> frente ao dólar na última década. A inflação oficial (IPCA) corrói o poder de compra ano após ano. Em <strong>Portugal</strong>, a inflação europeia também impacta as poupanças em euros.</p>
-                <p>O <strong>USDT</strong> (Tether) é atrelado ao dólar americano. Converter reais em USDT é a forma mais rápida e acessível de <strong>dolarizar suas economias</strong> sem precisar de conta bancária no exterior ou corretora internacional.</p>
-                <p><strong>Cada dia que você espera, seus reais valem menos.</strong></p>
+            <!-- Пошаговый гайд USDT -->
+            <h2 id="passo-a-passo-usdt">Como Comprar USDT com Reais via PIX — Passo a Passo</h2>
+
+            <p>O <strong>USDT</strong> é a criptomoeda mais comprada no Brasil com reais. Atrelada ao dólar, é a forma mais rápida de se proteger da desvalorização do real. Veja como comprar:</p>
+
+            <div class="step-block" id="passo1">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Abra o CryptoSwap Bot no Telegram</h3>
+                    <p>Clique no link <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> ou pesquise no Telegram. Pressione <strong>Iniciar</strong>. Nenhum cadastro é necessário — o bot já está pronto para usar.</p>
+                </div>
             </div>
 
-            <!-- Por região -->
-            <h2 id="por-regiao">Compra de Cripto por País</h2>
-
-            <div class="region-block">
-                <h3>🇧🇷 Brasil — Comprar USDT e Bitcoin com Reais via PIX (BRL)</h3>
-                <p>O Brasil é um dos <strong>maiores mercados de criptomoedas do mundo</strong>, com mais de 10 milhões de investidores em cripto. A combinação de PIX instantâneo com CryptoSwap Bot cria a forma mais rápida e acessível de comprar USDT e Bitcoin no Brasil.</p>
-                <p>Pares mais populares no Brasil:</p>
-                <ul>
-                    <li><strong>BRL → USDT</strong> — dolarização instantânea via PIX</li>
-                    <li><strong>BRL → BTC</strong> — Bitcoin como reserva de valor</li>
-                    <li><strong>BRL → ETH</strong> — Ethereum para DeFi e NFTs</li>
-                    <li><strong>BRL → USDC</strong> — stablecoin alternativo regulado</li>
-                    <li><strong>BRL → SOL</strong> — Solana, blockchain rápido e barato</li>
-                </ul>
-                <p>💡 <strong>Dica para o Brasil:</strong> O PIX funciona 24/7, inclusive nos finais de semana e feriados. Você pode comprar USDT às 3h da manhã de um domingo em menos de 5 minutos.</p>
+            <div class="step-block" id="passo2">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Selecione "Comprar Cripto" e escolha BRL</h3>
+                    <p>No menu principal toque em <strong>Comprar Cripto</strong> ou envie o comando <code>/buy</code>. Quando perguntado pela moeda de pagamento, selecione <strong>BRL — Real Brasileiro</strong>.</p>
+                </div>
             </div>
 
-            <div class="region-block">
-                <h3>🇵🇹 Portugal — Comprar Cripto com Euros (EUR)</h3>
-                <p>Portugal tem uma das <strong>comunidades crypto mais ativas da Europa</strong>. Com regulamentação favorável e alta adoção tecnológica, comprar cripto com euros pelo Telegram é uma alternativa cada vez mais popular às corretoras tradicionais.</p>
-                <p>Pares mais populares em Portugal:</p>
-                <ul>
-                    <li><strong>EUR → USDT</strong> — stablecoin mais líquido do mundo</li>
-                    <li><strong>EUR → BTC</strong> — investimento principal em cripto</li>
-                    <li><strong>EUR → ETH</strong> — acesso ao ecossistema DeFi</li>
-                    <li><strong>EUR → SOL</strong> — alternativa rápida ao Ethereum</li>
-                </ul>
-                <p>💡 <strong>Dica para Portugal:</strong> Utilizadores portugueses podem usar transferência bancária SEPA ou cartão de débito/crédito para comprar cripto via CryptoSwap Bot.</p>
+            <div class="step-block" id="passo3">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Escolha USDT como cripto a receber</h3>
+                    <p>Na lista de criptomoedas selecione <strong>USDT (Tether)</strong>. Escolha a rede: <strong>TRC-20</strong> (Tron) para taxas menores, ou <strong>ERC-20</strong> (Ethereum) se sua carteira for MetaMask. Para iniciantes, TRC-20 é a melhor opção.</p>
+                </div>
             </div>
 
-            <!-- Instrução passo a passo -->
-            <h2 id="como-comprar">Passo a Passo: Como Comprar Cripto com Reais via PIX</h2>
+            <div class="step-block" id="passo4">
+                <div class="step-content">
+                    <div style="display:flex; gap:16px; align-items:flex-start;">
+                        <div class="step-number" style="flex-shrink:0;">4</div>
+                        <div>
+                            <h3>Digite o valor em reais e confirme</h3>
+                            <p>Informe quanto deseja gastar — por exemplo, <strong>R$200</strong>. O bot mostrará exatamente quanto USDT você receberá, já com todas as taxas descontadas. Sem surpresas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <h3 id="step1">Passo 1: Abra o CryptoSwap Bot no Telegram</h3>
-            <p>Clique neste link: <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> ou pesquise no Telegram. Pressione <strong>Iniciar</strong> para começar.</p>
-
-            <h3 id="step2">Passo 2: Selecione "Comprar Cripto"</h3>
-            <p>No menu principal escolha <strong>"Comprar Cripto"</strong> ou use o comando <code>/buy</code>. Em seguida selecione <strong>BRL</strong> como moeda de pagamento (ou EUR para Portugal).</p>
-
-            <h3 id="step3">Passo 3: Escolha qual cripto comprar</h3>
-            <p>Selecione a criptomoeda que deseja receber. As mais populares no Brasil:</p>
-            <ul>
-                <li><strong>USDT</strong> — melhor para proteger da inflação, atrelado ao dólar</li>
-                <li><strong>BTC</strong> — Bitcoin, reserva de valor de longo prazo</li>
-                <li><strong>ETH</strong> — Ethereum para DeFi e Web3</li>
-                <li><strong>USDC</strong> — alternativa regulada ao USDT</li>
-                <li><strong>SOL</strong> — Solana, transações rápidas e baratas</li>
-            </ul>
-
-            <h3 id="step4">Passo 4: Insira o valor em reais</h3>
-            <p>Digite quanto deseja gastar em reais. O bot calcula automaticamente quanto cripto você receberá, já incluídas todas as taxas. Sem surpresas no final.</p>
-
-            <h3 id="step5">Passo 5: Pague via PIX e receba sua cripto</h3>
-            <p>Siga as instruções de pagamento do bot. Após confirmar o PIX, a criptomoeda chega à sua carteira em <strong>2-5 minutos</strong>. Sem burocracia, sem espera.</p>
+            <div class="step-block" id="passo5">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Pague via PIX e receba o USDT</h3>
+                    <p>O bot gera uma <strong>chave PIX</strong>. Abra o app do seu banco, faça o PIX para essa chave e confirme no bot. Em <strong>2-5 minutos</strong> o USDT chega direto na sua carteira. Pronto — você está dolarizado.</p>
+                </div>
+            </div>
 
             <!-- Mid CTA -->
             <div class="guide-cta">
-                <h3>🎯 É simples assim!</h3>
-                <p>Sem cadastro, sem CPF, sem escanear documentos — para valores abaixo de $1000</p>
+                <h3>🎯 Dolarize seus reais em 5 minutos</h3>
+                <p>Sem CPF, sem cadastro, sem corretora. Só você, o PIX e o bot.</p>
                 <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">
-                    Comprar Cripto Agora — Sem KYC
+                    Comprar USDT com PIX Agora
                 </a>
             </div>
 
-            <!-- O que comprar -->
-            <h2 id="o-que-comprar">Quais Criptomoedas Você Pode Comprar?</h2>
-            <p>CryptoSwap Bot suporta <strong>mais de 300 criptomoedas</strong>. As mais populares no Brasil e Portugal:</p>
+            <!-- Гайд по Bitcoin -->
+            <h2 id="passo-a-passo-bitcoin">Como Comprar Bitcoin com Reais via PIX — Passo a Passo</h2>
 
-            <h3>Stablecoins (atreladas ao dólar):</h3>
+            <p>O <strong>Bitcoin (BTC)</strong> é o ativo de reserva de valor mais reconhecido do mundo — o "ouro digital". Ideal para quem pensa em longo prazo. O processo é idêntico ao USDT, com uma diferença: você precisa ter um <strong>endereço de carteira Bitcoin</strong>.</p>
+
             <ul>
-                <li><strong>USDT</strong> (Tether) — a mais usada no Brasil para proteção da inflação e dolarização</li>
-                <li><strong>USDC</strong> (Circle) — stablecoin auditada e regulada</li>
-                <li><strong>DAI</strong> — stablecoin descentralizada</li>
-                <li><strong>BUSD</strong> — stablecoin do ecossistema Binance</li>
+                <li><strong>Passo 1:</strong> Abra <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> no Telegram → pressione Iniciar</li>
+                <li><strong>Passo 2:</strong> Selecione <strong>Comprar Cripto</strong> → escolha <strong>BRL</strong></li>
+                <li><strong>Passo 3:</strong> Selecione <strong>BTC (Bitcoin)</strong> na lista</li>
+                <li><strong>Passo 4:</strong> Cole o <strong>endereço da sua carteira Bitcoin</strong> (ex: Trust Wallet)</li>
+                <li><strong>Passo 5:</strong> Digite o valor em reais → copie a chave PIX → pague pelo seu banco</li>
+                <li><strong>Resultado:</strong> Bitcoin na sua carteira em <strong>2-5 minutos</strong> ✅</li>
             </ul>
 
-            <h3>Criptomoedas principais:</h3>
+            <p>💡 <strong>Dica:</strong> Para Bitcoin, use a <strong>Trust Wallet</strong> — gratuita, não exige CPF e suporta todas as redes. Baixe na App Store ou Google Play.</p>
+
+            <!-- Какие крипты купить -->
+            <h2 id="quais-criptos">Quais Criptomoedas Comprar com Reais — Guia para Brasileiros</h2>
+
+            <h3>🥇 Para proteger da inflação (mais popular no Brasil):</h3>
             <ul>
-                <li><strong>Bitcoin (BTC)</strong> — o ouro digital, ativo de reserva global</li>
-                <li><strong>Ethereum (ETH)</strong> — contratos inteligentes e DeFi</li>
-                <li><strong>Solana (SOL)</strong> — blockchain rápido e de baixo custo</li>
-                <li><strong>BNB</strong> — token do ecossistema Binance</li>
-                <li><strong>XRP</strong> — pagamentos internacionais rápidos</li>
-                <li><strong>Cardano (ADA)</strong> — blockchain sustentável</li>
-                <li><strong>Polygon (MATIC)</strong> — Layer 2 do Ethereum</li>
+                <li><strong>USDT (Tether)</strong> — atrelado ao dólar, ideal para dolarizar. O mais comprado no Brasil com reais. Disponível nas redes TRC-20 (mais barato) e ERC-20.</li>
+                <li><strong>USDC (Circle)</strong> — alternativa ao USDT, emitida por empresa americana regulada. Mesma paridade com o dólar, ligeiramente mais transparente.</li>
+                <li><strong>DAI</strong> — stablecoin descentralizada, não controlada por nenhuma empresa. Ideal para quem prioriza descentralização total.</li>
             </ul>
 
-            <!-- Segurança -->
-            <h2 id="seguranca">Como se Manter Seguro ao Comprar Cripto?</h2>
+            <h3>🥈 Para investimento de longo prazo:</h3>
+            <ul>
+                <li><strong>Bitcoin (BTC)</strong> — o ouro digital. Ativo de reserva global, com supply limitado a 21 milhões de unidades. Para quem pensa em 3-5+ anos.</li>
+                <li><strong>Ethereum (ETH)</strong> — a base do ecossistema DeFi e NFTs. Segunda maior cripto do mundo por capitalização.</li>
+                <li><strong>Solana (SOL)</strong> — blockchain rápida e de baixo custo. Alternativa popular ao Ethereum para transações do dia a dia.</li>
+            </ul>
+
+            <h3>🥉 Para usuários avançados:</h3>
+            <ul>
+                <li><strong>BNB</strong> — token do ecossistema Binance, usado para pagar taxas com desconto</li>
+                <li><strong>XRP</strong> — especializado em pagamentos internacionais ultra-rápidos</li>
+                <li><strong>Polygon (MATIC)</strong> — Layer 2 do Ethereum, transações mais baratas</li>
+                <li><strong>Avalanche (AVAX)</strong> — plataforma DeFi de alto desempenho</li>
+            </ul>
+
+            <!-- Безопасность -->
+            <h2 id="seguranca">Como se Manter Seguro ao Comprar Cripto pelo Telegram</h2>
+
             <ol>
-                <li><strong>Verifique sempre os endereços</strong> da carteira antes de enviar</li>
-                <li><strong>Comece com valores pequenos</strong> na sua primeira compra</li>
-                <li><strong>Use uma carteira de hardware</strong> (Ledger, Trezor) para valores grandes</li>
-                <li><strong>Nunca compartilhe sua frase-semente</strong> com ninguém, nem com bots</li>
-                <li><strong>Verifique o nome exato do bot</strong>: @CryptoSwapExchangeBot</li>
-                <li><strong>Desconfie de promessas de lucro garantido</strong> — cripto tem volatilidade</li>
+                <li><strong>Confirme o nome do bot:</strong> o único bot oficial é <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> — verifique o @username antes de usar</li>
+                <li><strong>Comece pequeno:</strong> na primeira compra use R$25-50 para testar o fluxo completo</li>
+                <li><strong>Jamais compartilhe sua seed phrase</strong> (frase de recuperação da carteira) com ninguém — nenhum bot legítimo pede isso</li>
+                <li><strong>Verifique o endereço da carteira:</strong> confira os primeiros e últimos 4 caracteres antes de confirmar</li>
+                <li><strong>Para valores acima de R$5.000:</strong> considere uma carteira de hardware (Ledger ou Trezor)</li>
+                <li><strong>Desconfie de promessas de rendimento garantido</strong> — cripto tem volatilidade, não há lucro garantido</li>
             </ol>
 
             <!-- FAQ -->
             <h2 id="faq">Perguntas Frequentes</h2>
 
-            <h3>Como comprar USDT com reais via PIX sem verificação?</h3>
-            <p>Abra <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> no Telegram, selecione Comprar USDT e escolha BRL. O bot fornece a chave PIX. Após confirmar o pagamento, o USDT chega em 2-5 minutos. <strong>Não é necessário CPF ou KYC para valores abaixo de $1000.</strong></p>
+            <h3>Como comprar USDT com reais via PIX sem CPF?</h3>
+            <p>Abra <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> no Telegram → selecione <strong>Comprar USDT</strong> → escolha <strong>BRL</strong> → informe o valor → pague via PIX. O USDT chega na sua carteira em 2-5 minutos. <strong>CPF não é exigido para valores abaixo de $1.000.</strong></p>
 
-            <h3>É possível comprar Bitcoin com PIX sem CPF?</h3>
-            <p>Sim. CryptoSwap Bot não exige CPF, cadastro ou verificação de identidade para valores abaixo de $1000. Você só precisa de uma <strong>carteira de criptomoedas</strong> para receber o Bitcoin — pode ser Trust Wallet, MetaMask, Exodus ou qualquer outra.</p>
+            <h3>Como comprar Bitcoin com PIX sem cadastro?</h3>
+            <p>O processo é idêntico: @CryptoSwapExchangeBot → Comprar BTC → BRL → valor em reais → PIX. <strong>Nenhum cadastro, nenhum CPF, nenhuma selfie.</strong> Bitcoin na carteira em 2-5 minutos.</p>
 
-            <h3>Como proteger minha renda da inflação com criptomoedas?</h3>
-            <p>A forma mais popular no Brasil é comprar <strong>USDT</strong>, atrelado ao dólar americano. Com CryptoSwap Bot você converte reais em USDT em minutos via PIX, sem precisar de conta em dólares, corretora internacional ou documentação extra.</p>
+            <h3>É possível comprar cripto com PIX 24 horas?</h3>
+            <p>Sim. O bot funciona <strong>24 horas por dia, 7 dias por semana, 365 dias por ano</strong> — incluindo feriados. O PIX também funciona a qualquer hora. Você pode comprar USDT às 3h da madrugada de um feriado sem nenhuma restrição.</p>
 
-            <h3>É seguro comprar cripto pelo Telegram?</h3>
-            <p>CryptoSwap Bot usa <strong>arquitetura non-custodial</strong>: a cripto vai diretamente para sua carteira. O bot nunca guarda seus fundos ou chaves privadas. Operações realizadas por ChangeNOW e SimpleSwap, ativos desde 2018 com bilhões em volume.</p>
+            <h3>Qual o valor mínimo para comprar cripto com reais?</h3>
+            <p>O mínimo é de aproximadamente <strong>R$25-50</strong> (cerca de $5 USD). Para USDT o mínimo é em torno de R$25, para Bitcoin cerca de R$50.</p>
 
-            <h3>Quanto tempo demora para receber a criptomoeda?</h3>
-            <p>Após confirmar o PIX, a cripto chega em <strong>2-5 minutos</strong>. Em casos de congestionamento de rede, Bitcoin pode levar até 15-30 minutos. USDT e outras altcoins costumam ser mais rápidas.</p>
+            <h3>É seguro comprar criptomoedas pelo Telegram?</h3>
+            <p>Sim. O CryptoSwap Bot usa <strong>arquitetura non-custodial</strong>: a cripto vai direto da rede blockchain para sua carteira. O bot nunca retém seus fundos. As operações são processadas por <strong>ChangeNOW e SimpleSwap</strong>, com mais de 6 anos de operação e bilhões em volume.</p>
 
-            <h3>Qual é o valor mínimo para comprar?</h3>
-            <p>O mínimo equivale a aproximadamente <strong>R$25-50</strong> (cerca de $5 USD). Para USDT o mínimo é de aproximadamente $5, para Bitcoin cerca de $10 em reais.</p>
+            <h3>Quanto tempo leva para receber a cripto após o PIX?</h3>
+            <p>Em média <strong>2-5 minutos</strong> após a confirmação do PIX. Em casos de congestionamento da rede Bitcoin, pode levar até 30 minutos. USDT nas redes TRC-20 e ERC-20 costuma ser confirmado em 2-3 minutos.</p>
 
-            <h3>Preciso ter carteira de cripto antes de comprar?</h3>
-            <p>Sim, você precisa de uma carteira para receber a criptomoeda. As mais populares no Brasil são <strong>Trust Wallet</strong> (mobile, gratuita), <strong>MetaMask</strong> (para Ethereum e tokens ERC-20) e <strong>Exodus</strong> (multimoeda, interface amigável).</p>
+            <h3>Preciso de carteira de cripto antes de comprar?</h3>
+            <p>Sim, você precisa de uma carteira para receber. Recomendações para brasileiros: <strong>Trust Wallet</strong> (mobile, gratuita, não exige CPF), <strong>MetaMask</strong> (para USDT ERC-20 e DeFi), <strong>Exodus</strong> (multimoeda, interface amigável). Todas são gratuitas.</p>
+
+            <h3>Como proteger meu dinheiro da inflação com cripto?</h3>
+            <p>Converta reais em <strong>USDT</strong> — stablecoin atrelada ao dólar. Enquanto o real perde valor, o USDT mantém paridade com o dólar. Com o CryptoSwap Bot você faz isso via PIX em menos de 5 minutos, sem conta em corretora ou documentação extra.</p>
 
             <!-- Bottom CTA -->
             <div class="guide-cta">
-                <h3>🚀 Proteja suas economias hoje mesmo</h3>
-                <p>Milhares de brasileiros já usam CryptoSwap Bot para comprar USDT via PIX em minutos</p>
+                <h3>🚀 Proteja seu dinheiro hoje mesmo</h3>
+                <p>PIX → USDT em 5 minutos. Sem CPF, sem cadastro, sem burocracia.</p>
                 <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">
-                    Iniciar CryptoSwap Bot
+                    Iniciar CryptoSwap Bot no Telegram
                 </a>
             </div>
 
-            <!-- Conclusão -->
-            <h2 id="conclusao">Resumo</h2>
-            <p>Comprar <strong>criptomoedas com reais via PIX</strong> pelo Telegram com CryptoSwap Bot significa:</p>
+            <!-- Резюме -->
+            <h2 id="resumo">Resumo — Por Que Usar o CryptoSwap Bot</h2>
             <ul>
-                <li>✅ <strong>Rápido</strong>: 2-5 minutos do PIX ao recebimento da cripto</li>
-                <li>✅ <strong>Seguro</strong>: non-custodial, impulsado por ChangeNOW e SimpleSwap</li>
-                <li>✅ <strong>Sem KYC</strong>: sem CPF, sem escaneamento de documentos (até $1000)</li>
-                <li>✅ <strong>PIX instantâneo</strong>: funciona 24/7, inclusive feriados</li>
-                <li>✅ <strong>300+ moedas</strong>: USDT, BTC, ETH, SOL e muito mais</li>
-                <li>✅ <strong>Disponível 24/7</strong>: sem horários bancários</li>
-                <li>✅ <strong>Proteção contra inflação</strong>: dolarize-se em minutos</li>
+                <li>⚡ <strong>PIX instantâneo</strong> — pague e receba cripto em 2-5 minutos, 24h/7 dias</li>
+                <li>🔐 <strong>Sem CPF</strong> — sem verificação de identidade para valores até $1.000</li>
+                <li>📵 <strong>Sem cadastro</strong> — apenas Telegram, carteira e PIX</li>
+                <li>💵 <strong>Proteção do dólar</strong> — converta reais em USDT antes que o real perca mais valor</li>
+                <li>🔒 <strong>Non-custodial</strong> — cripto vai direto para sua carteira, você tem controle total</li>
+                <li>🌐 <strong>300+ criptomoedas</strong> — USDT, BTC, ETH, SOL, BNB e muito mais</li>
+                <li>💰 <strong>A partir de R$25</strong> — qualquer pessoa pode começar</li>
+                <li>🏦 <strong>Qualquer banco</strong> — Nubank, Itaú, Bradesco, Caixa, BB e todos com PIX</li>
             </ul>
-            <p>Não espere a inflação corroer suas economias. Converta seus reais em USDT agora e mantenha o valor do seu dinheiro em dólares digitais.</p>
         </article>
 
-        <!-- Links internos -->
+        <!-- Внутренняя перелинковка -->
         <section class="features" style="margin-top: 40px;">
-            <h2>Mais Guias Úteis</h2>
+            <h2>Mais Guias para Brasileiros</h2>
             <div class="feature">
-                <h3>🔐 <a href="/pt/no-kyc">Comprar Cripto Sem KYC</a></h3>
-                <p>Como comprar e trocar criptomoedas sem verificação de identidade ou CPF.</p>
+                <h3>🔐 <a href="/pt/no-kyc">Comprar Cripto Sem KYC e Sem CPF</a></h3>
+                <p>Guia completo sobre como comprar e trocar criptomoedas sem verificação de identidade no Brasil.</p>
             </div>
             <div class="feature">
-                <h3>📊 <a href="/pt/buy-usdt">Comprar USDT</a></h3>
-                <p>Guia completo para comprar USDT com reais via PIX sem burocracia.</p>
+                <h3>📊 <a href="/pt/buy-usdt">Comprar USDT com Reais — Guia Completo</a></h3>
+                <p>Tudo sobre USDT: o que é, por que comprar e como converter reais em USDT via PIX.</p>
             </div>
             <div class="feature">
-                <h3>₿ <a href="/pt/buy-bitcoin">Comprar Bitcoin</a></h3>
-                <p>Como comprar Bitcoin com reais sem exchanges nem verificação.</p>
+                <h3>₿ <a href="/pt/buy-bitcoin">Comprar Bitcoin com PIX</a></h3>
+                <p>Como comprar seu primeiro Bitcoin com reais, sem corretora e sem documentos.</p>
             </div>
         </section>
     </main>
@@ -554,8 +760,8 @@
             <p>
                 <a href="/pt/terms" data-i18n-link="terms">Termos de Uso</a> |
                 <a href="/pt/privacy" data-i18n-link="privacy">Política de Privacidade</a> |
-                <a href="mailto:support@changenow.io" rel="noopener noreferrer">Suporte Changenow</a> |
-                <a href="mailto:support@simpleswap.io" rel="noopener noreferrer">Suporte Simpleswap</a>
+                <a href="mailto:support@changenow.io" rel="noopener noreferrer">Suporte ChangeNOW</a> |
+                <a href="mailto:support@simpleswap.io" rel="noopener noreferrer">Suporte SimpleSwap</a>
             </p>
         </nav>
         <p>© <span id="year"></span> CryptoSwap Bot. All rights reserved.</p>
