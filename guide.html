@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Основное -->
+    <title>Как купить криптовалюту за рубли в Telegram — Пошаговый гайд 2026</title>
+    <meta name="description" content="Пошаговая инструкция как купить биткоин, USDT или другую криптовалюту за рубли через Telegram-бота CryptoSwap. Без верификации, без банков, за 2-5 минут.">
+    <link rel="canonical" href="https://www.cryptoswapbot.online/guide" />
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO: Мультиязычность -->
+    <link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/guide" />
+    <link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/guide" />
+    <link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/guide" />
+    <link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/guide" />
+    <link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/guide" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/guide" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Верификация -->
+    <meta name="google-site-verification" content="b3Z2NfqgIJISRNv0reKut-_lWhBlX05PAquVu2GX8Mg" />
+    <meta name="yandex-verification" content="ed9cf69e2a649466" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Как купить криптовалюту за рубли в Telegram — Гайд">
+    <meta property="og:description" content="Пошаговая инструкция покупки криптовалюты за рубли через Telegram-бота. Без верификации, 300+ монет, 2-5 минут.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cryptoswapbot.online/guide">
+    <meta property="og:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="CryptoSwap Bot">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Как купить криптовалюту за рубли в Telegram — Гайд">
+    <meta name="twitter:description" content="Пошаговая инструкция покупки криптовалюты за рубли через Telegram-бота. Без верификации, 300+ монет.">
+    <meta name="twitter:image" content="https://www.cryptoswapbot.online/assets/logo.jpg">
+
+    <link rel="preconnect" href="https://t.me">
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <style>
+        /* Стили для SEO-страницы */
+        .guide-content {
+            background: var(--card-bg, #1a1a1a);
+            border: 1px solid var(--border, #333);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 24px 0;
+            line-height: 1.8;
+        }
+        .guide-content h2 {
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border, #333);
+            color: var(--primary, #0088cc);
+        }
+        .guide-content h2:first-child {
+            margin-top: 0;
+        }
+        .guide-content h3 {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--primary, #0088cc);
+        }
+        .guide-content p {
+            margin-bottom: 16px;
+            color: var(--text-light, #aaaaaa);
+        }
+        .guide-content ul, .guide-content ol {
+            padding-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-light, #aaaaaa);
+        }
+        .guide-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .guide-content li::marker {
+            color: var(--primary, #0088cc);
+        }
+        .guide-content a {
+            color: var(--primary, #0088cc);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .guide-content a:hover {
+            border-bottom-color: var(--primary, #0088cc);
+        }
+        .guide-content strong {
+            color: var(--text, #ffffff);
+            font-weight: 600;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 16px 0 32px;
+            color: var(--primary, #0088cc);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .guide-cta {
+            background: linear-gradient(135deg, var(--primary, #0088cc), #0066aa);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .guide-cta h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        .guide-cta .btn {
+            background: white;
+            color: var(--primary, #0088cc);
+            font-weight: 600;
+        }
+        .guide-cta .btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        .fiat-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+        .fiat-badge {
+            background: var(--border, #333);
+            color: var(--text, #ffffff);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            color: var(--text-light, #aaaaaa);
+        }
+        .comparison-table th {
+            background: var(--border, #333);
+            color: var(--text, #ffffff);
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border, #333);
+        }
+        .comparison-table tr:hover td {
+            background: rgba(0, 136, 204, 0.05);
+        }
+        .last-updated {
+            color: var(--text-light, #aaaaaa);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+    </style>
+
+    <!-- Schema.org HowTo (пошаговая инструкция) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Как купить криптовалюту за рубли через Telegram",
+      "description": "Пошаговая инструкция покупки криптовалюты через Telegram-бота CryptoSwap.",
+      "totalTime": "PT5M",
+      "cost": "0 RUB",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Запустить бота в Telegram",
+          "text": "Перейдите по ссылке @CryptoSwapExchangeBot и нажмите 'Запустить'",
+          "url": "https://www.cryptoswapbot.online/guide#step1"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Выбрать валюту для покупки",
+          "text": "Выберите какую криптовалюту хотите купить (BTC, ETH, USDT и др.)",
+          "url": "https://www.cryptoswapbot.online/guide#step2"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Указать сумму в рублях",
+          "text": "Введите сумму в рублях, которую хотите потратить на покупку криптовалюты",
+          "url": "https://www.cryptoswapbot.online/guide#step3"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Получить реквизиты для оплаты",
+          "text": "Бот предоставит реквизиты для перевода рублей (банковская карта или СБП)",
+          "url": "https://www.cryptoswapbot.online/guide#step4"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Получить криптовалюту",
+          "text": "После подтверждения оплаты вы получите криптовалюту на свой кошелёк в течение 2-5 минут",
+          "url": "https://www.cryptoswapbot.online/guide#step5"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как купить биткоин за рубли без верификации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Запустите @CryptoSwapExchangeBot в Telegram, выберите покупку BTC, укажите сумму в рублях. Бот предоставит реквизиты для перевода через СБП или карту. После оплаты биткоин поступит на ваш кошелёк за 2-5 минут. Верификация не требуется для сумм до 1000$."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие способы оплаты доступны для покупки криптовалюты?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для покупки криптовалюты за рубли доступны переводы через СБП (Система Быстрых Платежей) и банковские карты Visa/MasterCard российских банков. Комиссия за перевод зависит от вашего банка."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какую криптовалюту лучше купить для защиты от инфляции?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для защиты от инфляции рублей наиболее популярны стейблкоины (USDT, USDC), которые привязаны к курсу доллара. Также популярны биткоин (BTC) и эфириум (ETH) как долгосрочные инвестиции."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Безопасно ли покупать криптовалюту через Telegram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CryptoSwap Bot использует non-custodial архитектуру: средства переводятся напрямую вам, бот не хранит ваши приватные ключи. Все операции регулируются провайдерами ChangeNOW и SimpleSwap, которые работают с 2018 года."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="lang-switcher" aria-label="Выбор языка">
+            <button onclick="switchLang('ru')" aria-label="Русский">RU</button>
+            <button onclick="switchLang('en')" aria-label="English">EN</button>
+            <button onclick="switchLang('es')" aria-label="Español">ES</button>
+            <button onclick="switchLang('pt')" aria-label="Português">PT</button>
+            <button onclick="switchLang('tr')" aria-label="Türkçe">TR</button>
+        </nav>
+
+        <h1>
+            <span aria-hidden="true">🔄</span>
+            Как купить криптовалюту за рубли в Telegram
+            <span aria-hidden="true">🔄</span>
+        </h1>
+        <p class="subtitle">Пошаговый гайд 2026: быстро, безопасно, без верификации</p>
+    </header>
+
+    <main>
+        <a href="/" data-i18n-home class="back-link">← На главную</a>
+
+        <article class="guide-content">
+            <!-- Верхний CTA -->
+            <div class="guide-cta">
+                <h3>🚀 Готовы купить криптовалюту за рубли?</h3>
+                <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">
+                    Запустить бота и купить сейчас
+                </a>
+            </div>
+
+            <!-- Вступление с ключевыми словами -->
+            <p><strong>Купить криптовалюту за рубли</strong> стало проще, чем когда-либо. Благодаря Telegram-боту CryptoSwap вы можете приобрести <strong>биткоин</strong>, <strong>USDT</strong>, <strong>эфириум</strong> и другие 300+ монет напрямую за российские рубли. Без регистрации, без верификации (KYC) и без привязки к банковским счетам.</p>
+            
+            <p>Вот валюты, за которые можно купить криптовалюту:</p>
+            <div class="fiat-badges">
+                <span class="fiat-badge">🇷🇺 RUB (рубли)</span>
+                <span class="fiat-badge">🇺🇦 UAH (гривны)</span>
+                <span class="fiat-badge">🇰🇿 KZT (тенге)</span>
+                <span class="fiat-badge">🇧🇾 BYN (бел. рубли)</span>
+                <span class="fiat-badge">🇺🇸 USD (доллары)</span>
+                <span class="fiat-badge">🇪🇺 EUR (евро)</span>
+                <span class="fiat-badge">🌍 100+ фиатных валют</span>
+            </div>
+
+            <!-- Секция 1: Что такое CryptoSwap Bot -->
+            <h2 id="what-is">Что такое CryptoSwap Bot?</h2>
+            <p><strong>CryptoSwap Bot</strong> — это Telegram-бот для мгновенного обмена и покупки криптовалют. В отличие от传统的 бирж:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Характеристика</th>
+                        <th>CryptoSwap Bot</th>
+                        <th>Traditional биржи</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Регистрация</strong></td>
+                        <td>✅ Не требуется</td>
+                        <td>❌ Обязательна (+KYC)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Верификация</strong></td>
+                        <td>✅ Нет (до $1000)</td>
+                        <td>❌ Сканирование паспорта</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Покупка за рубли</strong></td>
+                        <td>✅ СБП и карты рос. банков</td>
+                        <td>❌ Ограничено (после ухода)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Время операции</strong></td>
+                        <td>2-5 минут</td>
+                        <td>1-3 дня</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Хранение средств</strong></td>
+                        <td>Non-custodial (вы владеете ключами)</td>
+                        <td>Custodial (биржа владеет ключами)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Секция 2: Преимущества -->
+            <h2 id="advantages">Почему покупать крипту через Telegram — это выгодно?</h2>
+            
+            <h3>1. Покупка за рубли без банковских ограничений</h3>
+            <p>После 2022 года большинство российских банков блокируют переводы на крипто-биржи. <strong>CryptoSwap Bot</strong> обходит эти ограничения через систему <strong>СБП</strong> (Система Быстрых Платежей) и P2P-переводы.</p>
+
+            <h3>2. Нет верификации (анонимность)</h3>
+            <p>Для сумм до <strong>$1000</strong> не требуется проходить KYC-процедуру. Достаточно указать адрес кошелька для получения криптовалюты.</p>
+
+            <h3>3. Защита от инфляции рублей</h3>
+            <p>При инфляции <strong>8-10% в год</strong> покупка USDT (привязанного к доллару) или биткоина сохраняет покупательную способность ваших рублей.</p>
+
+            <h3>4. 300+ монет в одном месте</h3>
+            <p>Купить можно не только биткоин, но и:</p>
+            <ul>
+                <li><strong>Стейблкоины</strong>: USDT, USDC, DAI</li>
+                <li><strong>Альткоины</strong>: ETH, SOL, BNB, XRP</li>
+                <li><strong>Мемкоины</strong>: DOGE, SHIB (с осторожностью)</li>
+            </ul>
+
+            <!-- Секция 3: Пошаговая инструкция -->
+            <h2 id="how-to">Пошаговая инструкция: как купить криптовалюту за рубли</h2>
+            
+            <h3 id="step1">Шаг 1: Запустите бота в Telegram</h3>
+            <p>Перейдите по ссылке <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> или найдите его в поиске Telegram. Нажмите кнопку <strong>«Запустить»</strong>.</p>
+
+            <h3 id="step2">Шаг 2: Выберите операцию "Купить криптовалюту"</h3>
+            <p>В главном меню выберите опцию <strong>«Купить криптовалюту»</strong> или используйте команду <code>/buy</code>.</p>
+
+            <h3 id="step3">Шаг 3: Укажите валюты</h3>
+            <ul>
+                <li><strong>От какая валюта</strong>: выберите <strong>RUB (рубли)</strong></li>
+                <li><strong>Какую криптовалюту купить</strong>: выберите нужную монету (например, USDT, BTC, ETH)</li>
+            </ul>
+
+            <h3 id="step4">Шаг 4: Введите сумму в рублях</h3>
+            <p>Укажите сумму в рублях, которую хотите потратить. Бот автоматически рассчитает, сколько криптовалюты вы получите.</p>
+
+            <h3 id="step5">Шаг 5: Получите реквизиты для оплаты</h3>
+            <p>Бот предоставит реквизиты для перевода рублей. Доступные способы:</p>
+            <ul>
+                <li><strong>СБП (Система Быстрых Платежей)</strong> — мгновенно, без комиссии</li>
+                <li><strong>Банковская карта</strong> — Visa/MasterCard российских банков</li>
+            </ul>
+
+            <h3 id="step6">Шаг 6: Отправьте платёж и получите криптовалюту</h3>
+            <p>Сделайте перевод по реквизитам. После подтверждения оплаты криптовалюта поступит на указанный вами кошелёк в течение <strong>2-5 минут</strong>.</p>
+
+            <!-- Верхний CTA после инструкции -->
+            <div class="guide-cta">
+                <h3>🎯 Теперь вы готовы к покупке!</h3>
+                <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">
+                    Перейти в бота и сделать первую покупку
+                </a>
+            </div>
+
+            <!-- Секция 4: Какие монеты можно купить -->
+            <h2 id="coins">Какие криптовалюты можно купить за рубли?</h2>
+            <p>CryptoSwap Bot поддерживает <strong>300+ криптовалют</strong>, включая:</p>
+            
+            <h3>Стейблкоины (привязаны к доллару):</h3>
+            <ul>
+                <li><strong>USDT</strong> (Tether) — самый популярный, идеален для сохранения стоимости</li>
+                <li><strong>USDC</strong> (Circle) — регулируемый стейблкоин</li>
+                <li><strong>DAI</strong> — децентрализованный стейблкоин</li>
+            </ul>
+
+            <h3>Крупные криптовалюты:</h3>
+            <ul>
+                <li><strong>Bitcoin (BTC)</strong> — золотой стандарт криптовалют</li>
+                <li><strong>Ethereum (ETH)</strong> — вторая по капитализации криптовалюта</li>
+                <li><strong>Solana (SOL)</strong> — быстрая и дешёвая альтернатива ETH</li>
+                <li><strong>Binance Coin (BNB)</strong> — валюта экосистемы Binance</li>
+            </ul>
+
+            <!-- Секция 5: Безопасность -->
+            <h2 id="safety">Безопасность: как не потерять деньги?</h2>
+            <ol>
+                <li><strong>Проверяйте адреса</strong>: всегда проверяйте адрес кошелька перед отправкой</li>
+                <li><strong>Начинайте с малых сумм</strong>: первую покупку сделайте на минимальную сумму (1000-2000₽)</li>
+                <li><strong>Используйте холодные кошельки</strong>: для хранения крупных сумм лучше использовать Ledger, Trezor</li>
+                <li><strong>Не сообщайте seed-фразу</strong>: никогда не вводите seed-фразу в боты или сайты</li>
+            </ol>
+
+            <!-- Секция 6: Часто задаваемые вопросы (FAQ) -->
+            <h2 id="faq">Часто задаваемые вопросы</h2>
+            
+            <h3>Как купить биткоин за рубли без верификации?</h3>
+            <p>Запустите <a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> в Telegram, выберите покупку BTC, укажите сумму в рублях. Бот предоставит реквизиты для перевода через СБП или карту. После оплаты биткоин поступит на ваш кошелёк за 2-5 минут. Верификация не требуется для сумм до 1000$.</p>
+
+            <h3>Какие способы оплаты доступны для покупки криптовалюты?</h3>
+            <p>Для покупки криптовалюты за рубли доступны переводы через <strong>СБП</strong> (Система Быстрых Платежей) и банковские карты Visa/MasterCard российских банков. Комиссия за перевод зависит от вашего банка.</p>
+
+            <h3>Какую криптовалюту лучше купить для защиты от инфляции?</h3>
+            <p>Для защиты от инфляции рублей наиболее популярны <strong>стейблкоины</strong> (USDT, USDC), которые привязаны к курсу доллара. Также популярны биткоин (BTC) и эфириум (ETH) как долгосрочные инвестиции.</p>
+
+            <h3>Безопасно ли покупать криптовалюту через Telegram?</h3>
+            <p>CryptoSwap Bot использует <strong>non-custodial архитектуру</strong>: средства переводятся напрямую вам, бот не хранит ваши приватные ключи. Все операции регулируются провайдерами ChangeNOW и SimpleSwap, которые работают с 2018 года.</p>
+
+            <h3>Какая минимальная сумма для покупки криптовалюты?</h3>
+            <p>Минимальная сумма зависит от выбранной криптовалюты, но обычно составляет <strong>от 1000 рублей</strong>. Для USDT минимальная сумма — 1000₽, для биткоина — от 3000₽.</p>
+
+            <!-- Нижний CTA -->
+            <div class="guide-cta">
+                <h3>🚀 Попробуйте сами — это бесплатно</h3>
+                <p>Убедитесь насколько просто купить криптовалюту за рубли через Telegram</p>
+                <a href="https://t.me/CryptoSwapExchangeBot" class="btn" target="_blank" rel="noopener noreferrer">
+                    Запустить CryptoSwap Bot
+                </a>
+            </div>
+
+            <!-- Вывод -->
+            <h2 id="conclusion">Заключение</h2>
+            <p><strong>Покупка криптовалюты за рубли</strong> через Telegram-бота CryptoSwap — это:</p>
+            <ul>
+                <li>✅ <strong>Быстро</strong>: 2-5 минут от старта до получения монет</li>
+                <li>✅ <strong>Безопасно</strong>: non-custodial архитектура, проверенные провайдеры</li>
+                <li>✅ <strong>Удобно</strong>: работает через Telegram, доступно 24/7</li>
+                <li>✅ <strong>Доступно</strong>: поддержка российских банков, СБП</li>
+                <li>✅ <strong>Анонимно</strong>: без верификации до $1000</li>
+            </ul>
+            <p>Не откладывайте защиту своих сбережений. Начните с малого — купите USDT на 1000₽ и оцените удобство сервиса.</p>
+        </article>
+
+        <!-- Блок похожих статей (внутренняя перелинковка) -->
+        <section class="features" style="margin-top: 40px;">
+            <h2>Другие полезные гайды</h2>
+            <div class="feature">
+                <h3>🔐 <a href="/no-kyc">Обмен без KYC</a></h3>
+                <p>Как обменивать криптовалюту без верификации и регистрации.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 <a href="/buy-usdt">Купить USDT</a></h3>
+                <p>Подробный гайд по покупке стейблкоина USDT за рубли.</p>
+            </div>
+            <div class="feature">
+                <h3>₿ <a href="/buy-bitcoin">Купить Bitcoin</a></h3>
+                <p>Как безопасно купить биткоин без бирж и верификации.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер (стандартный, как на других страницах) -->
+    <footer>
+        <nav aria-label="Футер навигация">
+            <p>
+                <a href="/terms" data-i18n-link="terms">Условия использования</a> |
+                <a href="/privacy" data-i18n-link="privacy">Политика конфиденциальности</a> |
+                <a href="mailto:support@changenow.io" rel="noopener noreferrer">Поддержка Changenow</a> |
+                <a href="mailto:support@simpleswap.io" rel="noopener noreferrer">Поддержка Simpleswap</a>
+            </p>
+        </nav>
+        <p>© <span id="year"></span> CryptoSwap Bot. All rights reserved.</p>
+    </footer>
+
+    <!-- Единый скрипт мультиязычности -->
+    <script>
+      const LANGS = ['en', 'es', 'pt', 'tr'];
+      const DEFAULT_LANG = 'ru';
+
+      function getCurrentLang() {
+        const path = window.location.pathname;
+        for (let l of LANGS) {
+          if (path.startsWith('/' + l + '/') || path === '/' + l) return l;
+        }
+        return DEFAULT_LANG;
+      }
+
+      function stripLangPrefix(path) {
+        for (let l of LANGS) {
+          if (path.startsWith('/' + l + '/')) return path.slice(('/' + l).length);
+          if (path === '/' + l) return '/';
+        }
+        return path;
+      }
+
+      function buildPath(targetLang, basePath) {
+        if (targetLang === DEFAULT_LANG) return basePath || '/';
+        if (!basePath || basePath === '/') return '/' + targetLang;
+        return '/' + targetLang + basePath;
+      }
+
+      function switchLang(targetLang) {
+        const currentLang = getCurrentLang();
+        if (targetLang === currentLang) return;
+        localStorage.setItem('site_lang', targetLang);
+        sessionStorage.removeItem('lang_redirected');
+        const basePath = stripLangPrefix(window.location.pathname);
+        window.location.href = buildPath(targetLang, basePath);
+      }
+
+      function highlightActiveLang() {
+        const currentLang = getCurrentLang();
+        document.querySelectorAll('.lang-switcher button').forEach(btn => {
+          btn.classList.remove('active');
+          const match = (btn.getAttribute('onclick') || '').match(/switchLang\('(\w+)'\)/);
+          if (match && match[1] === currentLang) btn.classList.add('active');
+        });
+      }
+
+      function updateFooterLinks() {
+        const currentLang = getCurrentLang();
+        const prefix = currentLang === DEFAULT_LANG ? '' : '/' + currentLang;
+        document.querySelectorAll('a[data-i18n-link]').forEach(link => {
+          link.href = prefix + '/' + link.getAttribute('data-i18n-link');
+        });
+        document.querySelectorAll('a[data-i18n-home]').forEach(link => {
+          link.href = prefix || '/';
+        });
+      }
+
+      (function autoRedirect() {
+        if (sessionStorage.getItem('lang_redirected')) return;
+        const currentLang = getCurrentLang();
+        let targetLang = localStorage.getItem('site_lang');
+        if (!targetLang) {
+          const b = (navigator.language || '').toLowerCase();
+          if (b.startsWith('ru'))      targetLang = 'ru';
+          else if (b.startsWith('es')) targetLang = 'es';
+          else if (b.startsWith('pt')) targetLang = 'pt';
+          else if (b.startsWith('tr')) targetLang = 'tr';
+          else                         targetLang = 'en';
+          localStorage.setItem('site_lang', targetLang);
+        }
+        if (targetLang !== currentLang) {
+          sessionStorage.setItem('lang_redirected', 'true');
+          const basePath = stripLangPrefix(window.location.pathname);
+          window.location.href = buildPath(targetLang, basePath);
+        }
+      })();
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('year').textContent = new Date().getFullYear();
+        highlightActiveLang();
+        updateFooterLinks();
+      });
+    </script>
+</body>
+</html>
