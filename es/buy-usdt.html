@@ -112,12 +112,7 @@
             margin: 32px 0;
             text-align: center;
         }
-        .guide-cta h3 {
-            color: white;
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-        }
+        .guide-cta h3 { color: white; margin-top: 0; margin-bottom: 12px; font-size: 1.3rem; }
         .guide-cta p { color: rgba(255,255,255,0.88); margin-bottom: 20px; }
         .guide-cta .btn {
             background: white;
@@ -136,12 +131,7 @@
         }
 
         /* Badges */
-        .fiat-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 16px 0 24px;
-        }
+        .fiat-badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
         .fiat-badge {
             background: var(--border, #2a2a2a);
             border: 1px solid rgba(0,136,204,0.3);
@@ -153,54 +143,17 @@
         }
 
         /* Stats */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 16px;
-            margin: 24px 0;
-        }
-        .stat-card {
-            background: var(--border, #2a2a2a);
-            border-radius: 10px;
-            padding: 20px 16px;
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--primary, #0088cc);
-            display: block;
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-light, #aaaaaa);
-            margin-top: 4px;
-            display: block;
-        }
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; margin: 24px 0; }
+        .stat-card { background: var(--border, #2a2a2a); border-radius: 10px; padding: 20px 16px; text-align: center; }
+        .stat-number { font-size: 1.7rem; font-weight: 700; color: var(--primary, #0088cc); display: block; }
+        .stat-label { font-size: 0.8rem; color: var(--text-light, #aaaaaa); margin-top: 4px; display: block; }
 
         /* Comparison table */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            font-size: 0.95rem;
-        }
-        .comparison-table th {
-            background: var(--border, #2a2a2a);
-            color: var(--text, #ffffff);
-            padding: 12px 16px;
-            text-align: left;
-            font-weight: 600;
-        }
-        .comparison-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border, #2a2a2a);
-            color: var(--text-light, #aaaaaa);
-        }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.95rem; }
+        .comparison-table th { background: var(--border, #2a2a2a); color: var(--text, #ffffff); padding: 12px 16px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border, #2a2a2a); color: var(--text-light, #aaaaaa); }
         .comparison-table tr:last-child td { border-bottom: none; }
-        .comparison-table tr:hover td {
-            background: rgba(0,136,204,0.04);
-        }
+        .comparison-table tr:hover td { background: rgba(0,136,204,0.04); }
 
         /* USDT explain */
         .usdt-explain-block {
@@ -210,15 +163,11 @@
             padding: 24px 28px;
             margin: 24px 0;
         }
-        .usdt-explain-block h3 {
-            color: var(--primary, #0088cc);
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
+        .usdt-explain-block h3 { color: var(--primary, #0088cc); margin-top: 0; margin-bottom: 12px; }
         .usdt-explain-block p { color: var(--text-light, #aaaaaa); }
         .usdt-explain-block ul { color: var(--text-light, #aaaaaa); }
 
-        /* Argentina block — ключевой триггер */
+        /* Argentina block */
         .argentina-block {
             background: rgba(116, 185, 255, 0.08);
             border: 1px solid rgba(116, 185, 255, 0.35);
@@ -226,13 +175,33 @@
             padding: 24px 28px;
             margin: 24px 0;
         }
-        .argentina-block h3 {
-            color: #74b9ff;
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
+        .argentina-block h3 { color: #74b9ff; margin-top: 0; margin-bottom: 12px; }
         .argentina-block p { color: var(--text-light, #aaaaaa); }
         .argentina-block ul { color: var(--text-light, #aaaaaa); }
+
+        /* Venezuela block — НОВЫЙ */
+        .venezuela-block {
+            background: rgba(253, 203, 110, 0.08);
+            border: 1px solid rgba(253, 203, 110, 0.35);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+        .venezuela-block h3 { color: #fdcb6e; margin-top: 0; margin-bottom: 12px; }
+        .venezuela-block p { color: var(--text-light, #aaaaaa); }
+        .venezuela-block ul { color: var(--text-light, #aaaaaa); }
+
+        /* Pagos locales block — НОВЫЙ */
+        .pagos-block {
+            background: rgba(0, 184, 148, 0.08);
+            border: 1px solid rgba(0, 184, 148, 0.35);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+        .pagos-block h3 { color: #00b894; margin-top: 0; margin-bottom: 12px; }
+        .pagos-block p { color: var(--text-light, #aaaaaa); }
+        .pagos-block ul { color: var(--text-light, #aaaaaa); }
 
         /* Networks block */
         .networks-block {
@@ -242,44 +211,16 @@
             padding: 24px 28px;
             margin: 24px 0;
         }
-        .networks-block h3 {
-            color: #00c853;
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
+        .networks-block h3 { color: #00c853; margin-top: 0; margin-bottom: 12px; }
         .networks-block p { color: var(--text-light, #aaaaaa); }
 
         /* Network cards */
-        .network-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin: 16px 0;
-        }
-        .network-card {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid var(--border, #2a2a2a);
-            border-radius: 8px;
-            padding: 16px;
-        }
-        .network-card h4 {
-            margin: 0 0 6px;
-            color: var(--text, #ffffff);
-            font-size: 0.95rem;
-        }
-        .network-card p {
-            margin: 0;
-            font-size: 0.85rem;
-            color: var(--text-light, #aaaaaa);
-        }
-        .network-recommended {
-            border-color: rgba(0, 200, 83, 0.4);
-        }
-        .network-recommended h4::after {
-            content: ' ✓ Recomendado';
-            color: #00c853;
-            font-size: 0.75rem;
-        }
+        .network-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+        .network-card { background: rgba(0,0,0,0.2); border: 1px solid var(--border, #2a2a2a); border-radius: 8px; padding: 16px; }
+        .network-card h4 { margin: 0 0 6px; color: var(--text, #ffffff); font-size: 0.95rem; }
+        .network-card p { margin: 0; font-size: 0.85rem; color: var(--text-light, #aaaaaa); }
+        .network-recommended { border-color: rgba(0, 200, 83, 0.4); }
+        .network-recommended h4::after { content: ' ✓ Recomendado'; color: #00c853; font-size: 0.75rem; }
 
         /* Steps */
         .step-block {
@@ -305,67 +246,41 @@
             font-size: 1rem;
             flex-shrink: 0;
         }
-        .step-content h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            color: var(--text, #ffffff);
-            font-size: 1rem;
-        }
-        .step-content p {
-            margin: 0;
-            color: var(--text-light, #aaaaaa);
-            font-size: 0.95rem;
-        }
+        .step-content h3 { margin-top: 0; margin-bottom: 8px; color: var(--text, #ffffff); font-size: 1rem; }
+        .step-content p { margin: 0; color: var(--text-light, #aaaaaa); font-size: 0.95rem; }
 
         /* Country cards */
-        .country-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
-        .country-card {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid var(--border, #2a2a2a);
-            border-radius: 10px;
-            padding: 20px;
-        }
-        .country-card h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1rem;
-            color: var(--text, #ffffff);
-        }
-        .country-card p {
-            margin: 0;
-            font-size: 0.88rem;
-            color: var(--text-light, #aaaaaa);
-        }
+        .country-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 20px 0; }
+        .country-card { background: rgba(0,0,0,0.2); border: 1px solid var(--border, #2a2a2a); border-radius: 10px; padding: 20px; }
+        .country-card h3 { margin-top: 0; margin-bottom: 8px; font-size: 1rem; color: var(--text, #ffffff); }
+        .country-card p { margin: 0; font-size: 0.88rem; color: var(--text-light, #aaaaaa); }
 
         /* Wallet cards */
-        .wallet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
-        .wallet-card {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid var(--border, #2a2a2a);
-            border-radius: 10px;
-            padding: 20px;
-        }
-        .wallet-card h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1rem;
-            color: var(--text, #ffffff);
-        }
-        .wallet-card p {
-            margin: 0;
+        .wallet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
+        .wallet-card { background: rgba(0,0,0,0.2); border: 1px solid var(--border, #2a2a2a); border-radius: 10px; padding: 20px; }
+        .wallet-card h3 { margin-top: 0; margin-bottom: 8px; font-size: 1rem; color: var(--text, #ffffff); }
+        .wallet-card p { margin: 0; font-size: 0.88rem; color: var(--text-light, #aaaaaa); }
+
+        /* Tabla de devaluación ARS — НОВЫЙ */
+        .deval-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
             font-size: 0.88rem;
-            color: var(--text-light, #aaaaaa);
         }
+        .deval-table th {
+            color: #ffffff;
+            border-bottom: 2px solid rgba(116,185,255,0.3);
+            padding: 8px 10px;
+            text-align: left;
+        }
+        .deval-table td {
+            color: var(--text-light, #aaaaaa);
+            border-bottom: 1px solid rgba(116,185,255,0.12);
+            padding: 8px 10px;
+        }
+        .deval-table tr:last-child td { border-bottom: none; }
+        .loss-col { color: #e05260 !important; font-weight: 600; }
 
         @media (max-width: 600px) {
             .guide-content { padding: 24px 16px; }
@@ -421,6 +336,14 @@
         },
         {
           "@type": "Question",
+          "name": "¿Cómo comprar USDT con Mercado Pago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abre @CryptoSwapExchangeBot en Telegram, selecciona Comprar USDT y elige ARS o MXN. El bot acepta pagos vía Mercado Pago para Argentina y México. Transfiere el monto indicado y el USDT llega a tu billetera en 2-5 minutos. Sin KYC, sin verificación."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "¿Es seguro comprar USDT por Telegram?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -433,6 +356,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "El mínimo equivale a aproximadamente $5 USD en tu moneda local: unos $5.000 ARS, $100 MXN o $20.000 COP. El bot muestra el mínimo exacto para tu moneda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo comprar USDT en Venezuela sin documentos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abre @CryptoSwapExchangeBot en Telegram, selecciona Comprar USDT y elige VES como moneda de pago o paga vía Zelle si lo prefieres. USDT llega a tu billetera en 2-5 minutos. Sin KYC, sin cédula venezolana requerida."
           }
         },
         {
@@ -549,20 +480,57 @@
                 </ul>
             </div>
 
-            <!-- Argentina block — главный триггер ES -->
+            <!-- Argentina block + НОВАЯ таблица девальвации -->
             <h2 id="argentina-usdt">Argentina — Comprar USDT con Pesos es una Necesidad, No una Opción</h2>
 
             <div class="argentina-block">
                 <h3>🇦🇷 Por Qué Argentina Lidera la Compra de USDT en LATAM</h3>
                 <p>Argentina tiene la <strong>tasa de adopción crypto más alta de América Latina</strong> — y la razón es brutal: con una inflación superior al 200% anual y un cepo que limita la compra de dólares a $200 USD mensuales, el USDT se convirtió en la única forma accesible de dolarizarse.</p>
-                <p>La realidad que enfrentan millones de argentinos:</p>
+
+                <!-- НОВЫЙ: Таблица девальвации ARS -->
+                <table class="deval-table">
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Tipo de cambio aprox. ARS/USD</th>
+                            <th>Poder adquisitivo perdido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2019</td><td>~$60 ARS</td><td>—</td></tr>
+                        <tr><td>2021</td><td>~$100 ARS</td><td class="loss-col">-40%</td></tr>
+                        <tr><td>2022</td><td>~$175 ARS</td><td class="loss-col">-66%</td></tr>
+                        <tr><td>2023</td><td>~$800 ARS</td><td class="loss-col">-92%</td></tr>
+                        <tr><td>2024</td><td>~$1.000+ ARS</td><td class="loss-col">-94%</td></tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 8px;"><em>*Si hubieras convertido $100.000 ARS a USDT en 2019 (≈ $1.667 USD), hoy tendrías el equivalente a $1.667.000+ ARS. Quien guardó pesos perdió el 94% de poder adquisitivo en dólares.</em></p>
+
+                <p style="margin-top: 16px;">La realidad que enfrentan millones de argentinos:</p>
                 <ul>
                     <li>📉 <strong>El peso pierde valor cada semana</strong> — 200%+ de inflación anual</li>
                     <li>💵 <strong>Solo $200 USD oficiales al mes</strong> — el cepo limita el acceso al dólar</li>
                     <li>🏦 <strong>Los bancos bloquean</strong> transferencias relacionadas con crypto</li>
                     <li>❌ <strong>Los exchanges rechazan</strong> documentos argentinos o congelan cuentas</li>
                 </ul>
-                <p>¿Cuánto USDT obtienes por $50.000 ARS? El bot calcula el monto exacto en tiempo real antes de confirmar. <strong>El USDT es el dólar blue digital — sin límites del cepo, sin cola, sin trámites.</strong></p>
+                <p><strong>El USDT es el dólar blue digital — sin límites del cepo, sin cola, sin trámites.</strong> El bot calcula el monto exacto en tiempo real antes de que confirmes.</p>
+            </div>
+
+            <!-- НОВЫЙ БЛОК: Venezuela -->
+            <h2 id="venezuela-usdt">Venezuela — El USDT Como Moneda de Facto</h2>
+
+            <div class="venezuela-block">
+                <h3>🇻🇪 Venezuela: Donde el USDT Reemplazó al Bolívar</h3>
+                <p>En Venezuela el USDT no es una inversión — es una <strong>necesidad de supervivencia económica</strong>. El bolívar soberano ha perdido más del <strong>99% de su valor en la última década</strong>, y hoy el USDT circula como moneda de facto en tiendas, mercados y transacciones cotidianas.</p>
+                <p>Por qué millones de venezolanos compran USDT:</p>
+                <ul>
+                    <li>💸 <strong>El bolívar colapsa</strong> — hiperinflación histórica, precios cambian a diario</li>
+                    <li>🏦 <strong>Restricciones bancarias</strong> — acceso limitado a dólares físicos</li>
+                    <li>🌍 <strong>Remesas del exterior</strong> — recibir dinero de familia en EE.UU. o España vía USDT</li>
+                    <li>🛒 <strong>Comercio cotidiano</strong> — comercios aceptan USDT directamente</li>
+                    <li>💼 <strong>Trabajo remoto</strong> — freelancers cobran en USDT sin fricción bancaria</li>
+                </ul>
+                <p>Con CryptoSwap Bot conviertes bolívares a USDT <strong>sin cédula venezolana, sin cuenta bancaria especial, en 2-5 minutos</strong>. También aceptamos pagos vía <strong>Zelle y Pago Móvil</strong> para Venezuela.</p>
             </div>
 
             <!-- Por país -->
@@ -575,24 +543,41 @@
                 </div>
                 <div class="country-card">
                     <h3>🇲🇽 México — MXN</h3>
-                    <p>Mayor mercado crypto de LATAM. Compra USDT con pesos mexicanos sin verificación. Ideal para freelancers que cobran en dólares y para proteger ahorros de la depreciación del peso.</p>
+                    <p>Mayor mercado crypto de LATAM. Compra USDT con pesos mexicanos sin verificación. Pago vía SPEI o CoDi. Ideal para freelancers y para proteger ahorros de la depreciación del peso.</p>
                 </div>
                 <div class="country-card">
                     <h3>🇨🇴 Colombia — COP</h3>
-                    <p>Comunidad crypto en crecimiento. USDT con pesos colombianos sin cédula. Popular entre freelancers y trabajadores remotos con clientes internacionales que pagan en dólares.</p>
+                    <p>Comunidad crypto en crecimiento. USDT con pesos colombianos sin cédula. Pago vía Nequi o Daviplata. Popular entre freelancers con clientes internacionales.</p>
                 </div>
                 <div class="country-card">
                     <h3>🇻🇪 Venezuela — VES</h3>
-                    <p>El USDT ya es moneda de facto. Convierte bolívares a USDT sin documentos. No es inversión — es supervivencia. El bolívar perdió el 99% de valor en una década.</p>
+                    <p>El USDT ya es moneda de facto. Convierte bolívares a USDT sin documentos. Acepta también Zelle y Pago Móvil. No es inversión — es supervivencia económica.</p>
                 </div>
                 <div class="country-card">
                     <h3>🇨🇱 Chile — CLP</h3>
-                    <p>Mercado más estable de LATAM. Inversores sofisticados que buscan exposición al dólar sin cuenta bancaria extranjera. USDT con pesos chilenos sin trámites.</p>
+                    <p>Mercado más estable de LATAM. Inversores que buscan exposición al dólar sin cuenta bancaria extranjera. USDT con pesos chilenos sin trámites ni KYC.</p>
                 </div>
                 <div class="country-card">
                     <h3>🇪🇸 España — EUR</h3>
                     <p>Mercado europeo hispanohablante. USDT con euros para usuarios que prefieren privacidad y rapidez frente a las plataformas reguladas europeas con KYC obligatorio.</p>
                 </div>
+            </div>
+
+            <!-- НОВЫЙ БЛОК: Sistemas de pago locales -->
+            <h2 id="pagos-locales">Cómo Pagar — Sistemas de Pago Locales en LATAM</h2>
+
+            <div class="pagos-block">
+                <h3>💳 CryptoSwap Bot acepta los métodos de pago más populares de cada país</h3>
+                <p>No necesitas una tarjeta internacional ni una cuenta en dólares. El bot acepta los métodos de pago que ya usas en tu día a día:</p>
+                <ul>
+                    <li>🇦🇷 <strong>Argentina</strong> — <strong>Mercado Pago</strong>, transferencia bancaria (CVU/CBU), Naranja X</li>
+                    <li>🇲🇽 <strong>México</strong> — <strong>SPEI</strong>, CoDi, Mercado Pago MX, transferencia bancaria</li>
+                    <li>🇨🇴 <strong>Colombia</strong> — <strong>Nequi</strong>, Daviplata, PSE, transferencia bancaria</li>
+                    <li>🇻🇪 <strong>Venezuela</strong> — <strong>Zelle</strong>, Pago Móvil, transferencia en bolívares</li>
+                    <li>🇨🇱 <strong>Chile</strong> — Transferencia bancaria, Khipu, Webpay</li>
+                    <li>🇪🇸 <strong>España</strong> — Bizum, transferencia SEPA, PayPal</li>
+                </ul>
+                <p>El bot te indica exactamente cómo pagar una vez que confirmas el monto y la dirección de tu billetera. <strong>Sin pasos extra, sin formularios, sin esperas de verificación.</strong></p>
             </div>
 
             <!-- Redes USDT -->
@@ -656,6 +641,12 @@
                         <td>✅ Sí</td>
                     </tr>
                     <tr>
+                        <td><strong>Mercado Pago / SPEI / Nequi</strong></td>
+                        <td>✅ Soportado</td>
+                        <td>⚠️ Varía por plataforma</td>
+                        <td>⚠️ No siempre</td>
+                    </tr>
+                    <tr>
                         <td><strong>Velocidad</strong></td>
                         <td>✅ 2-5 minutos</td>
                         <td>⚠️ 5-30 minutos</td>
@@ -674,15 +665,15 @@
                         <td>⚠️ Depende</td>
                     </tr>
                     <tr>
-                        <td><strong>Cepo cambiario</strong></td>
-                        <td>✅ No aplica</td>
+                        <td><strong>Cepo cambiario AR</strong></td>
+                        <td>✅ No aplica (P2P)</td>
                         <td>⚠️ Puede aplicar</td>
                         <td>⚠️ Variable</td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- Poshagovo -->
+            <!-- Paso a paso -->
             <h2 id="como-comprar">Cómo Comprar USDT con Pesos — Paso a Paso</h2>
 
             <div class="step-block">
@@ -729,7 +720,7 @@
                 <div class="step-number">6</div>
                 <div class="step-content">
                     <h3>Realiza el pago y recibe tu USDT</h3>
-                    <p>Sigue las instrucciones de pago del bot. Después de confirmar, el <strong>USDT llega a tu billetera en 2-5 minutos</strong>. Sin documentos, sin esperar verificación. Puedes verificar la transacción en tronscan.org.</p>
+                    <p>Sigue las instrucciones de pago del bot. Puedes pagar vía <strong>Mercado Pago, SPEI, Nequi, Zelle</strong> u otros métodos locales según tu país. Después de confirmar, el <strong>USDT llega a tu billetera en 2-5 minutos</strong>. Verifica en tronscan.org.</p>
                 </div>
             </div>
 
@@ -796,13 +787,19 @@
             <p><a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> → <strong>Comprar USDT</strong> → <strong>ARS</strong> → red TRC-20 → monto en pesos → dirección de billetera → pago. <strong>USDT en tu billetera en 2-5 minutos.</strong> Sin KYC, sin DNI, sin cepo.</p>
 
             <h3>¿Cuánto USDT obtengo por $50.000 pesos argentinos?</h3>
-            <p>El bot calcula y muestra el <strong>monto exacto en tiempo real</strong> antes de confirmar, incluyendo todas las comisiones. Sin sorpresas.</p>
+            <p>El bot calcula y muestra el <strong>monto exacto en tiempo real</strong> antes de confirmar, incluyendo todas las comisiones. Sin sorpresas ni tipos de cambio ocultos.</p>
 
             <h3>¿Cómo comprar USDT con pesos mexicanos sin verificación?</h3>
-            <p>@CryptoSwapExchangeBot → <strong>Comprar USDT</strong> → <strong>MXN</strong> → monto en pesos mexicanos → pago. USDT en tu billetera en <strong>2-5 minutos</strong> sin verificación de identidad.</p>
+            <p>@CryptoSwapExchangeBot → <strong>Comprar USDT</strong> → <strong>MXN</strong> → monto en pesos mexicanos → pago vía <strong>SPEI o Mercado Pago</strong>. USDT en tu billetera en <strong>2-5 minutos</strong> sin verificación de identidad.</p>
+
+            <h3>¿Cómo comprar USDT con Mercado Pago?</h3>
+            <p>Selecciona ARS o MXN en el bot → el bot acepta pagos vía <strong>Mercado Pago</strong>. Transfiere el monto indicado desde tu cuenta de Mercado Pago y el USDT llega a tu billetera en 2-5 minutos. <strong>Sin KYC, sin límite del cepo.</strong></p>
 
             <h3>¿El cepo cambiario afecta la compra de USDT?</h3>
             <p>No. El cepo limita la compra de <strong>dólares físicos</strong> vía el sistema bancario oficial. La compra de USDT vía P2P en Telegram opera en un marco diferente — <strong>sin límite de $200 USD mensuales.</strong></p>
+
+            <h3>¿Cómo comprar USDT en Venezuela?</h3>
+            <p>@CryptoSwapExchangeBot → <strong>Comprar USDT</strong> → <strong>VES</strong> o paga vía <strong>Zelle / Pago Móvil</strong>. USDT en 2-5 minutos. Sin cédula venezolana requerida. El USDT es moneda de facto en Venezuela.</p>
 
             <h3>¿Qué red de USDT elegir?</h3>
             <p>Para LATAM: <strong>TRC-20</strong> — comisiones menores a $1, confirmación en 1-3 minutos, compatible con Trust Wallet. ERC-20 si usas MetaMask. BEP-20 para ecosistema Binance.</p>
@@ -834,6 +831,7 @@
                 <li>⚡ <strong>2-5 minutos</strong> — del pago al USDT en tu billetera</li>
                 <li>🔐 <strong>Non-custodial</strong> — el USDT va directo a tu billetera, control total tuyo</li>
                 <li>🚫 <strong>Sin cepo</strong> — compra P2P no sujeta al límite de $200 USD mensuales</li>
+                <li>💳 <strong>Mercado Pago, SPEI, Nequi, Zelle</strong> — métodos de pago locales de cada país</li>
                 <li>🌐 <strong>TRC-20 recomendado</strong> — mínimas comisiones, máxima compatibilidad</li>
                 <li>💰 <strong>Desde ~$5 USD equivalente</strong> — accesible para todos los presupuestos</li>
             </ul>
