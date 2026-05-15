@@ -218,7 +218,7 @@
         .usdt-explain-block p { color: var(--text-light, #aaaaaa); }
         .usdt-explain-block ul { color: var(--text-light, #aaaaaa); }
 
-        /* Nigeria block — key trigger */
+        /* Nigeria block */
         .nigeria-block {
             background: rgba(0, 180, 80, 0.08);
             border: 1px solid rgba(0, 180, 80, 0.35);
@@ -233,6 +233,24 @@
         }
         .nigeria-block p { color: var(--text-light, #aaaaaa); }
         .nigeria-block ul { color: var(--text-light, #aaaaaa); }
+
+        /* ============================================
+           НОВЫЙ: UPI India block
+        ============================================ */
+        .upi-block {
+            background: rgba(255, 153, 0, 0.08);
+            border: 1px solid rgba(255, 153, 0, 0.35);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+        .upi-block h3 {
+            color: #ff9900;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        .upi-block p { color: var(--text-light, #aaaaaa); }
+        .upi-block ul { color: var(--text-light, #aaaaaa); }
 
         /* Networks block */
         .networks-block {
@@ -272,9 +290,7 @@
             font-size: 0.85rem;
             color: var(--text-light, #aaaaaa);
         }
-        .network-recommended {
-            border-color: rgba(0, 200, 83, 0.4);
-        }
+        .network-recommended { border-color: rgba(0, 200, 83, 0.4); }
         .network-recommended h4::after {
             content: ' ✓ Recommended';
             color: #00c853;
@@ -367,6 +383,29 @@
             color: var(--text-light, #aaaaaa);
         }
 
+        /* ============================================
+           НОВЫЙ: Таблица девальвации Naira
+        ============================================ */
+        .deval-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.88rem;
+        }
+        .deval-table th {
+            color: #ffffff;
+            border-bottom: 2px solid rgba(0,180,80,0.3);
+            padding: 8px 10px;
+            text-align: left;
+        }
+        .deval-table td {
+            color: var(--text-light, #aaaaaa);
+            border-bottom: 1px solid rgba(0,180,80,0.15);
+            padding: 8px 10px;
+        }
+        .deval-table tr:last-child td { border-bottom: none; }
+        .loss-col { color: #e05260 !important; font-weight: 600; }
+
         @media (max-width: 600px) {
             .guide-content { padding: 24px 16px; }
             .step-block { flex-direction: column; gap: 12px; }
@@ -374,6 +413,7 @@
     </style>
 
     <!-- Schema.org FAQPage -->
+    <!-- ИСПРАВЛЕНИЕ 1: Q5 — убран жёсткий курс ₦1,600 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -416,7 +456,15 @@
           "name": "How much USDT can I get for ₦50,000 Naira?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "At current exchange rates (approximately ₦1,600 per dollar), ₦50,000 would give you approximately 30-31 USDT after the small service fee. The bot shows the exact amount automatically before you confirm the transaction."
+            "text": "The exact amount depends on the current market exchange rate between NGN and USD. The bot automatically calculates and shows you the precise USDT amount before you confirm the transaction — including the current rate and service fee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to buy USDT with UPI in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open @CryptoSwapExchangeBot on Telegram, select Buy USDT, choose INR as payment currency. The bot supports UPI payments — fast, instant, no bank delays. Enter the amount in rupees, provide your TRC-20 wallet address, and pay via UPI. USDT arrives in 2-5 minutes. No Aadhaar or PAN required."
           }
         },
         {
@@ -549,19 +597,56 @@
                 </ul>
             </div>
 
-            <!-- Nigeria block — главный триггер EN -->
+            <!-- Nigeria block — ИСПРАВЛЕНИЕ 2: убран жёсткий курс, добавлена таблица девальвации -->
             <h2 id="nigeria-usdt">Nigeria — Buy USDT with Naira, Bypass Bank Restrictions</h2>
 
             <div class="nigeria-block">
                 <h3>🇳🇬 Why USDT is Essential for Nigerians</h3>
                 <p>Nigeria is the <strong>world's #1 country for P2P crypto trading</strong> — yet it is also one of the most restricted. The Central Bank of Nigeria (CBN) has repeatedly blocked banks from processing crypto transactions, while the Naira has lost over <strong>70% of its value against the dollar since 2021</strong>.</p>
-                <p>For millions of Nigerians, buying USDT with Naira solves three urgent problems at once:</p>
+
+                <!-- НОВЫЙ: таблица девальвации Naira -->
+                <table class="deval-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Approx. NGN/USD rate</th>
+                            <th>₦ value lost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2020</td><td>~₦380</td><td>—</td></tr>
+                        <tr><td>2021</td><td>~₦410</td><td>-8%</td></tr>
+                        <tr><td>2022</td><td>~₦430</td><td>-13%</td></tr>
+                        <tr><td>2023</td><td>~₦900</td><td class="loss-col">-57%</td></tr>
+                        <tr><td>2024</td><td>~₦1,500+</td><td class="loss-col">-74%</td></tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 8px;"><em>*If you had converted ₦100,000 to USDT in 2020, that $263 in USDT would buy ₦394,000+ today. Naira holders lost 74% of dollar purchasing power.</em></p>
+
+                <p style="margin-top: 16px;">For millions of Nigerians, buying USDT with Naira solves three urgent problems at once:</p>
                 <ul>
                     <li>💸 <strong>Naira devaluation</strong> — USDT holds dollar value while Naira falls</li>
                     <li>🏦 <strong>Bank restrictions</strong> — CryptoSwap Bot uses P2P, no bank involvement</li>
                     <li>🌍 <strong>International payments</strong> — send dollars to anyone worldwide for under $1</li>
                 </ul>
-                <p>How much USDT for ₦50,000? At current rates (~₦1,600/$): approximately <strong>30-31 USDT</strong>. The bot shows the exact amount before you confirm.</p>
+                <p>How much USDT for ₦50,000? The bot calculates the exact amount at current market rate before you confirm — no guessing, no hidden fees.</p>
+            </div>
+
+            <!-- НОВЫЙ БЛОК: UPI India -->
+            <h2 id="india-upi">India — Buy USDT with UPI, No Aadhaar Required</h2>
+
+            <div class="upi-block">
+                <h3>🇮🇳 UPI + USDT = Instant Dollar Access for 500M+ Indians</h3>
+                <p>India has one of the world's most advanced payment systems — <strong>UPI (Unified Payments Interface)</strong> — processing over 10 billion transactions per month. CryptoSwap Bot connects UPI directly to USDT purchases, making it the fastest way for Indians to buy dollars without a foreign bank account.</p>
+                <p>Why Indians choose USDT via UPI:</p>
+                <ul>
+                    <li>⚡ <strong>UPI is instant</strong> — payment confirmed in seconds, USDT arrives in 2-5 minutes</li>
+                    <li>🔒 <strong>No Aadhaar, no PAN needed</strong> — buy without government ID for small amounts</li>
+                    <li>🌍 <strong>Pay international clients or freelancers</strong> — USDT bypasses slow SWIFT transfers</li>
+                    <li>📱 <strong>Works from any UPI app</strong> — PhonePe, Google Pay, Paytm, BHIM</li>
+                    <li>💰 <strong>From ₹400 minimum</strong> — accessible for all income levels</li>
+                </ul>
+                <p><strong>How it works:</strong> Select INR in the bot → enter ₹ amount → choose UPI as payment method → scan QR or enter UPI ID → USDT in your wallet in 2-5 minutes. No KYC, no verification, no waiting days for bank approval.</p>
             </div>
 
             <!-- По странам -->
@@ -720,7 +805,7 @@
                 <div class="step-number">5</div>
                 <div class="step-content">
                     <h3>Enter the amount and your wallet address</h3>
-                    <p>Type how much you want to spend — for example <strong>₦50,000</strong> or <strong>₹5,000</strong>. The bot shows exactly how much USDT you will receive. Paste your <strong>TRC-20 wallet address</strong> from Trust Wallet.</p>
+                    <p>Type how much you want to spend — for example <strong>₦50,000</strong> or <strong>₹5,000</strong>. The bot shows exactly how much USDT you will receive at the current rate. Paste your <strong>TRC-20 wallet address</strong> from Trust Wallet.</p>
                 </div>
             </div>
 
@@ -728,7 +813,7 @@
                 <div class="step-number">6</div>
                 <div class="step-content">
                     <h3>Make payment and receive USDT</h3>
-                    <p>Follow the payment instructions provided by the bot. After confirming payment, <strong>USDT arrives in your Trust Wallet in 2-5 minutes</strong>. You can verify the transaction on tronscan.org using your wallet address.</p>
+                    <p>Follow the payment instructions provided by the bot (bank transfer, UPI, or mobile money). After confirming payment, <strong>USDT arrives in your Trust Wallet in 2-5 minutes</strong>. Verify the transaction on tronscan.org using your wallet address.</p>
                 </div>
             </div>
 
@@ -788,14 +873,14 @@
                 <li><strong>For large amounts</strong> — use a hardware wallet (Ledger or Trezor)</li>
             </ol>
 
-            <!-- FAQ -->
+            <!-- FAQ — ИСПРАВЛЕНИЕ 3: Q5 текст обновлён, добавлен Q6 про UPI -->
             <h2 id="faq">Frequently Asked Questions</h2>
 
             <h3>How to buy USDT with Nigerian Naira without KYC?</h3>
             <p><a href="https://t.me/CryptoSwapExchangeBot" target="_blank" rel="noopener noreferrer">@CryptoSwapExchangeBot</a> → <strong>Buy USDT</strong> → <strong>NGN</strong> → TRC-20 → amount in Naira → wallet address → payment. <strong>USDT in your wallet in 2-5 minutes.</strong> No KYC, no ID, no bank account needed.</p>
 
             <h3>How to buy USDT with Indian Rupees without verification?</h3>
-            <p>@CryptoSwapExchangeBot → <strong>Buy USDT</strong> → <strong>INR</strong> → amount in rupees → wallet address → pay via UPI or bank transfer. USDT delivered in <strong>2-5 minutes</strong>. No Aadhaar, no PAN, no KYC.</p>
+            <p>@CryptoSwapExchangeBot → <strong>Buy USDT</strong> → <strong>INR</strong> → amount in rupees → wallet address → pay via <strong>UPI</strong> (PhonePe, Google Pay, Paytm) or bank transfer. USDT delivered in <strong>2-5 minutes</strong>. No Aadhaar, no PAN, no KYC.</p>
 
             <h3>What is USDT and why buy it with local currency?</h3>
             <p>USDT is a stablecoin always worth exactly <strong>$1 USD</strong>. Users in Nigeria, India and Africa buy it with local currency to protect savings from devaluation, send money internationally for under $1, and access dollar value without a foreign bank account.</p>
@@ -804,7 +889,10 @@
             <p>For most users: <strong>TRC-20</strong> — fees under $1, confirmed in 1-3 minutes. ERC-20 — if you use MetaMask or DeFi. BEP-20 — if you use Binance ecosystem.</p>
 
             <h3>How much USDT for ₦50,000 Naira?</h3>
-            <p>At current rates (~₦1,600/$): approximately <strong>30-31 USDT</strong> after the service fee. The bot calculates and shows the exact amount before confirmation.</p>
+            <p>The exact amount depends on the current market rate between NGN and USD. The bot <strong>calculates and shows the precise USDT amount automatically</strong> before you confirm — including the current rate and any service fee. No guessing needed.</p>
+
+            <h3>How to buy USDT with UPI in India?</h3>
+            <p>Select <strong>INR</strong> in the bot → enter ₹ amount → choose UPI as payment → scan QR or enter UPI ID. Works with <strong>PhonePe, Google Pay, Paytm, BHIM</strong>. No Aadhaar or PAN required. USDT arrives in 2-5 minutes.</p>
 
             <h3>Is it safe to buy USDT via Telegram?</h3>
             <p>Yes with non-custodial services. USDT goes directly to your wallet — the bot never holds it. Powered by <strong>ChangeNOW and SimpleSwap</strong>, operating since 2018 with billions in volume.</p>
