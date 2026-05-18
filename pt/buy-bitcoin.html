@@ -216,7 +216,7 @@
         .btc-explain-block p { color: var(--text-light, #aaaaaa); }
         .btc-explain-block ul { color: var(--text-light, #aaaaaa); }
 
-        /* PIX block — verde Brasil */
+        /* PIX block */
         .pix-block {
             background: rgba(0, 200, 130, 0.08);
             border: 1px solid rgba(0, 200, 130, 0.35);
@@ -232,7 +232,7 @@
         .pix-block p { color: var(--text-light, #aaaaaa); }
         .pix-block ul { color: var(--text-light, #aaaaaa); }
 
-        /* Sem CPF block — azul */
+        /* Sem CPF block */
         .cpf-block {
             background: rgba(0, 136, 204, 0.08);
             border: 1px solid rgba(0, 136, 204, 0.35);
@@ -286,9 +286,7 @@
             font-size: 0.85rem;
             color: var(--text-light, #aaaaaa);
         }
-        .network-recommended {
-            border-color: rgba(247, 147, 26, 0.5);
-        }
+        .network-recommended { border-color: rgba(247, 147, 26, 0.5); }
         .network-recommended h4::after {
             content: ' ✓';
             color: #f7931a;
@@ -329,31 +327,6 @@
             margin: 0;
             color: var(--text-light, #aaaaaa);
             font-size: 0.95rem;
-        }
-
-        /* Country cards */
-        .country-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
-        .country-card {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid var(--border, #2a2a2a);
-            border-radius: 10px;
-            padding: 20px;
-        }
-        .country-card h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1rem;
-            color: var(--text, #ffffff);
-        }
-        .country-card p {
-            margin: 0;
-            font-size: 0.88rem;
-            color: var(--text-light, #aaaaaa);
         }
 
         /* Wallet cards */
@@ -619,7 +592,7 @@
                 </ul>
             </div>
 
-            <!-- Bloco PIX — PRINCIPAL -->
+            <!-- Bloco PIX -->
             <h2 id="pix-bitcoin">PIX + Bitcoin — O Jeito Mais Rápido de Comprar BTC no Brasil</h2>
 
             <div class="pix-block">
@@ -704,7 +677,7 @@
                 </ul>
             </div>
 
-            <!-- Tabela comparativa exchanges BR -->
+            <!-- Tabela comparativa -->
             <h2 id="comparativo-exchanges">CryptoSwap Bot vs Exchanges Brasileiras</h2>
 
             <table class="exchange-table">
@@ -763,7 +736,7 @@
                 </tbody>
             </table>
 
-            <!-- Bitcoin vs USDT para brasileiros -->
+            <!-- Bitcoin vs USDT -->
             <h2 id="bitcoin-vs-usdt">Bitcoin x USDT — Qual É Melhor para o Brasileiro</h2>
 
             <div class="vs-block">
@@ -998,7 +971,9 @@
             </ul>
         </article>
 
-        <!-- Links internos -->
+        <!-- ============================================================ -->
+        <!-- БЛОК ПЕРЕЛИНКОВКИ — ОБНОВЛЁН: добавлена карточка pix-crypto  -->
+        <!-- ============================================================ -->
         <section class="features" style="margin-top: 40px;">
             <h2>Guias Relacionados</h2>
             <div class="feature">
@@ -1013,7 +988,12 @@
                 <h3>💵 <a href="/pt/buy-usdt">Comprar USDT com Reais</a></h3>
                 <p>Stablecoin para proteger economias da inflação — sem a volatilidade do Bitcoin.</p>
             </div>
+            <div class="feature">
+                <h3>⚡ <a href="/pt/pix-crypto">PIX para Cripto — USDT e Bitcoin 24h</a></h3>
+                <p>Tudo sobre o PIX como método de compra: bancos aceitos, horários, redes e valores mínimos no Brasil.</p>
+            </div>
         </section>
+
     </main>
 
     <footer>
