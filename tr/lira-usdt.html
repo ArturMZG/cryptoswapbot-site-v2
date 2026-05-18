@@ -1094,6 +1094,9 @@
       const LANGS = ['en', 'es', 'pt', 'tr'];
       const DEFAULT_LANG = 'ru';
 
+      // Страницы без языковых аналогов — при смене языка ведут на главную
+      const REGIONAL_PAGES = ['/tr/lira-usdt'];
+
       function getCurrentLang() {
         const path = window.location.pathname;
         for (let l of LANGS) {
@@ -1116,11 +1119,27 @@
         return '/' + targetLang + basePath;
       }
 
+      function isRegionalPage() {
+        const path = window.location.pathname.replace(/\/$/, '');
+        return REGIONAL_PAGES.includes(path);
+      }
+
       function switchLang(targetLang) {
         const currentLang = getCurrentLang();
         if (targetLang === currentLang) return;
         localStorage.setItem('site_lang', targetLang);
         sessionStorage.removeItem('lang_redirected');
+
+        // Если страница региональная — переходим на главную нужного языка
+        if (isRegionalPage()) {
+          if (targetLang === DEFAULT_LANG) {
+            window.location.href = '/';
+          } else {
+            window.location.href = '/' + targetLang;
+          }
+          return;
+        }
+
         const basePath = stripLangPrefix(window.location.pathname);
         window.location.href = buildPath(targetLang, basePath);
       }
@@ -1158,6 +1177,8 @@
           else                         targetLang = 'en';
           localStorage.setItem('site_lang', targetLang);
         }
+        // Региональные страницы не редиректим автоматически
+        if (isRegionalPage()) return;
         if (targetLang !== currentLang) {
           sessionStorage.setItem('lang_redirected', 'true');
           const basePath = stripLangPrefix(window.location.pathname);
