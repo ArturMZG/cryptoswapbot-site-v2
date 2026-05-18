@@ -3,96 +3,401 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ✅ Главная (RU) -->
+  <!-- ========== ГЛАВНЫЕ СТРАНИЦЫ ========== -->
+
+  <!-- Главная RU -->
   <url>
     <loc>https://www.cryptoswapbot.online/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <!-- Связи между языковыми версиями для Google -->
-    <xhtml:link rel="alternate" hreflang="ru"       href="https://www.cryptoswapbot.online/"/>
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.cryptoswapbot.online/en"/>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.cryptoswapbot.online/es"/>
-    <xhtml:link rel="alternate" hreflang="pt"       href="https://www.cryptoswapbot.online/pt"/>
-    <xhtml:link rel="alternate" hreflang="tr"       href="https://www.cryptoswapbot.online/tr"/>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en"/>
   </url>
 
-  <!-- ✅ EN версия -->
+  <!-- Главная EN -->
   <url>
     <loc>https://www.cryptoswapbot.online/en</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru"       href="https://www.cryptoswapbot.online/"/>
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.cryptoswapbot.online/en"/>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.cryptoswapbot.online/es"/>
-    <xhtml:link rel="alternate" hreflang="pt"       href="https://www.cryptoswapbot.online/pt"/>
-    <xhtml:link rel="alternate" hreflang="tr"       href="https://www.cryptoswapbot.online/tr"/>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en"/>
   </url>
 
-  <!-- ✅ ES версия -->
+  <!-- Главная ES -->
   <url>
     <loc>https://www.cryptoswapbot.online/es</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru"       href="https://www.cryptoswapbot.online/"/>
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.cryptoswapbot.online/en"/>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.cryptoswapbot.online/es"/>
-    <xhtml:link rel="alternate" hreflang="pt"       href="https://www.cryptoswapbot.online/pt"/>
-    <xhtml:link rel="alternate" hreflang="tr"       href="https://www.cryptoswapbot.online/tr"/>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en"/>
   </url>
 
-  <!-- ✅ PT версия -->
+  <!-- Главная PT -->
   <url>
     <loc>https://www.cryptoswapbot.online/pt</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru"       href="https://www.cryptoswapbot.online/"/>
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.cryptoswapbot.online/en"/>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.cryptoswapbot.online/es"/>
-    <xhtml:link rel="alternate" hreflang="pt"       href="https://www.cryptoswapbot.online/pt"/>
-    <xhtml:link rel="alternate" hreflang="tr"       href="https://www.cryptoswapbot.online/tr"/>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en"/>
   </url>
 
-  <!-- ✅ TR версия -->
+  <!-- Главная TR -->
   <url>
     <loc>https://www.cryptoswapbot.online/tr</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru"       href="https://www.cryptoswapbot.online/"/>
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.cryptoswapbot.online/en"/>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.cryptoswapbot.online/es"/>
-    <xhtml:link rel="alternate" hreflang="pt"       href="https://www.cryptoswapbot.online/pt"/>
-    <xhtml:link rel="alternate" hreflang="tr"       href="https://www.cryptoswapbot.online/tr"/>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en"/>
   </url>
 
-  <!-- ✅ Страница покупки крипты (только одна, в корне) -->
+  <!-- ========== GUIDE ========== -->
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/guide</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/guide"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/guide"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/guide"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/guide"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/guide"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/en/guide</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/guide"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/guide"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/guide"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/guide"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/guide"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/es/guide</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/guide"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/guide"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/guide"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/guide"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/guide"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/pt/guide</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/guide"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/guide"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/guide"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/guide"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/guide"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/tr/guide</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/guide"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/guide"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/guide"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/guide"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/guide"/>
+  </url>
+
+  <!-- ========== NO-KYC ========== -->
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/no-kyc</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/no-kyc"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/en/no-kyc</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/no-kyc"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/es/no-kyc</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/no-kyc"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/pt/no-kyc</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/no-kyc"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/tr/no-kyc</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/no-kyc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/no-kyc"/>
+  </url>
+
+  <!-- ========== BUY-USDT ========== -->
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/buy-usdt</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/en/buy-usdt</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/es/buy-usdt</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/pt/buy-usdt</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/tr/buy-usdt</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-usdt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-usdt"/>
+  </url>
+
+  <!-- ========== BUY-BITCOIN ========== -->
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/buy-bitcoin</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/en/buy-bitcoin</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/es/buy-bitcoin</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/pt/buy-bitcoin</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+  </url>
+
+  <url>
+    <loc>https://www.cryptoswapbot.online/tr/buy-bitcoin</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://www.cryptoswapbot.online/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.cryptoswapbot.online/es/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.cryptoswapbot.online/pt/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://www.cryptoswapbot.online/tr/buy-bitcoin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cryptoswapbot.online/en/buy-bitcoin"/>
+  </url>
+
+  <!-- ========== РЕГИОНАЛЬНЫЕ СТРАНИЦЫ ========== -->
+
+  <!-- ES: Аргентина -->
+  <url>
+    <loc>https://www.cryptoswapbot.online/es/argentina</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- TR: Lira-USDT -->
+  <url>
+    <loc>https://www.cryptoswapbot.online/tr/lira-usdt</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PT: PIX-Crypto -->
+  <url>
+    <loc>https://www.cryptoswapbot.online/pt/pix-crypto</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- EN: Naira-Crypto -->
+  <url>
+    <loc>https://www.cryptoswapbot.online/en/naira-crypto</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========== EXCHANGE ========== -->
+
   <url>
     <loc>https://www.cryptoswapbot.online/exchange</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ✅ Юридические страницы -->
+  <!-- ========== СЛУЖЕБНЫЕ ========== -->
+
   <url>
     <loc>https://www.cryptoswapbot.online/privacy</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://www.cryptoswapbot.online/terms</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
